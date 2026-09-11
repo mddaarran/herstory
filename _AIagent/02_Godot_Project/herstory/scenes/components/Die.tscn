@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/Die.gd" id="1_die"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_die_face"]
+bg_color = Color(0.031, 0.078, 0.086, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.373, 0.827, 0.769, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_left = 3
+corner_radius_bottom_right = 3
+
+[node name="Die" type="Panel"]
+custom_minimum_size = Vector2(150, 150)
+theme_override_styles/panel = SubResource("StyleBoxFlat_die_face")
+script = ExtResource("1_die")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="Center"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+columns = 3
+theme_override_constants/hseparation = 10
+theme_override_constants/vseparation = 10

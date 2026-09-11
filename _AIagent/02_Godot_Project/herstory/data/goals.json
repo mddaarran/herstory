@@ -1,0 +1,7 @@
+[
+  {"id":"goal_treasury", "state":"treasury", "name":"让国库达到一千", "initial":200, "target":1000, "description":"在危机与支出之间积累足以改变国家命运的财富。", "major":"major_treasury_coup"},
+  {"id":"goal_population", "state":"population", "name":"让人口达到六百", "initial":300, "target":600, "description":"让人口增长成为国家力量，同时承担粮食与治理压力。", "major":"major_population_disaster"},
+  {"id":"goal_gdp", "state":"gdp", "name":"让经济达到一千", "initial":500, "target":1000, "description":"推动生产与商贸扩张，把繁荣变成实际国力。", "major":"major_guild_revolt"},
+  {"id":"goal_military", "state":"military", "name":"让军力达到七百", "initial":200, "target":700, "description":"建立足以守住边境、也足以改变权力平衡的军力。", "major":"major_final_invasion"},
+  {"id":"goal_territory", "state":"territory", "name":"让领土达到四百", "initial":150, "target":400, "description":"扩展实际控制范围，并承担新土地带来的治理成本。", "major":"major_frontier_revolt"}
+]

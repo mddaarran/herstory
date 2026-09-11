@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>Herstory 跑量模拟报告</title>
+<style>
+:root { --bg:#f7f5f0; --card:#ffffff; --line:#e2ddd2; --ink:#2b2823; --dim:#7a7368;
+         --accent:#8e6f3e; --red:#c0392b; --amber:#d68910; --grey:#7f8c8d; }
+* { box-sizing:border-box; }
+body { margin:0; padding:32px 40px 60px; background:var(--bg); color:var(--ink);
+        font:14px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+h1 { font-size:22px; margin:0 0 6px; letter-spacing:.5px; }
+.sub { color:var(--dim); font-size:12.5px; margin-bottom:26px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px;
+         padding:20px 22px; margin-bottom:18px; }
+h2 { font-size:15px; margin:0 0 4px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+.h2note { color:var(--dim); font-size:12px; margin:8px 0 14px; }
+table { border-collapse:collapse; width:100%; font-size:13px; margin-top:6px; }
+th,td { padding:6px 10px; border-bottom:1px solid #f0ece4; text-align:left; }
+th { color:var(--dim); font-weight:600; font-size:12px; background:#fbf9f5; }
+td.r,th.r { text-align:right; }
+tbody tr:hover { background:#faf7f1; }
+.chart { width:100%; height:auto; margin:6px 0 2px; }
+.chart .bl { font-size:12px; fill:#2b2823; }
+.chart .bv { font-size:11.5px; fill:#7a7368; }
+.chart .sv { font-size:11px; fill:#fff; font-weight:600; }
+.legend { font-size:12px; color:var(--dim); margin-top:8px; }
+.legend i { display:inline-block; width:10px; height:10px; margin:0 4px 0 12px; border-radius:2px; }
+.kpi { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px; }
+.kpi div { flex:1 1 150px; background:var(--card); border:1px solid var(--line);
+            border-radius:8px; padding:12px 14px; }
+.kpi b { display:block; font-size:20px; color:var(--accent); font-weight:600; }
+.kpi span { font-size:12px; color:var(--dim); }
+.note { background:#fdf8ec; border-left:3px solid var(--amber); padding:10px 14px;
+         font-size:12.5px; margin-top:12px; border-radius:0 4px 4px 0; }
+code { background:#f2eee6; padding:1px 5px; border-radius:3px; font-size:12px; }
+.two { display:flex; gap:18px; flex-wrap:wrap; }
+.two > div { flex:1 1 320px; }
+</style></head><body>
+<h1>Herstory 跑量模拟报告</h1>
+<div class="sub">1000 局 × 3 策略 × 15 轮 = 45000 轮 · 引擎内无头跑批（Godot 4.7.2 headless，
+直接复用 EventManager / Resolution / GameState）· 模拟不含 major（未触发里程碑）</div>
+
+<div class="kpi">
+  <div><b>3000</b><span>模拟局数</span></div>
+  <div><b>45000</b><span>判定次数</span></div>
+  <div><b>3.12</b><span>能力点/局（随机策略）</span></div>
+  <div><b>5.12</b><span>能力终值合计</span></div>
+  <div><b>22.0%</b><span>单局卡面重复率</span></div>
+</div>
+
+<div class="card">
+<h2>A. 危机触发与能力成长</h2>
+<div class="h2note">「过线种类」= 一局里进过抽取池的危机张数（共 16 张）；「上桌」= 出现在选卡页两
+张里的次数；「被绕开」= 上桌但没被选中处置的次数；「强制独占」= 触发 CRISIS_FORCE_DODGE_LIMIT
+后独占选卡页的局占比；「能力点」= 危机判定非失败发放的点数（建卡 2 点另计）。</div>
+<table><thead><tr><th class="l">策略</th><th class="r">过线种类/局</th><th class="r">上桌/局</th><th class="r">处置/局</th><th class="r">被绕开/局</th><th class="r">强制独占局%</th><th class="r">能力点/局</th><th class="r">能力终值合计</th></tr></thead><tbody><tr><td class="l">随机选卡</td><td class="r">6.05</td><td class="r">8.22</td><td class="r">4.34</td><td class="r">3.88</td><td class="r">34.3%</td><td class="r">3.12</td><td class="r">5.12</td></tr><tr><td class="l">优先危机</td><td class="r">5.99</td><td class="r">5.75</td><td class="r">5.14</td><td class="r">0.61</td><td class="r">0.6%</td><td class="r">3.79</td><td class="r">5.79</td></tr><tr><td class="l">只选第一张</td><td class="r">5.13</td><td class="r">6.51</td><td class="r">3.64</td><td class="r">2.87</td><td class="r">18.4%</td><td class="r">2.62</td><td class="r">4.62</td></tr></tbody></table>
+<div class="legend">能力点/局：<i style="background:#8e6f3e"></i>三种策略对比</div>
+<svg viewBox="0 0 620 72" class="chart"><text x="0" y="14" class="bl">随机选卡</text><rect x="120" y="3" width="276.6" height="14" fill="#8e6f3e" rx="2"/><text x="402.6" y="14" class="bv">3.12</text><text x="0" y="38" class="bl">优先危机</text><rect x="120" y="27" width="336.0" height="14" fill="#8e6f3e" rx="2"/><text x="462.0" y="38" class="bv">3.79</text><text x="0" y="62" class="bl">只选第一张</text><rect x="120" y="51" width="232.3" height="14" fill="#8e6f3e" rx="2"/><text x="358.3" y="62" class="bv">2.62</text></svg>
+</div>
+
+<div class="card">
+<h2>B. 事件覆盖与重复率</h2>
+<div class="h2note">每局 15 轮 × 2 张 = 30 张卡面（强制独占轮只出 1 张）。「单局覆盖池%」=
+去重后的卡面数 ÷ 日常池 47 张。</div>
+<table><thead><tr><th class="l">策略</th><th class="r">卡面总数/局</th><th class="r">去重后/局</th><th class="r">重复率</th><th class="r">单局覆盖池%</th></tr></thead><tbody><tr><td class="l">随机选卡</td><td class="r">29.64</td><td class="r">23.13</td><td class="r">22.0%</td><td class="r">49.2%</td></tr><tr><td class="l">优先危机</td><td class="r">29.99</td><td class="r">25.18</td><td class="r">16.1%</td><td class="r">53.6%</td></tr><tr><td class="l">只选第一张</td><td class="r">29.81</td><td class="r">23.79</td><td class="r">20.2%</td><td class="r">50.6%</td></tr></tbody></table>
+<div class="h2note" style="margin-top:14px">出场热度（3000 局合计，最热 / 最冷各 8 张）</div>
+<div class="two"><div>
+<b style="font-size:12.5px">最热</b>
+<table><thead><tr><th class="l">事件 id</th><th class="r">次数</th></tr></thead><tbody><tr><td class="l">silent_fields</td><td class="r">749</td></tr><tr><td class="l">border_tariff</td><td class="r">735</td></tr><tr><td class="l">retired_furnace_workers</td><td class="r">732</td></tr><tr><td class="l">midwife_station</td><td class="r">728</td></tr><tr><td class="l">company_military_rations</td><td class="r">721</td></tr><tr><td class="l">furnace_upgrade</td><td class="r">719</td></tr><tr><td class="l">iron_plow</td><td class="r">713</td></tr><tr><td class="l">lamp_festival</td><td class="r">710</td></tr></tbody></table>
+</div><div>
+<b style="font-size:12.5px">最冷</b>
+<table><thead><tr><th class="l">事件 id</th><th class="r">次数</th></tr></thead><tbody><tr><td class="l">frontier_beacon</td><td class="r">650</td></tr><tr><td class="l">women_night_read</td><td class="r">650</td></tr><tr><td class="l">farm_energy_conflict</td><td class="r">650</td></tr><tr><td class="l">soul_rite</td><td class="r">648</td></tr><tr><td class="l">eastern_tax_registry</td><td class="r">646</td></tr><tr><td class="l">company_tax_sheet</td><td class="r">645</td></tr><tr><td class="l">open_school</td><td class="r">641</td></tr><tr><td class="l">noble_customs_gate</td><td class="r">640</td></tr></tbody></table>
+</div></div>
+<div class="note">最热与最冷的出场次数相差仅约 1.2 倍 —— 阶段难度加权没有把任何一张卡打进冷宫，
+也没有哪张卡被反复刷脸。全库 47 张在 3000 局中<span>全部出场过</span>。</div>
+</div>
+
+<div class="card">
+<h2>C. 判定档位分布</h2>
+<div class="h2note">设计基准（difficulty=0、能力修正 0）为 27.8% / 44.4% / 27.8%。实测偏离来自
+两个方向：日常池整体偏易（加权后平均难度约 −0.6），以及能力修正随局推进从 +0.7 涨到 +1.5。</div>
+<table><thead><tr><th class="l">策略</th><th class="l">类别</th><th class="r">大成功</th><th class="r">有条件</th><th class="r">失败</th></tr></thead><tbody><tr><td class="l">随机选卡</td><td class="l">日常</td><td class="r">52.2%</td><td class="r">34.0%</td><td class="r">13.9%</td></tr><tr><td class="l">随机选卡</td><td class="l">危机</td><td class="r">29.6%</td><td class="r">42.1%</td><td class="r">28.3%</td></tr><tr><td class="l">优先危机</td><td class="l">日常</td><td class="r">53.7%</td><td class="r">33.6%</td><td class="r">12.7%</td></tr><tr><td class="l">优先危机</td><td class="l">危机</td><td class="r">33.6%</td><td class="r">40.1%</td><td class="r">26.3%</td></tr><tr><td class="l">只选第一张</td><td class="l">日常</td><td class="r">51.5%</td><td class="r">34.3%</td><td class="r">14.1%</td></tr><tr><td class="l">只选第一张</td><td class="l">危机</td><td class="r">27.9%</td><td class="r">44.0%</td><td class="r">28.1%</td></tr></tbody></table>
+<svg viewBox="0 0 620 156" class="chart"><text x="0" y="15" class="bl">随机选卡·日常</text><rect x="120.0" y="3" width="219.2" height="16" fill="#c0392b"/><text x="229.6" y="15" class="sv" text-anchor="middle">52.2%</text><rect x="339.2" y="3" width="142.8" height="16" fill="#d68910"/><text x="410.6" y="15" class="sv" text-anchor="middle">34%</text><rect x="482.0" y="3" width="58.4" height="16" fill="#7f8c8d"/><text x="511.2" y="15" class="sv" text-anchor="middle">13.9%</text><text x="0" y="41" class="bl">随机选卡·危机</text><rect x="120.0" y="29" width="124.3" height="16" fill="#c0392b"/><text x="182.2" y="41" class="sv" text-anchor="middle">29.6%</text><rect x="244.3" y="29" width="176.8" height="16" fill="#d68910"/><text x="332.7" y="41" class="sv" text-anchor="middle">42.1%</text><rect x="421.1" y="29" width="118.9" height="16" fill="#7f8c8d"/><text x="480.6" y="41" class="sv" text-anchor="middle">28.3%</text><text x="0" y="67" class="bl">优先危机·日常</text><rect x="120.0" y="55" width="225.5" height="16" fill="#c0392b"/><text x="232.8" y="67" class="sv" text-anchor="middle">53.7%</text><rect x="345.5" y="55" width="141.1" height="16" fill="#d68910"/><text x="416.1" y="67" class="sv" text-anchor="middle">33.6%</text><rect x="486.7" y="55" width="53.3" height="16" fill="#7f8c8d"/><text x="513.3" y="67" class="sv" text-anchor="middle">12.7%</text><text x="0" y="93" class="bl">优先危机·危机</text><rect x="120.0" y="81" width="141.1" height="16" fill="#c0392b"/><text x="190.6" y="93" class="sv" text-anchor="middle">33.6%</text><rect x="261.1" y="81" width="168.4" height="16" fill="#d68910"/><text x="345.3" y="93" class="sv" text-anchor="middle">40.1%</text><rect x="429.5" y="81" width="110.5" height="16" fill="#7f8c8d"/><text x="484.8" y="93" class="sv" text-anchor="middle">26.3%</text><text x="0" y="119" class="bl">只选第一张·日常</text><rect x="120.0" y="107" width="216.3" height="16" fill="#c0392b"/><text x="228.2" y="119" class="sv" text-anchor="middle">51.5%</text><rect x="336.3" y="107" width="144.1" height="16" fill="#d68910"/><text x="408.3" y="119" class="sv" text-anchor="middle">34.3%</text><rect x="480.4" y="107" width="59.2" height="16" fill="#7f8c8d"/><text x="510.0" y="119" class="sv" text-anchor="middle">14.1%</text><text x="0" y="145" class="bl">只选第一张·危机</text><rect x="120.0" y="133" width="117.2" height="16" fill="#c0392b"/><text x="178.6" y="145" class="sv" text-anchor="middle">27.9%</text><rect x="237.2" y="133" width="184.8" height="16" fill="#d68910"/><text x="329.6" y="145" class="sv" text-anchor="middle">44%</text><rect x="422.0" y="133" width="118.0" height="16" fill="#7f8c8d"/><text x="481.0" y="145" class="sv" text-anchor="middle">28.1%</text></svg>
+<div class="legend"><i style="background:#c0392b"></i>大成功<i style="background:#d68910"></i>
+有条件成功<i style="background:#7f8c8d"></i>失败</div>
+<div class="note">日常大成功率 <b>52%</b>（基准 27.8%）、失败率仅 <b>14%</b> —— 日常整体偏易。
+危机 30 / 42 / 28 已非常贴近基准，说明危机难度回退后已修复（此前实跑是 6 次失败 4 次）。</div>
+</div>
+
+<div class="card">
+<h2>D. 阶段难度曲线 vs 能力成长</h2>
+<div class="h2note">阶段加权只改变「各难度档被抽到的概率」，不改事件自身难度。这张表回答的是：
+曲线到底有没有把后期变难。</div>
+<table><thead><tr><th class="l">阶段</th><th class="l">轮次</th><th class="r">平均难度</th><th class="r">平均能力修正</th><th class="r">平均判定值</th><th class="r">大成功</th><th class="r">有条件</th><th class="r">失败</th><th class="r">样本</th></tr></thead><tbody><tr><td class="l">阶段1</td><td class="l">1-5</td><td class="r">-1.02</td><td class="r">+0.70</td><td class="r">7.72</td><td class="r">53.4%</td><td class="r">33.9%</td><td class="r">12.7%</td><td class="r">4254</td></tr><tr><td class="l">阶段2</td><td class="l">6-10</td><td class="r">-0.58</td><td class="r">+1.03</td><td class="r">8.03</td><td class="r">51.5%</td><td class="r">34.2%</td><td class="r">14.3%</td><td class="r">3115</td></tr><tr><td class="l">阶段3</td><td class="l">11-15</td><td class="r">-0.18</td><td class="r">+1.47</td><td class="r">8.42</td><td class="r">51.2%</td><td class="r">33.9%</td><td class="r">14.9%</td><td class="r">3286</td></tr></tbody></table>
+<div class="note">一期到三期：事件难度 -1.02 → -0.18（变难 +0.84），能力修正 +0.70 → +1.47（变强 +0.77），净 +0.07<br>
+难度确实在一期→三期抬了约 0.8 档，但同期能力修正也涨了约 0.8 ——
+<b>两者对冲，失败率只从 12.7% 爬到 14.9%（+2.2 个百分点）</b>。想让后期真的变难，
+光调 STAGE_DIFF_WEIGHT 不够，得同时压住能力成长速度，或把三期的难度权重再拉陡。</div>
+</div>
+
+<div class="card">
+<h2>E. 各危机逐项（随机策略）</h2>
+<div class="h2note">过线局% = 该危机在这一局里触发条件成立过；首触发轮 = 第一次成立的轮次；
+上桌局% = 出现在选卡页过；处置局% = 被选中处置过；回避率 = 上桌 − 处置。</div>
+<table><thead><tr><th class="l">危机 id</th><th class="r">过线局%</th><th class="r">首触发轮均值</th><th class="r">首触发中位数</th><th class="r">上桌局%</th><th class="r">处置局%</th><th class="r">回避率</th></tr></thead><tbody><tr><td class="l">fuel_smuggle</td><td class="r">93.9%</td><td class="r">5.45</td><td class="r">4</td><td class="r">85.9%</td><td class="r">78.4%</td><td class="r">7.5%</td></tr><tr><td class="l">fuel_demand</td><td class="r">82.0%</td><td class="r">4.79</td><td class="r">3.0</td><td class="r">72.2%</td><td class="r">67.6%</td><td class="r">4.6%</td></tr><tr><td class="l">border_pay</td><td class="r">81.0%</td><td class="r">6.91</td><td class="r">6.0</td><td class="r">70.1%</td><td class="r">61.8%</td><td class="r">8.3%</td></tr><tr><td class="l">flu_raiding</td><td class="r">75.1%</td><td class="r">6.21</td><td class="r">5</td><td class="r">63.0%</td><td class="r">55.6%</td><td class="r">7.4%</td></tr><tr><td class="l">gdp_crisis_400</td><td class="r">55.3%</td><td class="r">9.5</td><td class="r">9</td><td class="r">40.6%</td><td class="r">32.4%</td><td class="r">8.2%</td></tr><tr><td class="l">furnace_crack</td><td class="r">47.1%</td><td class="r">6.38</td><td class="r">5</td><td class="r">38.3%</td><td class="r">34.9%</td><td class="r">3.4%</td></tr><tr><td class="l">treasury_crisis_450</td><td class="r">29.0%</td><td class="r">8.07</td><td class="r">7.0</td><td class="r">19.2%</td><td class="r">14.0%</td><td class="r">5.2%</td></tr><tr><td class="l">military_crisis_300</td><td class="r">28.9%</td><td class="r">9.52</td><td class="r">10</td><td class="r">20.3%</td><td class="r">16.1%</td><td class="r">4.2%</td></tr><tr><td class="l">population_crisis_300</td><td class="r">28.9%</td><td class="r">9.96</td><td class="r">10</td><td class="r">20.8%</td><td class="r">16.3%</td><td class="r">4.5%</td></tr><tr><td class="l">husk_blight</td><td class="r">26.6%</td><td class="r">9.96</td><td class="r">10.0</td><td class="r">19.6%</td><td class="r">16.3%</td><td class="r">3.3%</td></tr><tr><td class="l">gdp_crisis_800</td><td class="r">21.6%</td><td class="r">11.75</td><td class="r">12.0</td><td class="r">13.2%</td><td class="r">9.3%</td><td class="r">3.9%</td></tr><tr><td class="l">territory_crisis_220</td><td class="r">15.0%</td><td class="r">11.75</td><td class="r">12.0</td><td class="r">8.4%</td><td class="r">6.7%</td><td class="r">1.7%</td></tr><tr><td class="l">population_crisis_500</td><td class="r">9.3%</td><td class="r">12.09</td><td class="r">13</td><td class="r">5.8%</td><td class="r">3.3%</td><td class="r">2.5%</td></tr><tr><td class="l">treasury_crisis_800</td><td class="r">8.8%</td><td class="r">10.4</td><td class="r">10.5</td><td class="r">5.1%</td><td class="r">3.0%</td><td class="r">2.1%</td></tr><tr><td class="l">territory_crisis_340</td><td class="r">1.2%</td><td class="r">13.67</td><td class="r">14.0</td><td class="r">0.2%</td><td class="r">0.2%</td><td class="r">0.0%</td></tr><tr><td class="l">military_crisis_560</td><td class="r">1.1%</td><td class="r">13.55</td><td class="r">14</td><td class="r">0.6%</td><td class="r">0.6%</td><td class="r">0.0%</td></tr></tbody></table>
+</div>
+
+<div class="card">
+<h2>F. 复现方式</h2>
+<div class="h2note">临时脚本 <code>_sim.gd</code> / <code>_sim.tscn</code> 跑完即删；以下两条命令可重跑。</div>
+<pre style="background:#f2eee6;padding:12px 14px;border-radius:5px;font-size:12px;overflow:auto">
+cd _AIagent/02_Godot_Project/herstory
+Godot_v4.7.2-stable_win64_console.exe --headless --quiet --path . res://_sim.tscn &gt; /dev/null 2&gt;&amp;1
+python _AIagent/05_Tools/analyze_sim.py outputs/sim_YYYYMMDD
+python _AIagent/05_Tools/make_sim_report.py outputs/sim_YYYYMMDD</pre>
+<div class="note">务必带 <code>--quiet</code> 并把 stdout 丢掉：EventManager 每轮会打印两次
+<code>[POOL]</code>，千局量级会产生 9MB 日志，实测耗时从 7.7s 涨到 84s（慢 11 倍）。</div>
+</div>
+</body></html>

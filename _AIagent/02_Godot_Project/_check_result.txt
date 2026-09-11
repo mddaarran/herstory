@@ -1,0 +1,9 @@
+JSON: daily=3 crisis=husk_blight major=autumn_council
+JSON_STRUCT_OK
+scripts\GameState.gd: balance=True tabs=43 spaces=0
+scripts\EventManager.gd: balance=True tabs=33 spaces=0
+scripts\Resolution.gd: balance=True tabs=16 spaces=0
+scripts\Chronicler.gd: balance=True tabs=16 spaces=0
+scripts\Main.gd: balance=True tabs=255 spaces=0
+scenes\Main.tscn: balance=True tabs=0 spaces=0
+Main.gd API missing: none

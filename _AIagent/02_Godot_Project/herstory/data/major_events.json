@@ -1,0 +1,501 @@
+{
+  "prophecy": "她将从乱世中登临至高之位。\n把一项伟业推至前所未有的高度，令天下以她的名字重新衡量兴衰。\n但功业抵达极处之日，盛极之势亦将反噬其身。\n她将留下拥有的一切与未竟之事，\n而她自己，将归于寂静。",
+  "events": [
+    {
+      "id": "major_treasury_coup",
+      "goal_id": "goal_treasury",
+      "title": "国库之火",
+      "difficulty": 3,
+      "background": "国库的数字终于突破了一千。消息传出后，宫廷、贵族与商会同时要求接管财政。入夜，叛军封锁宫门，国库方向升起第一道火光。",
+      "plans": [
+        {
+          "id": "guard_treasury",
+          "name": "亲自守卫国库",
+          "ability": "majesty",
+          "direction": "率近卫守住国库。",
+          "effects": {
+            "full": {
+              "military": -60,
+              "civilian_support": 80,
+              "noble_support": -40,
+              "legitimacy": 80
+            },
+            "partial": {
+              "military": -80,
+              "civilian_support": 40,
+              "noble_support": -60,
+              "legitimacy": 40
+            },
+            "fail": {
+              "military": -120,
+              "civilian_support": -40,
+              "noble_support": -100,
+              "legitimacy": -60
+            }
+          },
+          "chronicle": {
+            "full": "国库守住了一部分，君主仍然留在火场中。",
+            "partial": "国库保住了一半，君主在护送账册时受伤。",
+            "fail": "叛军攻入国库，君主被迫留在火场。"
+          },
+          "death_cause": "君主最终死于国库火灾后的建筑坍塌。"
+        },
+        {
+          "id": "open_treasury",
+          "name": "打开国库赈济城市",
+          "ability": "influence",
+          "direction": "打开国库，以财富平息城市暴动。",
+          "effects": {
+            "full": {
+              "civilian_support": 150,
+              "noble_support": -150,
+              "legitimacy": 50
+            },
+            "partial": {
+              "civilian_support": 80,
+              "noble_support": -120,
+              "legitimacy": 20
+            },
+            "fail": {
+              "civilian_support": -80,
+              "noble_support": -80,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "赈济送入城中，暴动暂时平息。",
+            "partial": "赈济只救下部分街区，君主仍决定返回宫殿。",
+            "fail": "国库被洗劫，赈济未能阻止暴动。"
+          },
+          "death_cause": "君主最终被失去特权的贵族刺杀。"
+        },
+        {
+          "id": "burn_ledgers",
+          "name": "焚毁账册与财富凭证",
+          "ability": "insight",
+          "direction": "烧毁账册，使任何势力都无法完整接管财富。",
+          "effects": {
+            "full": {
+              "gdp": -100,
+              "noble_support": -100,
+              "legitimacy": 80
+            },
+            "partial": {
+              "gdp": -80,
+              "noble_support": -80,
+              "legitimacy": 20
+            },
+            "fail": {
+              "gdp": -50,
+              "noble_support": -60,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "账册被火焰吞没，任何人都无法完整接管国库。",
+            "partial": "部分账册被烧毁，君主被困在火场。",
+            "fail": "焚毁命令未能执行，叛军包围了君主。"
+          },
+          "death_cause": "君主最终死于撤离时遭遇的叛军伏击。"
+        }
+      ]
+    },
+    {
+      "id": "major_guild_revolt",
+      "goal_id": "goal_gdp",
+      "title": "繁荣的城门",
+      "difficulty": 3,
+      "background": "城市的工坊昼夜不息，商船挤满港口。但繁荣已经养出了不再愿意服从王权的力量。商会关闭城门，宣布城市只接受自己的法律。",
+      "plans": [
+        {
+          "id": "suppress_guild",
+          "name": "调军镇压商业联盟",
+          "ability": "majesty",
+          "direction": "调军进入城市，恢复中央秩序。",
+          "effects": {
+            "full": {
+              "military": -80,
+              "civilian_support": -40,
+              "noble_support": 40,
+              "legitimacy": 100
+            },
+            "partial": {
+              "military": -120,
+              "civilian_support": -80,
+              "noble_support": 20,
+              "legitimacy": 40
+            },
+            "fail": {
+              "military": -150,
+              "civilian_support": -120,
+              "noble_support": -40,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "军队攻破城门，商业联盟的防线崩溃。",
+            "partial": "城市被迫投降，但巷战持续到最后一刻。",
+            "fail": "军队被困在城中，突围失败。"
+          },
+          "death_cause": "君主最终在战后巡视时遭商会刺杀。"
+        },
+        {
+          "id": "grant_autonomy",
+          "name": "承认城市自治",
+          "ability": "influence",
+          "direction": "承认自治协议，保住城市的繁荣。",
+          "effects": {
+            "full": {
+              "civilian_support": 80,
+              "noble_support": -40,
+              "legitimacy": 100
+            },
+            "partial": {
+              "civilian_support": 30,
+              "noble_support": -80,
+              "legitimacy": 40
+            },
+            "fail": {
+              "civilian_support": -60,
+              "noble_support": -100,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "自治协议顺利签署，城市重新开放。",
+            "partial": "协议只得到部分承认，城内仍有激进派反对。",
+            "fail": "谈判破裂，君主只能撤离城市。"
+          },
+          "death_cause": "君主最终在签约后的庆典上遭到刺杀。"
+        },
+        {
+          "id": "enter_workshop",
+          "name": "亲自进入主工坊救灾",
+          "ability": "insight",
+          "direction": "亲自进入主工坊，组织工人撤离。",
+          "effects": {
+            "full": {
+              "population": -40,
+              "civilian_support": 150,
+              "labor_health": 40,
+              "technology": 40
+            },
+            "partial": {
+              "population": -60,
+              "civilian_support": 80,
+              "labor_health": -20,
+              "technology": 20
+            },
+            "fail": {
+              "population": -100,
+              "civilian_support": -80,
+              "labor_health": -100,
+              "technology": -30
+            }
+          },
+          "chronicle": {
+            "full": "君主组织工人撤离，主工坊的火势暂时得到控制。",
+            "partial": "大部分工人获救，但炉墙已经开始坍塌。",
+            "fail": "救援失控，君主与工人一同被困在废墟中。"
+          },
+          "death_cause": "君主最终死于主工坊的爆炸与坍塌。"
+        }
+      ]
+    },
+    {
+      "id": "major_final_invasion",
+      "goal_id": "goal_military",
+      "title": "最后的入侵",
+      "difficulty": 3,
+      "background": "周边国家终于放下彼此的仇恨，组成共同的敌军。她的军队从北境与海岸同时传来警报，战争已经无法避免。",
+      "plans": [
+        {
+          "id": "march_to_battle",
+          "name": "亲自出征迎敌",
+          "ability": "majesty",
+          "direction": "率军正面迎战。",
+          "effects": {
+            "full": {
+              "territory": 60,
+              "civilian_support": 100,
+              "legitimacy": 100
+            },
+            "partial": {
+              "territory": 20,
+              "civilian_support": 40,
+              "legitimacy": 40
+            },
+            "fail": {
+              "territory": -100,
+              "civilian_support": -80,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "君主率军击溃敌军，追击仍在继续。",
+            "partial": "战役获胜，但君主已经身受重伤。",
+            "fail": "战线崩溃，敌军包围了君主。"
+          },
+          "death_cause": "君主最终死于战场上的敌军弩箭。"
+        },
+        {
+          "id": "hold_capital",
+          "name": "死守都城",
+          "ability": "insight",
+          "direction": "退守都城，以城墙拖垮敌军。",
+          "effects": {
+            "full": {
+              "civilian_support": 40,
+              "legitimacy": 80
+            },
+            "partial": {
+              "territory": -80,
+              "civilian_support": -20,
+              "legitimacy": 20
+            },
+            "fail": {
+              "territory": -150,
+              "civilian_support": -100,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "都城守住了，敌军仍在城外集结。",
+            "partial": "敌军被挡在城外，但围城已经持续太久。",
+            "fail": "城门被攻破，敌军进入王宫。"
+          },
+          "death_cause": "君主最终死于围城期间的伤病。"
+        },
+        {
+          "id": "lure_enemy",
+          "name": "诱敌深入后决战",
+          "ability": "insight",
+          "direction": "诱敌深入，再以伏击决战。",
+          "effects": {
+            "full": {
+              "territory": 100,
+              "civilian_support": 60,
+              "legitimacy": 80
+            },
+            "partial": {
+              "territory": 40,
+              "civilian_support": 20,
+              "legitimacy": 20
+            },
+            "fail": {
+              "territory": -80,
+              "civilian_support": -80,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "敌军落入伏击，主力阵线被击溃。",
+            "partial": "伏击成功，但己方损失十分惨重。",
+            "fail": "敌军识破计谋，君主被迫撤退。"
+          },
+          "death_cause": "君主最终在战后遭残余敌军暗杀。"
+        }
+      ]
+    },
+    {
+      "id": "major_population_disaster",
+      "goal_id": "goal_population",
+      "title": "没有空位的城市",
+      "difficulty": 3,
+      "background": "全国人口达到前所未有的规模，却也迎来了最严重的灾害。粮仓见底，疫病穿过人口密集的街区，灾民开始冲击官仓与宫门。",
+      "plans": [
+        {
+          "id": "enter_disaster_zone",
+          "name": "亲自进入灾区",
+          "ability": "influence",
+          "direction": "进入疫区，亲自主持救济。",
+          "effects": {
+            "full": {
+              "treasury": -80,
+              "civilian_support": 200,
+              "labor_health": 40,
+              "legitimacy": 60
+            },
+            "partial": {
+              "treasury": -120,
+              "civilian_support": 120,
+              "labor_health": -20,
+              "legitimacy": 30
+            },
+            "fail": {
+              "treasury": -100,
+              "civilian_support": -60,
+              "labor_health": -80,
+              "legitimacy": -60
+            }
+          },
+          "chronicle": {
+            "full": "君主打开救济站，灾区秩序暂时稳定。",
+            "partial": "大部分灾民获救，但疫病已经传入救济站。",
+            "fail": "灾民冲破护卫，灾区陷入混乱。"
+          },
+          "death_cause": "君主最终感染疫病而死。"
+        },
+        {
+          "id": "requisition_grain",
+          "name": "强行征粮维持秩序",
+          "ability": "majesty",
+          "direction": "调军征粮，优先维持主要城市。",
+          "effects": {
+            "full": {
+              "treasury": 40,
+              "military": -60,
+              "civilian_support": -80,
+              "legitimacy": 80
+            },
+            "partial": {
+              "treasury": 20,
+              "military": -100,
+              "civilian_support": -120,
+              "legitimacy": 30
+            },
+            "fail": {
+              "military": -150,
+              "civilian_support": -200,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "主要城市恢复秩序，粮食被集中运入城内。",
+            "partial": "粮食被集中起来，但暴动已经扩散到地方。",
+            "fail": "征粮激起全面民变，军队失去控制。"
+          },
+          "death_cause": "君主最终在返回宫城途中被灾民刺杀。"
+        },
+        {
+          "id": "open_royal_granaries",
+          "name": "打开宫廷与贵族粮仓",
+          "ability": "insight",
+          "direction": "打开宫廷与贵族粮仓，优先救济灾民。",
+          "effects": {
+            "full": {
+              "treasury": -150,
+              "civilian_support": 150,
+              "noble_support": -200,
+              "legitimacy": 100
+            },
+            "partial": {
+              "treasury": -180,
+              "civilian_support": 100,
+              "noble_support": -150,
+              "legitimacy": 40
+            },
+            "fail": {
+              "treasury": -80,
+              "civilian_support": -80,
+              "noble_support": -100,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "粮食送到灾区，人口危机开始缓解。",
+            "partial": "救济延缓了灾难，但贵族已经开始密谋。",
+            "fail": "粮仓尚未开启便被贵族控制，君主遭到软禁。"
+          },
+          "death_cause": "君主最终被贵族联盟毒杀。"
+        }
+      ]
+    },
+    {
+      "id": "major_frontier_revolt",
+      "goal_id": "goal_territory",
+      "title": "地图的尽头",
+      "difficulty": 3,
+      "background": "地图上最后一块空白被填上了。但边疆太长，新的土地拒绝接受旧的旗帜。起义从最远的山口开始，随后蔓延到整条边界。",
+      "plans": [
+        {
+          "id": "march_frontier",
+          "name": "亲自前往最远边疆镇压",
+          "ability": "majesty",
+          "direction": "亲自前往最远边疆镇压起义。",
+          "effects": {
+            "full": {
+              "military": -100,
+              "civilian_support": 80,
+              "legitimacy": 80
+            },
+            "partial": {
+              "military": -150,
+              "civilian_support": 20,
+              "legitimacy": 30
+            },
+            "fail": {
+              "military": -200,
+              "civilian_support": -80,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "边疆军队重新效忠，主要起义据点被收复。",
+            "partial": "起义被压下，但君主仍被困在边疆。",
+            "fail": "边疆军队倒戈，君主被困城中。"
+          },
+          "death_cause": "君主最终在返回途中遭边疆叛军伏击。"
+        },
+        {
+          "id": "grant_frontier_autonomy",
+          "name": "承认地方自治",
+          "ability": "influence",
+          "direction": "承认边疆自治，换取地方停止反抗。",
+          "effects": {
+            "full": {
+              "civilian_support": 100,
+              "noble_support": -80,
+              "legitimacy": 60
+            },
+            "partial": {
+              "civilian_support": 50,
+              "noble_support": -120,
+              "legitimacy": 20
+            },
+            "fail": {
+              "civilian_support": -80,
+              "noble_support": -150,
+              "legitimacy": -100
+            }
+          },
+          "chronicle": {
+            "full": "边疆接受自治协议，地方军队暂时放下武器。",
+            "partial": "部分地区接受和解，君主准备撤离。",
+            "fail": "中央派与边疆势力同时反对协议，谈判营地陷入混乱。"
+          },
+          "death_cause": "君主最终在签署自治协议后被中央派刺杀。"
+        },
+        {
+          "id": "cross_unknown_border",
+          "name": "继续向未知之地远征",
+          "ability": "majesty",
+          "direction": "拒绝停下，继续越过已知边界远征。",
+          "effects": {
+            "full": {
+              "military": -150,
+              "treasury": -100,
+              "legitimacy": 80
+            },
+            "partial": {
+              "military": -180,
+              "treasury": -150,
+              "legitimacy": 20
+            },
+            "fail": {
+              "military": -200,
+              "treasury": -200,
+              "legitimacy": -80
+            }
+          },
+          "chronicle": {
+            "full": "君主越过已知边界，远征军继续向未知之地推进。",
+            "partial": "远征取得短暂胜利，但补给已经断绝。",
+            "fail": "军队在未知土地上溃散，君主与主力失去联系。"
+          },
+          "death_cause": "君主最终在未知之地的远征中战死。"
+        }
+      ]
+    }
+  ]
+}

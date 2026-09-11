@@ -1,0 +1,801 @@
+{
+  "prefix": "C:/Users/maodr/Desktop/Herstory/outputs/sim_20260910",
+  "n_runs": 3000,
+  "n_events": 45000,
+  "growth": {
+    "random": {
+      "kinds_per_run": 6.05,
+      "drawn": 8.22,
+      "resolved": 4.34,
+      "ignored": 3.88,
+      "force_pct": 34.3,
+      "force_avg": 0.36,
+      "points": 3.12,
+      "ability_total": 5.12
+    },
+    "crisis_first": {
+      "kinds_per_run": 5.99,
+      "drawn": 5.75,
+      "resolved": 5.14,
+      "ignored": 0.61,
+      "force_pct": 0.6,
+      "force_avg": 0.01,
+      "points": 3.79,
+      "ability_total": 5.79
+    },
+    "first_only": {
+      "kinds_per_run": 5.13,
+      "drawn": 6.51,
+      "resolved": 3.64,
+      "ignored": 2.87,
+      "force_pct": 18.4,
+      "force_avg": 0.19,
+      "points": 2.62,
+      "ability_total": 4.62
+    }
+  },
+  "per_crisis": {
+    "border_pay": {
+      "random": {
+        "trigger_rate": 81.0,
+        "first_mean": 6.91,
+        "first_median": 6.0,
+        "appear_rate": 70.1,
+        "resolve_rate": 61.8,
+        "dodge_rate": 8.3
+      },
+      "crisis_first": {
+        "trigger_rate": 75.4,
+        "first_mean": 7.34,
+        "first_median": 7.0,
+        "appear_rate": 65.1,
+        "resolve_rate": 64.7,
+        "dodge_rate": 0.4
+      },
+      "first_only": {
+        "trigger_rate": 66.0,
+        "first_mean": 7.9,
+        "first_median": 8.0,
+        "appear_rate": 53.1,
+        "resolve_rate": 46.6,
+        "dodge_rate": 6.5
+      }
+    },
+    "flu_raiding": {
+      "random": {
+        "trigger_rate": 75.1,
+        "first_mean": 6.21,
+        "first_median": 5,
+        "appear_rate": 63.0,
+        "resolve_rate": 55.6,
+        "dodge_rate": 7.4
+      },
+      "crisis_first": {
+        "trigger_rate": 76.5,
+        "first_mean": 6.2,
+        "first_median": 5,
+        "appear_rate": 66.2,
+        "resolve_rate": 65.2,
+        "dodge_rate": 1.0
+      },
+      "first_only": {
+        "trigger_rate": 33.9,
+        "first_mean": 6.76,
+        "first_median": 6,
+        "appear_rate": 25.5,
+        "resolve_rate": 22.1,
+        "dodge_rate": 3.4
+      }
+    },
+    "fuel_demand": {
+      "random": {
+        "trigger_rate": 82.0,
+        "first_mean": 4.79,
+        "first_median": 3.0,
+        "appear_rate": 72.2,
+        "resolve_rate": 67.6,
+        "dodge_rate": 4.6
+      },
+      "crisis_first": {
+        "trigger_rate": 82.7,
+        "first_mean": 5.09,
+        "first_median": 4,
+        "appear_rate": 73.2,
+        "resolve_rate": 72.2,
+        "dodge_rate": 1.0
+      },
+      "first_only": {
+        "trigger_rate": 51.9,
+        "first_mean": 5.45,
+        "first_median": 4,
+        "appear_rate": 39.5,
+        "resolve_rate": 34.5,
+        "dodge_rate": 5.0
+      }
+    },
+    "fuel_smuggle": {
+      "random": {
+        "trigger_rate": 93.9,
+        "first_mean": 5.45,
+        "first_median": 4,
+        "appear_rate": 85.9,
+        "resolve_rate": 78.4,
+        "dodge_rate": 7.5
+      },
+      "crisis_first": {
+        "trigger_rate": 92.8,
+        "first_mean": 5.62,
+        "first_median": 5.0,
+        "appear_rate": 86.3,
+        "resolve_rate": 85.3,
+        "dodge_rate": 1.0
+      },
+      "first_only": {
+        "trigger_rate": 91.9,
+        "first_mean": 6.07,
+        "first_median": 5,
+        "appear_rate": 85.3,
+        "resolve_rate": 78.3,
+        "dodge_rate": 7.0
+      }
+    },
+    "furnace_crack": {
+      "random": {
+        "trigger_rate": 47.1,
+        "first_mean": 6.38,
+        "first_median": 5,
+        "appear_rate": 38.3,
+        "resolve_rate": 34.9,
+        "dodge_rate": 3.4
+      },
+      "crisis_first": {
+        "trigger_rate": 45.1,
+        "first_mean": 6.67,
+        "first_median": 6,
+        "appear_rate": 37.2,
+        "resolve_rate": 36.6,
+        "dodge_rate": 0.6
+      },
+      "first_only": {
+        "trigger_rate": 73.4,
+        "first_mean": 6.69,
+        "first_median": 6.0,
+        "appear_rate": 64.5,
+        "resolve_rate": 59.3,
+        "dodge_rate": 5.2
+      }
+    },
+    "gdp_crisis_400": {
+      "random": {
+        "trigger_rate": 55.3,
+        "first_mean": 9.5,
+        "first_median": 9,
+        "appear_rate": 40.6,
+        "resolve_rate": 32.4,
+        "dodge_rate": 8.2
+      },
+      "crisis_first": {
+        "trigger_rate": 49.6,
+        "first_mean": 9.49,
+        "first_median": 10.0,
+        "appear_rate": 39.3,
+        "resolve_rate": 38.4,
+        "dodge_rate": 0.9
+      },
+      "first_only": {
+        "trigger_rate": 48.5,
+        "first_mean": 9.58,
+        "first_median": 10,
+        "appear_rate": 37.3,
+        "resolve_rate": 30.0,
+        "dodge_rate": 7.3
+      }
+    },
+    "gdp_crisis_800": {
+      "random": {
+        "trigger_rate": 21.6,
+        "first_mean": 11.75,
+        "first_median": 12.0,
+        "appear_rate": 13.2,
+        "resolve_rate": 9.3,
+        "dodge_rate": 3.9
+      },
+      "crisis_first": {
+        "trigger_rate": 25.6,
+        "first_mean": 11.76,
+        "first_median": 12.0,
+        "appear_rate": 16.5,
+        "resolve_rate": 16.2,
+        "dodge_rate": 0.3
+      },
+      "first_only": {
+        "trigger_rate": 15.3,
+        "first_mean": 11.99,
+        "first_median": 12,
+        "appear_rate": 9.0,
+        "resolve_rate": 6.5,
+        "dodge_rate": 2.5
+      }
+    },
+    "husk_blight": {
+      "random": {
+        "trigger_rate": 26.6,
+        "first_mean": 9.96,
+        "first_median": 10.0,
+        "appear_rate": 19.6,
+        "resolve_rate": 16.3,
+        "dodge_rate": 3.3
+      },
+      "crisis_first": {
+        "trigger_rate": 25.6,
+        "first_mean": 10.0,
+        "first_median": 10.0,
+        "appear_rate": 20.0,
+        "resolve_rate": 19.6,
+        "dodge_rate": 0.4
+      },
+      "first_only": {
+        "trigger_rate": 9.5,
+        "first_mean": 9.67,
+        "first_median": 10,
+        "appear_rate": 7.1,
+        "resolve_rate": 5.4,
+        "dodge_rate": 1.7
+      }
+    },
+    "military_crisis_300": {
+      "random": {
+        "trigger_rate": 28.9,
+        "first_mean": 9.52,
+        "first_median": 10,
+        "appear_rate": 20.3,
+        "resolve_rate": 16.1,
+        "dodge_rate": 4.2
+      },
+      "crisis_first": {
+        "trigger_rate": 31.7,
+        "first_mean": 10.03,
+        "first_median": 11,
+        "appear_rate": 23.6,
+        "resolve_rate": 22.8,
+        "dodge_rate": 0.8
+      },
+      "first_only": {
+        "trigger_rate": 10.3,
+        "first_mean": 9.3,
+        "first_median": 10,
+        "appear_rate": 7.6,
+        "resolve_rate": 5.7,
+        "dodge_rate": 1.9
+      }
+    },
+    "military_crisis_560": {
+      "random": {
+        "trigger_rate": 1.1,
+        "first_mean": 13.55,
+        "first_median": 14,
+        "appear_rate": 0.6,
+        "resolve_rate": 0.6,
+        "dodge_rate": 0.0
+      },
+      "crisis_first": {
+        "trigger_rate": 2.2,
+        "first_mean": 12.86,
+        "first_median": 13.0,
+        "appear_rate": 1.4,
+        "resolve_rate": 1.4,
+        "dodge_rate": 0.0
+      },
+      "first_only": {
+        "trigger_rate": 0.1,
+        "first_mean": 13.0,
+        "first_median": 13,
+        "appear_rate": 0.1,
+        "resolve_rate": 0.1,
+        "dodge_rate": 0.0
+      }
+    },
+    "population_crisis_300": {
+      "random": {
+        "trigger_rate": 28.9,
+        "first_mean": 9.96,
+        "first_median": 10,
+        "appear_rate": 20.8,
+        "resolve_rate": 16.3,
+        "dodge_rate": 4.5
+      },
+      "crisis_first": {
+        "trigger_rate": 25.4,
+        "first_mean": 10.16,
+        "first_median": 11.0,
+        "appear_rate": 19.5,
+        "resolve_rate": 18.5,
+        "dodge_rate": 1.0
+      },
+      "first_only": {
+        "trigger_rate": 58.6,
+        "first_mean": 9.25,
+        "first_median": 9.0,
+        "appear_rate": 47.5,
+        "resolve_rate": 40.8,
+        "dodge_rate": 6.7
+      }
+    },
+    "population_crisis_500": {
+      "random": {
+        "trigger_rate": 9.3,
+        "first_mean": 12.09,
+        "first_median": 13,
+        "appear_rate": 5.8,
+        "resolve_rate": 3.3,
+        "dodge_rate": 2.5
+      },
+      "crisis_first": {
+        "trigger_rate": 9.9,
+        "first_mean": 12.2,
+        "first_median": 13,
+        "appear_rate": 6.2,
+        "resolve_rate": 5.9,
+        "dodge_rate": 0.3
+      },
+      "first_only": {
+        "trigger_rate": 27.3,
+        "first_mean": 11.66,
+        "first_median": 12,
+        "appear_rate": 17.6,
+        "resolve_rate": 13.4,
+        "dodge_rate": 4.2
+      }
+    },
+    "territory_crisis_220": {
+      "random": {
+        "trigger_rate": 15.0,
+        "first_mean": 11.75,
+        "first_median": 12.0,
+        "appear_rate": 8.4,
+        "resolve_rate": 6.7,
+        "dodge_rate": 1.7
+      },
+      "crisis_first": {
+        "trigger_rate": 13.8,
+        "first_mean": 12.2,
+        "first_median": 13.0,
+        "appear_rate": 8.9,
+        "resolve_rate": 8.3,
+        "dodge_rate": 0.6
+      },
+      "first_only": {
+        "trigger_rate": 11.5,
+        "first_mean": 12.14,
+        "first_median": 13,
+        "appear_rate": 7.2,
+        "resolve_rate": 4.8,
+        "dodge_rate": 2.4
+      }
+    },
+    "territory_crisis_340": {
+      "random": {
+        "trigger_rate": 1.2,
+        "first_mean": 13.67,
+        "first_median": 14.0,
+        "appear_rate": 0.2,
+        "resolve_rate": 0.2,
+        "dodge_rate": 0.0
+      },
+      "crisis_first": {
+        "trigger_rate": 0.7,
+        "first_mean": 13.57,
+        "first_median": 13,
+        "appear_rate": 0.2,
+        "resolve_rate": 0.2,
+        "dodge_rate": 0.0
+      },
+      "first_only": {
+        "trigger_rate": 0.2,
+        "first_mean": 15.0,
+        "first_median": 15.0,
+        "appear_rate": 0.1,
+        "resolve_rate": 0.1,
+        "dodge_rate": 0.0
+      }
+    },
+    "treasury_crisis_450": {
+      "random": {
+        "trigger_rate": 29.0,
+        "first_mean": 8.07,
+        "first_median": 7.0,
+        "appear_rate": 19.2,
+        "resolve_rate": 14.0,
+        "dodge_rate": 5.2
+      },
+      "crisis_first": {
+        "trigger_rate": 28.8,
+        "first_mean": 7.88,
+        "first_median": 7.0,
+        "appear_rate": 19.2,
+        "resolve_rate": 18.1,
+        "dodge_rate": 1.1
+      },
+      "first_only": {
+        "trigger_rate": 12.6,
+        "first_mean": 6.79,
+        "first_median": 6.0,
+        "appear_rate": 7.3,
+        "resolve_rate": 5.0,
+        "dodge_rate": 2.3
+      }
+    },
+    "treasury_crisis_800": {
+      "random": {
+        "trigger_rate": 8.8,
+        "first_mean": 10.4,
+        "first_median": 10.5,
+        "appear_rate": 5.1,
+        "resolve_rate": 3.0,
+        "dodge_rate": 2.1
+      },
+      "crisis_first": {
+        "trigger_rate": 12.7,
+        "first_mean": 10.81,
+        "first_median": 11,
+        "appear_rate": 8.3,
+        "resolve_rate": 7.6,
+        "dodge_rate": 0.7
+      },
+      "first_only": {
+        "trigger_rate": 2.4,
+        "first_mean": 10.58,
+        "first_median": 11.0,
+        "appear_rate": 1.2,
+        "resolve_rate": 0.8,
+        "dodge_rate": 0.4
+      }
+    }
+  },
+  "coverage": {
+    "random": {
+      "total": 29.64,
+      "uniq": 23.13,
+      "repeat_rate": 22.0,
+      "coverage": 49.2,
+      "lib_used": 100.0
+    },
+    "crisis_first": {
+      "total": 29.99,
+      "uniq": 25.18,
+      "repeat_rate": 16.1,
+      "coverage": 53.6,
+      "lib_used": 100.0
+    },
+    "first_only": {
+      "total": 29.81,
+      "uniq": 23.79,
+      "repeat_rate": 20.2,
+      "coverage": 50.6,
+      "lib_used": 100.0
+    }
+  },
+  "hot": [
+    [
+      "silent_fields",
+      749
+    ],
+    [
+      "border_tariff",
+      735
+    ],
+    [
+      "retired_furnace_workers",
+      732
+    ],
+    [
+      "midwife_station",
+      728
+    ],
+    [
+      "company_military_rations",
+      721
+    ],
+    [
+      "furnace_upgrade",
+      719
+    ],
+    [
+      "iron_plow",
+      713
+    ],
+    [
+      "lamp_festival",
+      710
+    ],
+    [
+      "guild_furnace_technology",
+      707
+    ],
+    [
+      "border_farm_supply",
+      702
+    ]
+  ],
+  "cold": [
+    [
+      "frontier_beacon",
+      650
+    ],
+    [
+      "women_night_read",
+      650
+    ],
+    [
+      "farm_energy_conflict",
+      650
+    ],
+    [
+      "soul_rite",
+      648
+    ],
+    [
+      "eastern_tax_registry",
+      646
+    ],
+    [
+      "company_tax_sheet",
+      645
+    ],
+    [
+      "open_school",
+      641
+    ],
+    [
+      "noble_customs_gate",
+      640
+    ],
+    [
+      "widow_field",
+      630
+    ],
+    [
+      "company_radiation_debt",
+      628
+    ]
+  ],
+  "never_seen": [],
+  "tiers": {
+    "random": {
+      "日常": {
+        "full": 52.2,
+        "partial": 34.0,
+        "fail": 13.9
+      },
+      "危机": {
+        "full": 29.6,
+        "partial": 42.1,
+        "fail": 28.3
+      }
+    },
+    "crisis_first": {
+      "日常": {
+        "full": 53.7,
+        "partial": 33.6,
+        "fail": 12.7
+      },
+      "危机": {
+        "full": 33.6,
+        "partial": 40.1,
+        "fail": 26.3
+      }
+    },
+    "first_only": {
+      "日常": {
+        "full": 51.5,
+        "partial": 34.3,
+        "fail": 14.1
+      },
+      "危机": {
+        "full": 27.9,
+        "partial": 44.0,
+        "fail": 28.1
+      }
+    }
+  },
+  "stage_tiers": {
+    "阶段1": {
+      "full": 53.4,
+      "partial": 33.9,
+      "fail": 12.7
+    },
+    "阶段2": {
+      "full": 51.5,
+      "partial": 34.2,
+      "fail": 14.3
+    },
+    "阶段3": {
+      "full": 51.2,
+      "partial": 33.9,
+      "fail": 14.9
+    }
+  },
+  "stage_detail": {
+    "阶段1": {
+      "rounds": "1-5",
+      "avg_diff": -1.02,
+      "avg_mod": 0.7,
+      "avg_total": 7.72,
+      "full": 53.4,
+      "partial": 33.9,
+      "fail": 12.7,
+      "n": 4254
+    },
+    "阶段2": {
+      "rounds": "6-10",
+      "avg_diff": -0.58,
+      "avg_mod": 1.03,
+      "avg_total": 8.03,
+      "full": 51.5,
+      "partial": 34.2,
+      "fail": 14.3,
+      "n": 3115
+    },
+    "阶段3": {
+      "rounds": "11-15",
+      "avg_diff": -0.18,
+      "avg_mod": 1.47,
+      "avg_total": 8.42,
+      "full": 51.2,
+      "partial": 33.9,
+      "fail": 14.9,
+      "n": 3286
+    }
+  },
+  "diff_tiers": {
+    "-3": {
+      "full": 79.9,
+      "partial": 19.3,
+      "fail": 0.8
+    },
+    "-2": {
+      "full": 71.5,
+      "partial": 25.5,
+      "fail": 3.0
+    },
+    "-1": {
+      "full": 58.2,
+      "partial": 32.3,
+      "fail": 9.5
+    },
+    "0": {
+      "full": 43.2,
+      "partial": 39.5,
+      "fail": 17.3
+    },
+    "1": {
+      "full": 30.6,
+      "partial": 39.8,
+      "fail": 29.6
+    }
+  },
+  "major_table": {
+    "0": {
+      "full": 2.8,
+      "partial": 25.0,
+      "fail": 72.2
+    },
+    "1": {
+      "full": 8.3,
+      "partial": 33.3,
+      "fail": 58.3
+    },
+    "2": {
+      "full": 16.7,
+      "partial": 41.7,
+      "fail": 41.7
+    },
+    "3": {
+      "full": 27.8,
+      "partial": 44.4,
+      "fail": 27.8
+    },
+    "4": {
+      "full": 41.7,
+      "partial": 41.7,
+      "fail": 16.7
+    },
+    "5": {
+      "full": 58.3,
+      "partial": 33.3,
+      "fail": 8.3
+    },
+    "6": {
+      "full": 72.2,
+      "partial": 25.0,
+      "fail": 2.8
+    }
+  },
+  "finals": {
+    "treasury": {
+      "random": 474.3,
+      "crisis_first": 487.1,
+      "first_only": 292.0
+    },
+    "gdp": {
+      "random": 699.4,
+      "crisis_first": 702.4,
+      "first_only": 664.0
+    },
+    "population": {
+      "random": 355.7,
+      "crisis_first": 358.0,
+      "first_only": 449.0
+    },
+    "military": {
+      "random": 265.4,
+      "crisis_first": 283.2,
+      "first_only": 225.7
+    },
+    "territory": {
+      "random": 187.1,
+      "crisis_first": 189.0,
+      "first_only": 186.9
+    },
+    "civilian_support": {
+      "random": 35.0,
+      "crisis_first": 36.6,
+      "first_only": 63.9
+    },
+    "noble_support": {
+      "random": 25.1,
+      "crisis_first": 25.1,
+      "first_only": 14.1
+    },
+    "radiation_risk": {
+      "random": 36.9,
+      "crisis_first": 38.6,
+      "first_only": 20.3
+    },
+    "plague_progress": {
+      "random": 2.9,
+      "crisis_first": 2.8,
+      "first_only": 1.6
+    },
+    "agrarian_support": {
+      "random": 32.2,
+      "crisis_first": 33.2,
+      "first_only": 72.3
+    },
+    "guild_support": {
+      "random": 50.2,
+      "crisis_first": 51.9,
+      "first_only": 28.0
+    },
+    "fuel_reserve": {
+      "random": 211.9,
+      "crisis_first": 290.6,
+      "first_only": 269.1
+    },
+    "wealth_gap": {
+      "random": 48.4,
+      "crisis_first": 48.8,
+      "first_only": 40.9
+    },
+    "literacy_rate": {
+      "random": 23.7,
+      "crisis_first": 23.6,
+      "first_only": 27.7
+    },
+    "legitimacy": {
+      "random": 35.2,
+      "crisis_first": 43.6,
+      "first_only": 47.1
+    },
+    "labor_health": {
+      "random": 53.4,
+      "crisis_first": 53.9,
+      "first_only": 68.7
+    },
+    "technology": {
+      "random": 22.2,
+      "crisis_first": 22.2,
+      "first_only": 23.4
+    }
+  }
+}

@@ -1,0 +1,23 @@
+import { FileBlob, SpreadsheetFile } from "@oai/artifact-tool";
+
+const path = "C:/Users/maodr/Desktop/Herstory/_AIagent/01_Game_Design/Numbers/N_事件全量表_原子朋克文案_V1.2.xlsx";
+const temp = "C:/Users/maodr/Desktop/Herstory/_AIagent/01_Game_Design/Numbers/N_事件全量表_原子朋克文案_V1.2.tmp.xlsx";
+const wb = await SpreadsheetFile.importXlsx(await FileBlob.load(path));
+const old = wb.worksheets.getItem("Major事件文案");
+const values = old.getRange("A1:Q16").values;
+const compact = values.map((row, i) => i === 0 ? row.slice(0, 14).concat(["death_cause"]) : row.slice(0, 15));
+old.delete();
+const sheet = wb.worksheets.add("Major事件文案");
+sheet.showGridLines = false;
+sheet.getRangeByIndexes(0, 0, compact.length, compact[0].length).values = compact;
+sheet.getRange("A1:O1").format = { fill: "#1F4E78", font: { name: "Arial", size: 10, bold: true, color: "#FFFFFF" }, wrapText: true, verticalAlignment: "center" };
+sheet.getRange("A2:O16").format = { font: { name: "Arial", size: 10, color: "#222222" }, wrapText: true, verticalAlignment: "top" };
+sheet.getRange("A1:O16").format.borders = { preset: "all", style: "thin", color: "#D9E2F3" };
+sheet.getRange("A:O").format.columnWidth = 18;
+sheet.getRange("G:G").format.columnWidth = 42;
+sheet.getRange("L:O").format.columnWidth = 42;
+sheet.freezePanes.freezeRows(1);
+wb.recalculate();
+const output = await SpreadsheetFile.exportXlsx(wb);
+await output.save(temp);
+console.log(`EXPORTED ${temp}`);

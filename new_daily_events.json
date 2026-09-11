@@ -1,0 +1,1434 @@
+[
+  {
+    "id": "agriculture_new_land",
+    "title": "农业公司发现了一块地",
+    "type": "daily",
+    "background": "农业公司在北方山口发现适合种植火穗的土地，但地契、旧地图和驻军报告互相矛盾。农业公司要求立即开垦，同业公会想用于炉坊扩建，旧姓贵族声称土地属于祖产。",
+    "plans": [
+      {
+        "name": "先登记再开垦",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -50,
+            "gdp": 30,
+            "territory": 20,
+            "agrarian_support": 15,
+            "noble_support": -10
+          },
+          "partial": {
+            "treasury": -80,
+            "gdp": 15,
+            "territory": 10,
+            "agrarian_support": 8,
+            "noble_support": -15
+          },
+          "fail": {
+            "territory": -15,
+            "agrarian_support": -10,
+            "noble_support": 5
+          }
+        },
+        "chronicle": {
+          "full": "领土+20，GDP+30，财政-50，农业支持+15，旧姓支持-10。",
+          "partial": "领土+10，GDP+15，财政-80，农业支持+8，旧姓支持-15。",
+          "fail": "领土-15，农业支持-10，旧姓支持+5。"
+        }
+      },
+      {
+        "name": "让军队先立界碑",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -60,
+            "population": -15,
+            "military": 50,
+            "territory": 35,
+            "agrarian_support": -10,
+            "noble_support": -20
+          },
+          "partial": {
+            "treasury": -90,
+            "population": -25,
+            "military": 25,
+            "territory": 18,
+            "agrarian_support": -5
+          },
+          "fail": {
+            "population": -20,
+            "military": -40,
+            "territory": -20,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "领土+35，军力+50，财政-60，人口-15，农业支持-10，旧姓支持-20。",
+          "partial": "领土+18，军力+25，财政-90，人口-25，农业支持-5。",
+          "fail": "领土-20，军力-40，人口-20，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "土地登记继续悬置，各方自行插旗。",
+      "chronicle": "土地登记继续悬置，各方自行插旗。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "fuel_for_fields",
+    "title": "农业公司要优先拿火籽",
+    "type": "daily",
+    "background": "火穗播种期提前，农业公司要求优先拨发火籽；同业公会扩建炉坊，军务处申请火籽用于边境信标。",
+    "plans": [
+      {
+        "name": "给火穗田先用",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 70,
+            "gdp": -30,
+            "military": -20,
+            "agrarian_support": 18,
+            "guild_support": -12,
+            "fuel_reserve": 35
+          },
+          "partial": {
+            "treasury": 35,
+            "gdp": -45,
+            "military": -30,
+            "agrarian_support": 10,
+            "fuel_reserve": 15
+          },
+          "fail": {
+            "gdp": -40,
+            "agrarian_support": -15,
+            "fuel_reserve": -25
+          }
+        },
+        "chronicle": {
+          "full": "火籽储备+35，财政+70，农业支持+18，GDP-30，军力-20，公会支持-12。",
+          "partial": "火籽储备+15，财政+35，农业支持+10，GDP-45，军力-30。",
+          "fail": "火籽储备-25，农业支持-15，GDP-40。"
+        }
+      },
+      {
+        "name": "保城市炉坊",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 50,
+            "gdp": 70,
+            "agrarian_support": -20,
+            "guild_support": 18,
+            "radiation_risk": 10
+          },
+          "partial": {
+            "treasury": 25,
+            "gdp": 30,
+            "agrarian_support": -25,
+            "guild_support": 10,
+            "radiation_risk": 15
+          },
+          "fail": {
+            "treasury": -30,
+            "gdp": -40,
+            "agrarian_support": -15,
+            "guild_support": -10,
+            "radiation_risk": 20
+          }
+        },
+        "chronicle": {
+          "full": "GDP+70，财政+50，公会支持+18，农业支持-20，土地风险+10。",
+          "partial": "GDP+30，财政+25，公会支持+10，农业支持-25，土地风险+15。",
+          "fail": "GDP-40，财政-30，公会支持-10，农业支持-15，土地风险+20。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "各部门自行截留火籽。",
+      "chronicle": "各部门自行截留火籽。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "migration_contract",
+    "title": "农业公司申请迁移人口",
+    "type": "daily",
+    "background": "农业公司申请把灾民和失业工人迁入北部火穗聚落，人口登记处担心粮食压力，旧姓贵族要求优先安置自己的佃户。",
+    "plans": [
+      {
+        "name": "给迁民粮种和住房",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -60,
+            "gdp": 30,
+            "population": 70,
+            "territory": 15,
+            "agrarian_support": 18,
+            "civilian_support": 8
+          },
+          "partial": {
+            "treasury": -90,
+            "gdp": 15,
+            "population": 30,
+            "territory": 8,
+            "agrarian_support": 10
+          },
+          "fail": {
+            "treasury": -50,
+            "population": -30,
+            "agrarian_support": -15,
+            "civilian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "人口+70，领土+15，GDP+30，财政-60，农业支持+18，平民支持+8。",
+          "partial": "人口+30，领土+8，GDP+15，财政-90，农业支持+10。",
+          "fail": "人口-30，财政-50，农业支持-15，平民支持-10。"
+        }
+      },
+      {
+        "name": "让旧姓负责迁民",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 40,
+            "population": 45,
+            "territory": 20,
+            "agrarian_support": -15,
+            "noble_support": 18,
+            "civilian_support": -10
+          },
+          "partial": {
+            "treasury": 20,
+            "population": 20,
+            "territory": 10,
+            "agrarian_support": -20,
+            "noble_support": 10
+          },
+          "fail": {
+            "population": -35,
+            "territory": -15,
+            "noble_support": -10,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "人口+45，领土+20，财政+40，旧姓支持+18，农业支持-15，平民支持-10。",
+          "partial": "人口+20，领土+10，财政+20，旧姓支持+10，农业支持-20。",
+          "fail": "人口-35，领土-15，旧姓支持-10，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "迁民滞留，旧姓开始私下招募灾民。",
+      "chronicle": "迁民滞留，旧姓开始私下招募灾民。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "company_tax_sheet",
+    "title": "农业公司要求修改税册",
+    "type": "daily",
+    "background": "农业公司要求将火穗田、辐射整治区和粮田分开登记，财政总局担心短期税收下降，旧姓贵族担心土地被暴露。",
+    "plans": [
+      {
+        "name": "公开核对土地账",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 90,
+            "agrarian_support": 15,
+            "noble_support": -18,
+            "radiation_risk": -10
+          },
+          "partial": {
+            "treasury": 40,
+            "agrarian_support": 8,
+            "noble_support": -25,
+            "radiation_risk": -5
+          },
+          "fail": {
+            "treasury": -40,
+            "agrarian_support": -12,
+            "noble_support": 5
+          }
+        },
+        "chronicle": {
+          "full": "财政+90，农业支持+15，土地风险-10，旧姓支持-18。",
+          "partial": "财政+40，农业支持+8，土地风险-5，旧姓支持-25。",
+          "fail": "财政-40，农业支持-12，旧姓支持+5。"
+        }
+      },
+      {
+        "name": "直接核准新税册",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 110,
+            "territory": 15,
+            "agrarian_support": -10,
+            "noble_support": -25,
+            "legitimacy": 10
+          },
+          "partial": {
+            "treasury": 50,
+            "territory": 8,
+            "agrarian_support": -15,
+            "noble_support": -30
+          },
+          "fail": {
+            "treasury": -50,
+            "agrarian_support": -15,
+            "noble_support": -20,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "财政+110，领土+15，农业支持-10，旧姓支持-25，合法性+10。",
+          "partial": "财政+50，领土+8，农业支持-15，旧姓支持-30。",
+          "fail": "财政-50，农业支持-15，旧姓支持-20，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "新旧税册并行，土地账目混乱。",
+      "chronicle": "新旧税册并行，土地账目混乱。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "border_farm_supply",
+    "title": "农业公司与军队争边境土地",
+    "type": "daily",
+    "background": "农业公司发现可种火穗的荒地，军务处要求划为军粮屯田和训练场，地方居民担心田地被征用。",
+    "plans": [
+      {
+        "name": "分区给军粮和火穗",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -40,
+            "population": -10,
+            "military": 45,
+            "territory": 20,
+            "agrarian_support": 12
+          },
+          "partial": {
+            "treasury": -70,
+            "population": -15,
+            "military": 20,
+            "territory": 10,
+            "agrarian_support": 6
+          },
+          "fail": {
+            "military": -25,
+            "territory": -15,
+            "agrarian_support": -10,
+            "civilian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "领土+20，军力+45，财政-40，农业支持+12，人口-10。",
+          "partial": "领土+10，军力+20，财政-70，农业支持+6，人口-15。",
+          "fail": "领土-15，军力-25，农业支持-10，平民支持-10。"
+        }
+      },
+      {
+        "name": "军队先接管",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "gdp": -20,
+            "population": -20,
+            "military": 75,
+            "territory": 30,
+            "agrarian_support": -20,
+            "civilian_support": -15
+          },
+          "partial": {
+            "population": -30,
+            "military": 35,
+            "territory": 15,
+            "agrarian_support": -25,
+            "civilian_support": -20
+          },
+          "fail": {
+            "population": -25,
+            "military": -50,
+            "territory": -20,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "军力+75，领土+30，人口-20，农业支持-20，平民支持-15，GDP-20。",
+          "partial": "军力+35，领土+15，人口-30，农业支持-25，平民支持-20。",
+          "fail": "军力-50，领土-20，人口-25，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "军队和农业公司同时争夺土地。",
+      "chronicle": "军队和农业公司同时争夺土地。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "company_radiation_debt",
+    "title": "农业公司承担土地风险",
+    "type": "daily",
+    "background": "整治署发现农业公司把高辐射田地重新登记为普通火穗田，农业公司称这是为了避免炉坊停产。",
+    "plans": [
+      {
+        "name": "强制整治并追责",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -70,
+            "agrarian_support": -15,
+            "legitimacy": 12,
+            "radiation_risk": -18,
+            "fuel_reserve": -20
+          },
+          "partial": {
+            "treasury": -100,
+            "agrarian_support": -25,
+            "radiation_risk": -8,
+            "fuel_reserve": -30
+          },
+          "fail": {
+            "agrarian_support": -20,
+            "legitimacy": -15,
+            "radiation_risk": 20
+          }
+        },
+        "chronicle": {
+          "full": "土地风险-18，农业支持-15，财政-70，火籽储备-20，合法性+12。",
+          "partial": "土地风险-8，农业支持-25，财政-100，火籽储备-30。",
+          "fail": "土地风险+20，农业支持-20，合法性-15。"
+        }
+      },
+      {
+        "name": "用长期合同换整治",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 60,
+            "gdp": 30,
+            "agrarian_support": 10,
+            "noble_support": -10,
+            "radiation_risk": -10
+          },
+          "partial": {
+            "treasury": 30,
+            "gdp": 15,
+            "agrarian_support": 5,
+            "radiation_risk": -5
+          },
+          "fail": {
+            "gdp": -25,
+            "agrarian_support": -10,
+            "radiation_risk": 15
+          }
+        },
+        "chronicle": {
+          "full": "土地风险-10，财政+60，农业支持+10，GDP+30，旧姓支持-10。",
+          "partial": "土地风险-5，财政+30，农业支持+5，GDP+15。",
+          "fail": "土地风险+15，农业支持-10，GDP-25。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "整治责任继续悬置。",
+      "chronicle": "整治责任继续悬置。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "company_military_rations",
+    "title": "农业公司与军粮处争火籽",
+    "type": "daily",
+    "background": "军需署要求将种核火籽转为军粮燃料，农业公司认为这会破坏下一季农业生产。",
+    "plans": [
+      {
+        "name": "保住种核",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -30,
+            "population": 25,
+            "military": -25,
+            "agrarian_support": 18,
+            "fuel_reserve": 30
+          },
+          "partial": {
+            "population": 10,
+            "military": -40,
+            "agrarian_support": 10,
+            "fuel_reserve": 12
+          },
+          "fail": {
+            "population": -20,
+            "military": -20,
+            "agrarian_support": -15,
+            "fuel_reserve": -25
+          }
+        },
+        "chronicle": {
+          "full": "火籽储备+30，人口+25，农业支持+18，军力-25，财政-30。",
+          "partial": "火籽储备+12，人口+10，农业支持+10，军力-40。",
+          "fail": "火籽储备-25，人口-20，农业支持-15，军力-20。"
+        }
+      },
+      {
+        "name": "先拨军粮配额",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -50,
+            "population": -15,
+            "military": 70,
+            "agrarian_support": -20,
+            "civilian_support": -10
+          },
+          "partial": {
+            "treasury": -80,
+            "population": -25,
+            "military": 35,
+            "agrarian_support": -25
+          },
+          "fail": {
+            "population": -30,
+            "military": -45,
+            "agrarian_support": -15,
+            "civilian_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "军力+70，财政-50，农业支持-20，人口-15，平民支持-10。",
+          "partial": "军力+35，财政-80，农业支持-25，人口-25。",
+          "fail": "军力-45，农业支持-15，人口-30，平民支持-15。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "军需署和农业公司互相扣留运输车。",
+      "chronicle": "军需署和农业公司互相扣留运输车。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "farm_energy_conflict",
+    "title": "农业公司与公会争能源",
+    "type": "daily",
+    "background": "农业公司要求将火籽炉夜间产能转给灌溉泵站，同业公会要求维持炉坊生产。",
+    "plans": [
+      {
+        "name": "给灌溉泵站供能",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "gdp": -20,
+            "population": 30,
+            "agrarian_support": 20,
+            "guild_support": -18,
+            "radiation_risk": -10
+          },
+          "partial": {
+            "gdp": -35,
+            "population": 15,
+            "agrarian_support": 10,
+            "guild_support": -25,
+            "radiation_risk": -5
+          },
+          "fail": {
+            "gdp": -40,
+            "population": -20,
+            "agrarian_support": -15,
+            "radiation_risk": 15
+          }
+        },
+        "chronicle": {
+          "full": "人口+30，GDP-20，农业支持+20，公会支持-18，土地风险-10。",
+          "partial": "人口+15，GDP-35，农业支持+10，公会支持-25，土地风险-5。",
+          "fail": "人口-20，GDP-40，农业支持-15，土地风险+15。"
+        }
+      },
+      {
+        "name": "维持炉坊负荷",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 50,
+            "gdp": 80,
+            "agrarian_support": -20,
+            "guild_support": 20,
+            "radiation_risk": 15
+          },
+          "partial": {
+            "treasury": 25,
+            "gdp": 35,
+            "agrarian_support": -28,
+            "guild_support": 10,
+            "radiation_risk": 20
+          },
+          "fail": {
+            "treasury": -30,
+            "gdp": -50,
+            "agrarian_support": -20,
+            "guild_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+80，财政+50，公会支持+20，农业支持-20，土地风险+15。",
+          "partial": "GDP+35，财政+25，公会支持+10，农业支持-28，土地风险+20。",
+          "fail": "GDP-50，财政-30，公会支持-15，农业支持-20。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "泵站和炉坊各自维持旧负荷。",
+      "chronicle": "泵站和炉坊各自维持旧负荷。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "grain_city_furnaces",
+    "title": "军粮和种粮只能保一边",
+    "type": "daily",
+    "background": "储备署发现冬季粮仓只够满足城市炉坊和边境军粮中的一项。",
+    "plans": [
+      {
+        "name": "保种粮和农户粮",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "gdp": -30,
+            "population": 45,
+            "military": -20,
+            "agrarian_support": 18,
+            "civilian_support": 8
+          },
+          "partial": {
+            "gdp": -45,
+            "population": 20,
+            "military": -30,
+            "agrarian_support": 10
+          },
+          "fail": {
+            "gdp": -40,
+            "population": -25,
+            "agrarian_support": -15,
+            "civilian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "人口+45，农业支持+18，GDP-30，军力-20，平民支持+8。",
+          "partial": "人口+20，农业支持+10，GDP-45，军力-30。",
+          "fail": "人口-25，农业支持-15，GDP-40，平民支持-10。"
+        }
+      },
+      {
+        "name": "先保城市和军粮",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "gdp": 50,
+            "population": -20,
+            "military": 45,
+            "agrarian_support": -20,
+            "guild_support": 15
+          },
+          "partial": {
+            "gdp": 25,
+            "population": -30,
+            "military": 20,
+            "agrarian_support": -28,
+            "guild_support": 8
+          },
+          "fail": {
+            "gdp": -45,
+            "population": -35,
+            "military": -35,
+            "civilian_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+50，军力+45，公会支持+15，农业支持-20，人口-20。",
+          "partial": "GDP+25，军力+20，公会支持+8，农业支持-28，人口-30。",
+          "fail": "GDP-45，军力-35，人口-35，平民支持-15。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "储备署按旧比例分粮，各方都无法获得足够库存。",
+      "chronicle": "储备署按旧比例分粮，各方都无法获得足够库存。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "noble_ancestral_land",
+    "title": "贵族不认农业公司的新土地",
+    "type": "daily",
+    "background": "农业公司发现无人登记的火穗田，旧姓贵族拿出祖产档案，要求保留土地。",
+    "plans": [
+      {
+        "name": "审查祖产档案",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 50,
+            "territory": 15,
+            "agrarian_support": 15,
+            "noble_support": -18,
+            "radiation_risk": -8
+          },
+          "partial": {
+            "treasury": 25,
+            "territory": 8,
+            "agrarian_support": 8,
+            "noble_support": -25
+          },
+          "fail": {
+            "territory": -15,
+            "agrarian_support": -12,
+            "noble_support": 5
+          }
+        },
+        "chronicle": {
+          "full": "领土+15，财政+50，农业支持+15，旧姓支持-18，土地风险-8。",
+          "partial": "领土+8，财政+25，农业支持+8，旧姓支持-25。",
+          "fail": "领土-15，农业支持-12，旧姓支持+5。"
+        }
+      },
+      {
+        "name": "承认旧姓祖产",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 60,
+            "territory": -10,
+            "agrarian_support": -20,
+            "noble_support": 20,
+            "legitimacy": 5
+          },
+          "partial": {
+            "treasury": 30,
+            "territory": -15,
+            "agrarian_support": -28,
+            "noble_support": 10
+          },
+          "fail": {
+            "treasury": -40,
+            "agrarian_support": -15,
+            "noble_support": -10,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "旧姓支持+20，财政+60，农业支持-20，领土-10，合法性+5。",
+          "partial": "旧姓支持+10，财政+30，农业支持-28，领土-15。",
+          "fail": "旧姓支持-10，财政-40，农业支持-15，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "双方自行雇人进入田地。",
+      "chronicle": "双方自行雇人进入田地。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "noble_customs_gate",
+    "title": "贵族要收自己的关税",
+    "type": "daily",
+    "background": "旧姓贵族在河港设置收费站，财政总局要求恢复中央税权，农业公司担心运输被重复收费。",
+    "plans": [
+      {
+        "name": "撤掉私设收费站",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 80,
+            "gdp": 40,
+            "agrarian_support": 12,
+            "noble_support": -20,
+            "legitimacy": 10
+          },
+          "partial": {
+            "treasury": 35,
+            "gdp": 20,
+            "agrarian_support": 6,
+            "noble_support": -30
+          },
+          "fail": {
+            "treasury": -40,
+            "gdp": -30,
+            "agrarian_support": -10,
+            "noble_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "财政+80，GDP+40，旧姓支持-20，农业支持+12，合法性+10。",
+          "partial": "财政+35，GDP+20，旧姓支持-30，农业支持+6。",
+          "fail": "财政-40，GDP-30，旧姓支持-15，农业支持-10。"
+        }
+      },
+      {
+        "name": "分成关税收入",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 70,
+            "gdp": 50,
+            "agrarian_support": -15,
+            "noble_support": 15,
+            "civilian_support": -10
+          },
+          "partial": {
+            "treasury": 30,
+            "gdp": 25,
+            "agrarian_support": -25,
+            "noble_support": 8
+          },
+          "fail": {
+            "treasury": -50,
+            "gdp": -35,
+            "agrarian_support": -15,
+            "noble_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "财政+70，GDP+50，旧姓支持+15，农业支持-15，平民支持-10。",
+          "partial": "财政+30，GDP+25，旧姓支持+8，农业支持-25。",
+          "fail": "财政-50，GDP-35，旧姓支持-10，农业支持-15。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "地方收费站继续存在。",
+      "chronicle": "地方收费站继续存在。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "noble_marriage_land",
+    "title": "联姻继承的土地",
+    "type": "daily",
+    "background": "旧姓贵族准备通过婚姻继承北部土地，并计划将其改成火穗田。农业公司担心土地被私人垄断。",
+    "plans": [
+      {
+        "name": "准许继承但限制用途",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 40,
+            "territory": 20,
+            "agrarian_support": 12,
+            "noble_support": -15,
+            "radiation_risk": -8
+          },
+          "partial": {
+            "treasury": 20,
+            "territory": 10,
+            "agrarian_support": 6,
+            "noble_support": -25
+          },
+          "fail": {
+            "territory": -15,
+            "agrarian_support": -10,
+            "noble_support": -10,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "领土+20，财政+40，农业支持+12，旧姓支持-15，土地风险-8。",
+          "partial": "领土+10，财政+20，农业支持+6，旧姓支持-25。",
+          "fail": "领土-15，农业支持-10，旧姓支持-10，合法性-10。"
+        }
+      },
+      {
+        "name": "承认完整继承",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 70,
+            "territory": 30,
+            "agrarian_support": -18,
+            "noble_support": 20,
+            "civilian_support": -10
+          },
+          "partial": {
+            "treasury": 30,
+            "territory": 15,
+            "agrarian_support": -25,
+            "noble_support": 10
+          },
+          "fail": {
+            "treasury": -40,
+            "territory": -20,
+            "noble_support": -15,
+            "legitimacy": -10
+          }
+        },
+        "chronicle": {
+          "full": "领土+30，财政+70，旧姓支持+20，农业支持-18，平民支持-10。",
+          "partial": "领土+15，财政+30，旧姓支持+10，农业支持-25。",
+          "fail": "领土-20，财政-40，旧姓支持-15，合法性-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "地方家族自行接管土地和人口。",
+      "chronicle": "地方家族自行接管土地和人口。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "guild_furnace_technology",
+    "title": "公会要买断新炉壁",
+    "type": "daily",
+    "background": "技工提交能减少火籽消耗和辐射泄漏的新炉壁设计，公会要求买断，检查署要求公开标准。",
+    "plans": [
+      {
+        "name": "国家买断并公开标准",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -50,
+            "gdp": 60,
+            "agrarian_support": -10,
+            "guild_support": -18,
+            "labor_health": 15,
+            "fuel_reserve": 20
+          },
+          "partial": {
+            "treasury": -80,
+            "gdp": 30,
+            "agrarian_support": -15,
+            "guild_support": -25,
+            "labor_health": 8
+          },
+          "fail": {
+            "treasury": -40,
+            "gdp": -40,
+            "labor_health": -15,
+            "fuel_reserve": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+60，财政-50，劳工健康+15，公会支持-18，农业支持-10，火籽储备+20。",
+          "partial": "GDP+30，财政-80，劳工健康+8，公会支持-25，农业支持-15。",
+          "fail": "GDP-40，财政-40，劳工健康-15，火籽储备-15。"
+        }
+      },
+      {
+        "name": "授予公会独家生产权",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 100,
+            "gdp": 70,
+            "agrarian_support": -20,
+            "guild_support": 20,
+            "fuel_reserve": -15
+          },
+          "partial": {
+            "treasury": 45,
+            "gdp": 35,
+            "agrarian_support": -28,
+            "guild_support": 10,
+            "fuel_reserve": -25
+          },
+          "fail": {
+            "treasury": -50,
+            "gdp": -45,
+            "guild_support": -15,
+            "labor_health": -20
+          }
+        },
+        "chronicle": {
+          "full": "财政+100，GDP+70，公会支持+20，农业支持-20，火籽储备-15。",
+          "partial": "财政+45，GDP+35，公会支持+10，农业支持-28，火籽储备-25。",
+          "fail": "财政-50，GDP-45，公会支持-15，劳工健康-20。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "技术继续停留在技工手中。",
+      "chronicle": "技术继续停留在技工手中。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "guild_worker_shift",
+    "title": "公会要求夜班扩产",
+    "type": "daily",
+    "background": "公会要求开放夜间炉坊，检查署报告事故率上升，农业公司要求夜间火籽优先供应灌溉泵站。",
+    "plans": [
+      {
+        "name": "限制夜班并设防护",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "gdp": -30,
+            "agrarian_support": 15,
+            "guild_support": -18,
+            "labor_health": 18,
+            "fuel_reserve": 10
+          },
+          "partial": {
+            "gdp": -45,
+            "agrarian_support": 8,
+            "guild_support": -25,
+            "labor_health": 8
+          },
+          "fail": {
+            "gdp": -40,
+            "agrarian_support": -10,
+            "guild_support": -15,
+            "labor_health": -15
+          }
+        },
+        "chronicle": {
+          "full": "劳工健康+18，农业支持+15，GDP-30，公会支持-18，火籽储备+10。",
+          "partial": "劳工健康+8，农业支持+8，GDP-45，公会支持-25。",
+          "fail": "劳工健康-15，GDP-40，农业支持-10，公会支持-15。"
+        }
+      },
+      {
+        "name": "批准夜班扩产",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 60,
+            "gdp": 80,
+            "agrarian_support": -18,
+            "guild_support": 20,
+            "radiation_risk": 10,
+            "labor_health": -15
+          },
+          "partial": {
+            "treasury": 30,
+            "gdp": 35,
+            "agrarian_support": -25,
+            "guild_support": 10,
+            "labor_health": -25
+          },
+          "fail": {
+            "treasury": -30,
+            "gdp": -50,
+            "guild_support": -15,
+            "labor_health": -25
+          }
+        },
+        "chronicle": {
+          "full": "GDP+80，财政+60，公会支持+20，劳工健康-15，农业支持-18，土地风险+10。",
+          "partial": "GDP+35，财政+30，公会支持+10，劳工健康-25，农业支持-25。",
+          "fail": "GDP-50，财政-30，公会支持-15，劳工健康-25。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "工坊主自行安排轮班。",
+      "chronicle": "工坊主自行安排轮班。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "guild_trade_route",
+    "title": "公会要求统一商路关税",
+    "type": "daily",
+    "background": "同业公会要求统一税率并撤销农业公司的粮运检查站，农业公司担心粮食和火籽被优先运出境。",
+    "plans": [
+      {
+        "name": "统一税率但保留检查站",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 50,
+            "gdp": 55,
+            "agrarian_support": 12,
+            "guild_support": 15,
+            "noble_support": -10
+          },
+          "partial": {
+            "treasury": 25,
+            "gdp": 25,
+            "agrarian_support": 6,
+            "guild_support": 8
+          },
+          "fail": {
+            "treasury": -30,
+            "gdp": -35,
+            "agrarian_support": -10,
+            "guild_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+55，财政+50，农业支持+12，公会支持+15，旧姓支持-10。",
+          "partial": "GDP+25，财政+25，农业支持+6，公会支持+8。",
+          "fail": "GDP-35，财政-30，农业支持-10，公会支持-15。"
+        }
+      },
+      {
+        "name": "撤掉农业公司检查站",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 80,
+            "gdp": 75,
+            "population": -10,
+            "agrarian_support": -20,
+            "guild_support": 20,
+            "radiation_risk": 8
+          },
+          "partial": {
+            "treasury": 35,
+            "gdp": 35,
+            "population": -15,
+            "agrarian_support": -30,
+            "guild_support": 10
+          },
+          "fail": {
+            "treasury": -40,
+            "gdp": -45,
+            "agrarian_support": -20,
+            "guild_support": -15,
+            "civilian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "GDP+75，财政+80，公会支持+20，农业支持-20，人口-10，土地风险+8。",
+          "partial": "GDP+35，财政+35，公会支持+10，农业支持-30，人口-15。",
+          "fail": "GDP-45，财政-40，公会支持-15，农业支持-20，平民支持-10。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "地方税率和检查站继续并存。",
+      "chronicle": "地方税率和检查站继续并存。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "guild_city_market",
+    "title": "公会要扩建城市市场",
+    "type": "daily",
+    "background": "公会申请扩建火籽市场，农业公司担心抽走粮食和火籽，旧姓贵族要求把市场特许权交给自己的商号。",
+    "plans": [
+      {
+        "name": "有条件扩建市场",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 70,
+            "gdp": 60,
+            "agrarian_support": -10,
+            "guild_support": 12,
+            "fuel_reserve": -8
+          },
+          "partial": {
+            "treasury": 35,
+            "gdp": 25,
+            "agrarian_support": -18,
+            "guild_support": 6,
+            "fuel_reserve": -15
+          },
+          "fail": {
+            "treasury": -30,
+            "gdp": -40,
+            "agrarian_support": -12,
+            "guild_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+60，财政+70，公会支持+12，农业支持-10，火籽储备-8。",
+          "partial": "GDP+25，财政+35，公会支持+6，农业支持-18，火籽储备-15。",
+          "fail": "GDP-40，财政-30，公会支持-15，农业支持-12。"
+        }
+      },
+      {
+        "name": "把市场交给旧姓商号",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 60,
+            "gdp": 70,
+            "agrarian_support": -15,
+            "guild_support": -18,
+            "noble_support": 20,
+            "fuel_reserve": -10
+          },
+          "partial": {
+            "treasury": 25,
+            "gdp": 30,
+            "agrarian_support": -22,
+            "guild_support": -25,
+            "noble_support": 10
+          },
+          "fail": {
+            "treasury": -40,
+            "gdp": -45,
+            "guild_support": -15,
+            "noble_support": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+70，财政+60，旧姓支持+20，公会支持-18，农业支持-15，火籽储备-10。",
+          "partial": "GDP+30，财政+25，旧姓支持+10，公会支持-25，农业支持-22。",
+          "fail": "GDP-45，财政-40，旧姓支持-15，公会支持-15。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "商人在城门外自行搭棚交易。",
+      "chronicle": "商人在城门外自行搭棚交易。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "population_labor_draft",
+    "title": "人口迁移和劳动力争夺",
+    "type": "daily",
+    "background": "农业公司要求把灾民迁入火穗田，工坊管理局则想把同一批人送进织造厂。",
+    "plans": [
+      {
+        "name": "送往农业聚落",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": -50,
+            "gdp": -20,
+            "population": 60,
+            "territory": 20,
+            "agrarian_support": 18,
+            "guild_support": -12
+          },
+          "partial": {
+            "treasury": -80,
+            "gdp": -35,
+            "population": 25,
+            "territory": 10,
+            "agrarian_support": 10
+          },
+          "fail": {
+            "population": -30,
+            "agrarian_support": -15,
+            "civilian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "人口+60，领土+20，农业支持+18，GDP-20，财政-50，公会支持-12。",
+          "partial": "人口+25，领土+10，农业支持+10，GDP-35，财政-80。",
+          "fail": "人口-30，农业支持-15，平民支持-10。"
+        }
+      },
+      {
+        "name": "送进城市工坊",
+        "ability": "威仪",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 50,
+            "gdp": 75,
+            "population": -15,
+            "agrarian_support": -20,
+            "guild_support": 18,
+            "radiation_risk": 10
+          },
+          "partial": {
+            "treasury": 25,
+            "gdp": 35,
+            "population": -25,
+            "agrarian_support": -28,
+            "guild_support": 10
+          },
+          "fail": {
+            "gdp": -45,
+            "population": -35,
+            "guild_support": -15,
+            "labor_health": -15
+          }
+        },
+        "chronicle": {
+          "full": "GDP+75，财政+50，公会支持+18，农业支持-20，人口-15，土地风险+10。",
+          "partial": "GDP+35，财政+25，公会支持+10，农业支持-28，人口-25。",
+          "fail": "GDP-45，人口-35，公会支持-15，劳工健康-15。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "灾民继续在登记处和工坊门口排队。",
+      "chronicle": "灾民继续在登记处和工坊门口排队。",
+      "effects": {}
+    },
+    "difficulty": -1,
+    "weight": 1,
+    "cooldown": 3
+  },
+  {
+    "id": "settlement_registry",
+    "title": "新聚落归属和土地登记",
+    "type": "daily",
+    "background": "新聚落在旧河道旁形成，农业公司已经修建灌溉渠，旧姓贵族要求居民登记在庄园名下，中央担心失去土地和人口控制。",
+    "plans": [
+      {
+        "name": "纳入中央登记",
+        "ability": "洞察",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 60,
+            "population": 35,
+            "territory": 20,
+            "agrarian_support": 10,
+            "noble_support": -20,
+            "legitimacy": 8
+          },
+          "partial": {
+            "treasury": 30,
+            "population": 15,
+            "territory": 10,
+            "agrarian_support": 5,
+            "noble_support": -28
+          },
+          "fail": {
+            "treasury": -40,
+            "population": -25,
+            "territory": -15,
+            "agrarian_support": -10
+          }
+        },
+        "chronicle": {
+          "full": "领土+20，人口+35，财政+60，农业支持+10，旧姓支持-20，合法性+8。",
+          "partial": "领土+10，人口+15，财政+30，农业支持+5，旧姓支持-28。",
+          "fail": "领土-15，人口-25，财政-40，农业支持-10。"
+        }
+      },
+      {
+        "name": "交给地方庄园登记",
+        "ability": "驭人",
+        "direction": "即时解决当前冲突，但需要承担相应的政治或资源代价。",
+        "effects": {
+          "full": {
+            "treasury": 70,
+            "population": 25,
+            "territory": 25,
+            "agrarian_support": -18,
+            "noble_support": 18,
+            "legitimacy": -8
+          },
+          "partial": {
+            "treasury": 35,
+            "population": 10,
+            "territory": 12,
+            "agrarian_support": -25,
+            "noble_support": 10
+          },
+          "fail": {
+            "population": -30,
+            "territory": -20,
+            "noble_support": -15,
+            "legitimacy": -12
+          }
+        },
+        "chronicle": {
+          "full": "领土+25，人口+25，财政+70，旧姓支持+18，农业支持-18，合法性-8。",
+          "partial": "领土+12，人口+10，财政+35，旧姓支持+10，农业支持-25。",
+          "fail": "领土-20，人口-30，旧姓支持-15，合法性-12。"
+        }
+      }
+    ],
+    "ignored": {
+      "text": "居民和农业公司各自保留一份名单。",
+      "chronicle": "居民和农业公司各自保留一份名单。",
+      "effects": {}
+    },
+    "difficulty": 0,
+    "weight": 1,
+    "cooldown": 3
+  }
+]

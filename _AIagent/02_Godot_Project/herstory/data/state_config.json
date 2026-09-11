@@ -1,0 +1,97 @@
+{
+  "treasury": {
+    "initial": 500,
+    "min": 0,
+    "max": 9999
+  },
+  "population": {
+    "initial": 300,
+    "min": 0,
+    "max": 9999
+  },
+  "gdp": {
+    "initial": 500,
+    "min": 0,
+    "max": 9999
+  },
+  "military": {
+    "initial": 200,
+    "min": 0,
+    "max": 9999
+  },
+  "territory": {
+    "initial": 150,
+    "min": 0,
+    "max": 9999
+  },
+  "civilian_support": {
+    "initial": 55,
+    "min": 0,
+    "max": 100
+  },
+  "noble_support": {
+    "initial": 50,
+    "min": 0,
+    "max": 100
+  },
+  "radiation_risk": {
+    "initial": 20,
+    "min": 0,
+    "max": 100
+  },
+  "plague_progress": {
+    "initial": 0,
+    "min": 0,
+    "max": 10
+  },
+  "agrarian_support": {
+    "initial": 50,
+    "min": 0,
+    "max": 100
+  },
+  "guild_support": {
+    "initial": 50,
+    "min": 0,
+    "max": 100
+  },
+  "fuel_reserve": {
+    "initial": 400,
+    "min": 0,
+    "max": 999
+  },
+  "wealth_gap": {
+    "initial": 40,
+    "min": 0,
+    "max": 100
+  },
+  "literacy_rate": {
+    "initial": 20,
+    "min": 0,
+    "max": 100
+  },
+  "female_literacy": {
+    "initial": 8,
+    "min": 0,
+    "max": 100
+  },
+  "legitimacy": {
+    "initial": 50,
+    "min": 0,
+    "max": 100
+  },
+  "labor_health": {
+    "initial": 60,
+    "min": 0,
+    "max": 100
+  },
+  "female_support": {
+    "initial": 45,
+    "min": 0,
+    "max": 100
+  },
+  "technology": {
+    "initial": 20,
+    "min": 0,
+    "max": 100
+  }
+}

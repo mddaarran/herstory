@@ -1,0 +1,4 @@
+runs_per_strategy=1000
+max_rounds=15
+build_budget=2
+elapsed_ms=37010

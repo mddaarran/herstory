@@ -1,0 +1,143 @@
+==============================================================================
+A. 危机触发与能力成长
+==============================================================================
+策略                 过线种类/局     上桌/局     处置/局     被绕开/局      强制独占局%     能力点/局     能力终值
+random               6.05     8.22     4.34      3.88       34.3%      3.12     5.12
+crisis_first         5.99     5.75     5.14      0.61        0.6%      3.79     5.79
+first_only           5.13     6.51     3.64      2.87       18.4%      2.62     4.62
+
+能力点获取分布（每局拿到几点，建卡固定 2 点另计）：
+策略                 ≥0点局%     ≥1点局%     ≥2点局%     ≥3点局%     ≥4点局%     ≥5点局%
+random            100.0%     98.5%     87.5%     65.4%     37.3%     16.8%
+crisis_first      100.0%     98.9%     93.0%     77.9%     55.5%     32.4%
+first_only        100.0%     96.6%     81.5%     53.0%     22.9%      6.7%
+
+各危机逐项（过线率 = 该局进过池；处置率 = 被点开处置过）：
+危机 id                   策略                 过线局%       首触发轮均值      首触发中位     上桌局%     处置局%      回避率
+border_pay              random            81.0%         6.91        6.0    70.1%    61.8%     8.3%
+flu_raiding             random            75.1%         6.21        5.0    63.0%    55.6%     7.4%
+fuel_demand             random            82.0%         4.79        3.0    72.2%    67.6%     4.6%
+fuel_smuggle            random            93.9%         5.45        4.0    85.9%    78.4%     7.5%
+furnace_crack           random            47.1%         6.38        5.0    38.3%    34.9%     3.4%
+gdp_crisis_400          random            55.3%         9.50        9.0    40.6%    32.4%     8.2%
+gdp_crisis_800          random            21.6%        11.75       12.0    13.2%     9.3%     3.9%
+husk_blight             random            26.6%         9.96       10.0    19.6%    16.3%     3.3%
+military_crisis_300     random            28.9%         9.52       10.0    20.3%    16.1%     4.2%
+military_crisis_560     random             1.1%        13.55       14.0     0.6%     0.6%     0.0%
+population_crisis_300   random            28.9%         9.96       10.0    20.8%    16.3%     4.5%
+population_crisis_500   random             9.3%        12.09       13.0     5.8%     3.3%     2.5%
+territory_crisis_220    random            15.0%        11.75       12.0     8.4%     6.7%     1.7%
+territory_crisis_340    random             1.2%        13.67       14.0     0.2%     0.2%     0.0%
+treasury_crisis_450     random            29.0%         8.07        7.0    19.2%    14.0%     5.2%
+treasury_crisis_800     random             8.8%        10.40       10.5     5.1%     3.0%     2.1%
+border_pay              crisis_first      75.4%         7.34        7.0    65.1%    64.7%     0.4%
+flu_raiding             crisis_first      76.5%         6.20        5.0    66.2%    65.2%     1.0%
+fuel_demand             crisis_first      82.7%         5.09        4.0    73.2%    72.2%     1.0%
+fuel_smuggle            crisis_first      92.8%         5.62        5.0    86.3%    85.3%     1.0%
+furnace_crack           crisis_first      45.1%         6.67        6.0    37.2%    36.6%     0.6%
+gdp_crisis_400          crisis_first      49.6%         9.49       10.0    39.3%    38.4%     0.9%
+gdp_crisis_800          crisis_first      25.6%        11.76       12.0    16.5%    16.2%     0.3%
+husk_blight             crisis_first      25.6%        10.00       10.0    20.0%    19.6%     0.4%
+military_crisis_300     crisis_first      31.7%        10.03       11.0    23.6%    22.8%     0.8%
+military_crisis_560     crisis_first       2.2%        12.86       13.0     1.4%     1.4%     0.0%
+population_crisis_300   crisis_first      25.4%        10.16       11.0    19.5%    18.5%     1.0%
+population_crisis_500   crisis_first       9.9%        12.20       13.0     6.2%     5.9%     0.3%
+territory_crisis_220    crisis_first      13.8%        12.20       13.0     8.9%     8.3%     0.6%
+territory_crisis_340    crisis_first       0.7%        13.57       13.0     0.2%     0.2%     0.0%
+treasury_crisis_450     crisis_first      28.8%         7.88        7.0    19.2%    18.1%     1.1%
+treasury_crisis_800     crisis_first      12.7%        10.81       11.0     8.3%     7.6%     0.7%
+border_pay              first_only        66.0%         7.90        8.0    53.1%    46.6%     6.5%
+flu_raiding             first_only        33.9%         6.76        6.0    25.5%    22.1%     3.4%
+fuel_demand             first_only        51.9%         5.45        4.0    39.5%    34.5%     5.0%
+fuel_smuggle            first_only        91.9%         6.07        5.0    85.3%    78.3%     7.0%
+furnace_crack           first_only        73.4%         6.69        6.0    64.5%    59.3%     5.2%
+gdp_crisis_400          first_only        48.5%         9.58       10.0    37.3%    30.0%     7.3%
+gdp_crisis_800          first_only        15.3%        11.99       12.0     9.0%     6.5%     2.5%
+husk_blight             first_only         9.5%         9.67       10.0     7.1%     5.4%     1.7%
+military_crisis_300     first_only        10.3%         9.30       10.0     7.6%     5.7%     1.9%
+military_crisis_560     first_only         0.1%        13.00       13.0     0.1%     0.1%     0.0%
+population_crisis_300   first_only        58.6%         9.25        9.0    47.5%    40.8%     6.7%
+population_crisis_500   first_only        27.3%        11.66       12.0    17.6%    13.4%     4.2%
+territory_crisis_220    first_only        11.5%        12.14       13.0     7.2%     4.8%     2.4%
+territory_crisis_340    first_only         0.2%        15.00       15.0     0.1%     0.1%     0.0%
+treasury_crisis_450     first_only        12.6%         6.79        6.0     7.3%     5.0%     2.3%
+treasury_crisis_800     first_only         2.4%        10.58       11.0     1.2%     0.8%     0.4%
+
+==============================================================================
+B. 事件覆盖与重复率
+==============================================================================
+策略                  抽卡总数/局      去重后/局      重复率      单局覆盖池%      全库出场%
+random               29.64      23.13    22.0%       49.2%     100.0%
+crisis_first         29.99      25.18    16.1%       53.6%     100.0%
+first_only           29.81      23.79    20.2%       50.6%     100.0%
+
+日常事件出场热度（全 3 策略 3000 局合计，池内共 47 张）：
+  出场最多 8 张：silent_fields(749)  border_tariff(735)  retired_furnace_workers(732)  midwife_station(728)  company_military_rations(721)  furnace_upgrade(719)  iron_plow(713)  lamp_festival(710)
+  出场最少 8 张：farm_energy_conflict(650)  soul_rite(648)  eastern_tax_registry(646)  company_tax_sheet(645)  open_school(641)  noble_customs_gate(640)  widow_field(630)  company_radiation_debt(628)
+  从未出场：0 张
+
+==============================================================================
+C. 判定档位分布（%）
+==============================================================================
+策略            类别            大成功      有条件       失败       样本
+random        日常          52.2%    34.0%    13.9%    10655
+random        危机          29.6%    42.1%    28.3%     4345
+crisis_first  日常          53.7%    33.6%    12.7%     9862
+crisis_first  危机          33.6%    40.1%    26.3%     5138
+first_only    日常          51.5%    34.3%    14.1%    11356
+first_only    危机          27.9%    44.0%    28.1%     3644
+
+日常事件按阶段（策略=random）：
+阶段        轮次              大成功      有条件       失败       样本
+阶段1       1-5           53.4%    33.9%    12.7%     4254
+阶段2       6-10          51.5%    34.2%    14.3%     3115
+阶段3       11-15         51.2%    33.9%    14.9%     3286
+
+阶段难度曲线 vs 能力成长（策略=random，日常）：
+阶段        轮次            平均难度        平均能力修正       平均判定值      大成功       失败       样本
+阶段1       1-5          -1.02          0.70        7.72    53.4%    12.7%     4254
+阶段2       6-10         -0.58          1.03        8.03    51.5%    14.3%     3115
+阶段3       11-15        -0.18          1.47        8.42    51.2%    14.9%     3286
+  → 一期到三期：事件难度 -1.02 → -0.18（变难 +0.84），能力修正 +0.70 → +1.47（变强 +0.77），净效果 +0.07
+
+按事件难度档（策略=random，日常）：
+difficulty        大成功      有条件       失败       样本
+-3              79.9%    19.3%     0.8%      911
+-2              71.5%    25.5%     3.0%     1362
+-1              58.2%    32.3%     9.5%     3037
+0               43.2%    39.5%    17.3%     3597
+1               30.6%    39.8%    29.6%     1748
+
+大议 major（difficulty=+3，模拟未含，按 2d6 理论值）：
+能力修正            大成功      有条件       失败
++0             2.8%    25.0%    72.2%
++1             8.3%    33.3%    58.3%
++2            16.7%    41.7%    41.7%
++3            27.8%    44.4%    27.8%
++4            41.7%    41.7%    16.7%
++5            58.3%    33.3%     8.3%
++6            72.2%    25.0%     2.8%
+
+==============================================================================
+D. 15 轮终局数值（均值，三种策略）
+==============================================================================
+字段                          random  crisis_first    first_only
+treasury                     474.3         487.1         292.0
+gdp                          699.4         702.4         664.0
+population                   355.7         358.0         449.0
+military                     265.4         283.2         225.7
+territory                    187.1         189.0         186.9
+civilian_support              35.0          36.6          63.9
+noble_support                 25.1          25.1          14.1
+radiation_risk                36.9          38.6          20.3
+plague_progress                2.9           2.8           1.6
+agrarian_support              32.2          33.2          72.3
+guild_support                 50.2          51.9          28.0
+fuel_reserve                 211.9         290.6         269.1
+wealth_gap                    48.4          48.8          40.9
+literacy_rate                 23.7          23.6          27.7
+legitimacy                    35.2          43.6          47.1
+labor_health                  53.4          53.9          68.7
+technology                    22.2          22.2          23.4
+
+汇总已写入 C:/Users/maodr/Desktop/Herstory/outputs/sim_20260910_summary.json

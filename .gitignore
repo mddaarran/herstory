@@ -1,0 +1,35 @@
+# ---- 依赖目录（本机 node_modules 为符号链接，指向 336MB 运行时依赖）----
+node_modules/
+node_modules
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- Godot 生成物 ----
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+
+# ---- 运行日志 / 调试临时输出 ----
+*.log
+outputs/_sim_stdout.txt
+_pyerr.txt
+_t_err.txt
+_t.txt
+_ls.txt
+
+# ---- Office 临时锁文件 ----
+~$*.xlsx
+~$*.docx
+~$*.pptx
+*.tmp
+
+# ---- 系统 / 编辑器 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- WorkBuddy 本机会话记忆（换机器无意义，如需同步请删掉这两行）----
+.workbuddy/memory/

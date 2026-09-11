@@ -1,0 +1,1818 @@
+[gd_scene format=3 uid="uid://ds8g5fu0e5m5"]
+
+[ext_resource type="Script" uid="uid://ui5w024ijk7j" path="res://addons/figma_importer/figma_importer.gd" id="1_fig"]
+[ext_resource type="Script" uid="uid://clfpksv5jp56a" path="res://addons/figma_importer/designer_frame.gd" id="2_v8jw0"]
+[ext_resource type="Script" uid="uid://b34oplg48wx0" path="res://addons/figma_importer/designer_image_panel.gd" id="3_r0m3f"]
+[ext_resource type="Shader" uid="uid://tefl1nc14os4" path="res://addons/figma_importer/shader/vertex_apply_shader.gdshader" id="4_sw3nc"]
+[ext_resource type="Texture2D" uid="uid://bvceijevmgolk" path="res://addons/figma_importer/error_texture.png" id="5_ccj4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hdft"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 80.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki1vh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3bef"]
+content_margin_left = 80.0
+content_margin_top = 40.0
+content_margin_right = 80.0
+content_margin_bottom = 40.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjn2o"]
+line_spacing = 0.0
+font_size = 34
+font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3gki"]
+line_spacing = 0.0
+font_color = Color(0.8980392, 0.8980392, 0.8980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euk5g"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6120m"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x8tq"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(10, 10)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlfva"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txe7b"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsa6c"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(10, 10)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqhak"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgiai"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4ha3"]
+content_margin_left = 20.0
+content_margin_top = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m14eq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e16vb"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(37.798992, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6t0g"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojbxj"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qrea"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6rjjr"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4ncs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pd27g"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrhkn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldwe4"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a674f"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2awmb"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfnf3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_33m15"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3r5w"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r21sv"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a383"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3abh2"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(14, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wieg"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt74t"]
+content_margin_left = 80.0
+content_margin_top = 0.0
+content_margin_right = 80.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgggk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 80.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgfrf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi51b"]
+content_margin_left = 80.0
+content_margin_top = 40.0
+content_margin_right = 80.0
+content_margin_bottom = 40.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8cf0"]
+line_spacing = 0.0
+font_size = 34
+font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uijgn"]
+line_spacing = 0.0
+font_color = Color(0.8980392, 0.8980392, 0.8980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07wto"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f11a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhxyn"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(10, 10)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6sxh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csnki"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjt0g"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(10, 10)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysh4h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_porqc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fhh1"]
+content_margin_left = 20.0
+content_margin_top = 0.0
+content_margin_right = 20.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kn0j"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7fwt"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(37.798992, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtxe6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5s2ff"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgvgf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2wufm"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4s0ly"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s04lw"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiip6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vj7io"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvhag"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cqff"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ly6e"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgnd8"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8xdv"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_womgl"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(18.553185, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e0w7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkvwq"]
+shader = ExtResource("4_sw3nc")
+shader_parameter/image_texture = ExtResource("5_ccj4i")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(14, 7)
+shader_parameter/texture_size = Vector2(128, 128)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/vert_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn0bo"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8k73"]
+content_margin_left = 80.0
+content_margin_top = 0.0
+content_margin_right = 80.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[node name="FigmaImportScratch" type="Control" unique_id=1517150842]
+custom_minimum_size = Vector2(1200, 800)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fig")
+document_json_file = "res://figma_export/button_from_Scifiuikit.json"
+SelectPage = "➝ Buttons xIDx1:6x"
+SelectFrame = "Button xIDx51:5422x"
+
+[node name="Button xIDx51_5422x" type="ScrollContainer" parent="." unique_id=992947115]
+custom_minimum_size = Vector2(0, 880)
+clip_contents = false
+layout_mode = 0
+offset_right = 1056.0
+offset_bottom = 880.0
+pivot_offset = Vector2(528, 440)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hdft")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer")
+widthSizeMode = "HUG"
+minSize = Vector2(0, 880)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(1, 1, 1, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 80.0, 0.0]
+layoutMode = "VERTICAL"
+vLayoutAlign = "Center"
+spacing = 82
+
+[node name="InnerContainer" type="VBoxContainer" parent="Button xIDx51_5422x" unique_id=1668118559]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 82
+alignment = 1
+
+[node name="Frame 231 xIDx51_6385x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer" unique_id=983484704]
+custom_minimum_size = Vector2(1056, 0)
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ki1vh")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer")
+heightSizeMode = "HUG"
+minSize = Vector2(1056, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "VERTICAL"
+vLayoutAlign = "Bottom"
+
+[node name="InnerContainer" type="VBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x" unique_id=1582452738]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Frame 230 xIDx51_6394x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=329990784]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3bef")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [40.0, 80.0, 40.0, 80.0]
+layoutMode = "VERTICAL"
+spacing = 8
+
+[node name="InnerContainer" type="VBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x" unique_id=503774597]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Button  xIDx51_6395x" type="Label" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer" unique_id=542915355]
+custom_minimum_size = Vector2(119, 39)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Button"
+label_settings = SubResource("LabelSettings_tjn2o")
+autowrap_mode = 3
+
+[node name="Used to trigger an action or event, such as submitting a form, confirming a choice, or navigating to another view_ They help communicate what actions are available and indicate priority through placement and emphasis_  xIDx51_6396x" type="Label" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer" unique_id=1076867739]
+custom_minimum_size = Vector2(1, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Used to trigger an action or event, such as submitting a form, confirming a choice, or navigating to another view. They help communicate what actions are available and indicate priority through placement and emphasis."
+label_settings = SubResource("LabelSettings_a3gki")
+autowrap_mode = 3
+
+[node name="top element xIDx51_6388x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=1567883605]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_euk5g")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "HORIZONTAL"
+hLayoutAlign = "Right"
+
+[node name="InnerContainer" type="HBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x" unique_id=2069940317]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Rectangle 74 xIDx51_6389x" type="Panel" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1492276534]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6120m")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Polygon 12 xIDx51_6390x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1356854445]
+material = SubResource("ShaderMaterial_4x8tq")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlfva")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 12 xIDx51_6390x/InnerContainer")
+minSize = Vector2(10, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 12 xIDx51_6390x" unique_id=2068875924]
+layout_mode = 2
+
+[node name="Rectangle 75 xIDx51_6391x" type="Panel" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1334620213]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_txe7b")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Polygon 11 xIDx51_6392x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1138956928]
+material = SubResource("ShaderMaterial_bsa6c")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqhak")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 11 xIDx51_6392x/InnerContainer")
+minSize = Vector2(10, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 11 xIDx51_6392x" unique_id=1623756881]
+layout_mode = 2
+
+[node name="Rectangle 73 xIDx51_6393x" type="Panel" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=203710237]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgiai")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Frame 232 xIDx51_6386x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=1064408683]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e4ha3")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 20.0, 0.0, 20.0]
+layoutMode = "HORIZONTAL"
+
+[node name="InnerContainer" type="HBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x" unique_id=1726058243]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Frame 233 xIDx51_6602x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer" unique_id=471668747]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m14eq")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer")
+widthSizeMode = "HUG"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "HORIZONTAL"
+vLayoutAlign = "Center"
+spacing = -1
+
+[node name="InnerContainer" type="HBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x" unique_id=696853568]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = -1
+
+[node name="Vector xIDx51_6593x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1369043726]
+material = SubResource("ShaderMaterial_e16vb")
+custom_minimum_size = Vector2(37.798992, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l6t0g")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6593x/InnerContainer")
+minSize = Vector2(37.798992, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6593x" unique_id=1848996743]
+layout_mode = 2
+
+[node name="Vector xIDx51_6615x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1051942784]
+material = SubResource("ShaderMaterial_ojbxj")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1qrea")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6615x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6615x" unique_id=410854721]
+layout_mode = 2
+
+[node name="Vector xIDx51_6623x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1286909018]
+material = SubResource("ShaderMaterial_6rjjr")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_f4ncs")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6623x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6623x" unique_id=615263997]
+layout_mode = 2
+
+[node name="Vector xIDx51_6625x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1743662971]
+material = SubResource("ShaderMaterial_pd27g")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_yrhkn")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6625x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6625x" unique_id=1572209272]
+layout_mode = 2
+
+[node name="Vector xIDx51_6627x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1635541256]
+material = SubResource("ShaderMaterial_ldwe4")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_a674f")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6627x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6627x" unique_id=1624332037]
+layout_mode = 2
+
+[node name="Vector xIDx51_6637x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1976583141]
+material = SubResource("ShaderMaterial_2awmb")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfnf3")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6637x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6637x" unique_id=288550630]
+layout_mode = 2
+
+[node name="Vector xIDx51_6629x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1512585416]
+material = SubResource("ShaderMaterial_33m15")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3r5w")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6629x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6629x" unique_id=1463781998]
+layout_mode = 2
+
+[node name="Vector xIDx51_6631x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=413269088]
+material = SubResource("ShaderMaterial_r21sv")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a383")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6631x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6631x" unique_id=1718767722]
+layout_mode = 2
+
+[node name="Vector xIDx51_6387x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer" unique_id=1942291814]
+material = SubResource("ShaderMaterial_3abh2")
+custom_minimum_size = Vector2(14, 7)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3wieg")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Vector xIDx51_6387x/InnerContainer")
+minSize = Vector2(14, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="Button xIDx51_5422x/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Vector xIDx51_6387x" unique_id=1891709969]
+layout_mode = 2
+
+[node name="Frame 229 xIDx51_5423x" type="ScrollContainer" parent="Button xIDx51_5422x/InnerContainer" unique_id=1434252313]
+custom_minimum_size = Vector2(1056, 0)
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dt74t")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/Button xIDx51_5422x/InnerContainer/Frame 229 xIDx51_5423x/InnerContainer")
+heightSizeMode = "HUG"
+minSize = Vector2(1056, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 80.0, 0.0, 80.0]
+layoutMode = "VERTICAL"
+spacing = 10
+
+[node name="InnerContainer" type="VBoxContainer" parent="Button xIDx51_5422x/InnerContainer/Frame 229 xIDx51_5423x" unique_id=1933096184]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="@ScrollContainer@127346" type="ScrollContainer" parent="." unique_id=1040305608]
+custom_minimum_size = Vector2(0, 880)
+clip_contents = false
+layout_mode = 0
+offset_right = 1056.0
+offset_bottom = 880.0
+pivot_offset = Vector2(528, 440)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgggk")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer")
+widthSizeMode = "HUG"
+minSize = Vector2(0, 880)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(1, 1, 1, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 80.0, 0.0]
+layoutMode = "VERTICAL"
+vLayoutAlign = "Center"
+spacing = 82
+
+[node name="InnerContainer" type="VBoxContainer" parent="@ScrollContainer@127346" unique_id=1012669442]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 82
+alignment = 1
+
+[node name="Frame 231 xIDx51_6385x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer" unique_id=656015097]
+custom_minimum_size = Vector2(1056, 0)
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bgfrf")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer")
+heightSizeMode = "HUG"
+minSize = Vector2(1056, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "VERTICAL"
+vLayoutAlign = "Bottom"
+
+[node name="InnerContainer" type="VBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x" unique_id=1890417712]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Frame 230 xIDx51_6394x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=1710302213]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wi51b")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [40.0, 80.0, 40.0, 80.0]
+layoutMode = "VERTICAL"
+spacing = 8
+
+[node name="InnerContainer" type="VBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x" unique_id=376575167]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Button  xIDx51_6395x" type="Label" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer" unique_id=351165972]
+custom_minimum_size = Vector2(119, 39)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Button"
+label_settings = SubResource("LabelSettings_p8cf0")
+autowrap_mode = 3
+
+[node name="Used to trigger an action or event, such as submitting a form, confirming a choice, or navigating to another view_ They help communicate what actions are available and indicate priority through placement and emphasis_  xIDx51_6396x" type="Label" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 230 xIDx51_6394x/InnerContainer" unique_id=724441626]
+custom_minimum_size = Vector2(1, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Used to trigger an action or event, such as submitting a form, confirming a choice, or navigating to another view. They help communicate what actions are available and indicate priority through placement and emphasis."
+label_settings = SubResource("LabelSettings_uijgn")
+autowrap_mode = 3
+
+[node name="top element xIDx51_6388x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=1410044053]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_07wto")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "HORIZONTAL"
+hLayoutAlign = "Right"
+
+[node name="InnerContainer" type="HBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x" unique_id=2118292812]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Rectangle 74 xIDx51_6389x" type="Panel" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1093663137]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8f11a")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Polygon 12 xIDx51_6390x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=725248567]
+material = SubResource("ShaderMaterial_qhxyn")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6sxh")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 12 xIDx51_6390x/InnerContainer")
+minSize = Vector2(10, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 12 xIDx51_6390x" unique_id=634150625]
+layout_mode = 2
+
+[node name="Rectangle 75 xIDx51_6391x" type="Panel" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=687318877]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_csnki")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Polygon 11 xIDx51_6392x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1639915948]
+material = SubResource("ShaderMaterial_sjt0g")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ysh4h")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 11 xIDx51_6392x/InnerContainer")
+minSize = Vector2(10, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer/Polygon 11 xIDx51_6392x" unique_id=542539099]
+layout_mode = 2
+
+[node name="Rectangle 73 xIDx51_6393x" type="Panel" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/top element xIDx51_6388x/InnerContainer" unique_id=1780025816]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_porqc")
+script = ExtResource("3_r0m3f")
+widthSizeMode = "FILL"
+minSize = Vector2(0, 10)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="Frame 232 xIDx51_6386x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer" unique_id=1744547453]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0fhh1")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer")
+widthSizeMode = "FILL"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 20.0, 0.0, 20.0]
+layoutMode = "HORIZONTAL"
+
+[node name="InnerContainer" type="HBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x" unique_id=1942568950]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Frame 233 xIDx51_6602x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer" unique_id=1790910754]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6kn0j")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer")
+widthSizeMode = "HUG"
+heightSizeMode = "HUG"
+minSize = Vector2(0, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+layoutMode = "HORIZONTAL"
+vLayoutAlign = "Center"
+spacing = -1
+
+[node name="InnerContainer" type="HBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x" unique_id=1886178977]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = -1
+
+[node name="Vector xIDx51_6593x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1345669269]
+material = SubResource("ShaderMaterial_e7fwt")
+custom_minimum_size = Vector2(37.798992, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtxe6")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6593x/InnerContainer")
+minSize = Vector2(37.798992, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6593x" unique_id=1545443967]
+layout_mode = 2
+
+[node name="Vector xIDx51_6615x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=315527780]
+material = SubResource("ShaderMaterial_5s2ff")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgvgf")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6615x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6615x" unique_id=1568049081]
+layout_mode = 2
+
+[node name="Vector xIDx51_6623x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1863648794]
+material = SubResource("ShaderMaterial_2wufm")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4s0ly")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6623x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6623x" unique_id=1521868474]
+layout_mode = 2
+
+[node name="Vector xIDx51_6625x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=138665482]
+material = SubResource("ShaderMaterial_s04lw")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hiip6")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6625x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6625x" unique_id=1139496986]
+layout_mode = 2
+
+[node name="Vector xIDx51_6627x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=2020112252]
+material = SubResource("ShaderMaterial_vj7io")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_kvhag")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6627x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6627x" unique_id=1847926159]
+layout_mode = 2
+
+[node name="Vector xIDx51_6637x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=405067979]
+material = SubResource("ShaderMaterial_2cqff")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ly6e")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6637x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6637x" unique_id=211927379]
+layout_mode = 2
+
+[node name="Vector xIDx51_6629x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1614883177]
+material = SubResource("ShaderMaterial_jgnd8")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8xdv")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6629x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6629x" unique_id=773441768]
+layout_mode = 2
+
+[node name="Vector xIDx51_6631x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer" unique_id=1379696359]
+material = SubResource("ShaderMaterial_womgl")
+custom_minimum_size = Vector2(18.553185, 7)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7e0w7")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6631x/InnerContainer")
+minSize = Vector2(18.553185, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Frame 233 xIDx51_6602x/InnerContainer/Vector xIDx51_6631x" unique_id=141211222]
+layout_mode = 2
+
+[node name="Vector xIDx51_6387x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer" unique_id=1144380808]
+material = SubResource("ShaderMaterial_gkvwq")
+custom_minimum_size = Vector2(14, 7)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn0bo")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Vector xIDx51_6387x/InnerContainer")
+minSize = Vector2(14, 7)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("5_ccj4i")
+corner_radius = [null, null, null, null]
+padding = [null, null, null, null]
+
+[node name="InnerContainer" type="Control" parent="@ScrollContainer@127346/InnerContainer/Frame 231 xIDx51_6385x/InnerContainer/Frame 232 xIDx51_6386x/InnerContainer/Vector xIDx51_6387x" unique_id=24445499]
+layout_mode = 2
+
+[node name="Frame 229 xIDx51_5423x" type="ScrollContainer" parent="@ScrollContainer@127346/InnerContainer" unique_id=257901251]
+custom_minimum_size = Vector2(1056, 0)
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8k73")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("2_v8jw0")
+inner_container = NodePath("/root/@EditorNode@19513/@Panel@14/@VBoxContainer@15/DockVSplitMain/DockHSplitMain/@VBoxContainer@37/DockVSplitCenter/@VSplitContainer@101/@VBoxContainer@102/@EditorMainScreen@160/MainScreen/@CanvasItemEditor@10138/@VSplitContainer@9897/@HSplitContainer@9899/@HSplitContainer@9901/@Control@9902/@SubViewportContainer@9903/@SubViewport@9904/FigmaImportScratch/@ScrollContainer@127346/InnerContainer/Frame 229 xIDx51_5423x/InnerContainer")
+heightSizeMode = "HUG"
+minSize = Vector2(1056, 0)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 80.0, 0.0, 80.0]
+layoutMode = "VERTICAL"
+spacing = 10
+
+[node name="InnerContainer" type="VBoxContainer" parent="@ScrollContainer@127346/InnerContainer/Frame 229 xIDx51_5423x" unique_id=66008999]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10

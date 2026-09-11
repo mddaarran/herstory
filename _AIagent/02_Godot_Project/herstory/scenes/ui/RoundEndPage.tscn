@@ -1,0 +1,108 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/RoundEndPage.gd" id="1_rep"]
+[ext_resource type="Script" path="res://scripts/ui/NotchButton.gd" id="2_nb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_divider"]
+bg_color = Color(0.133, 0.188, 0.165, 1)
+
+[node name="RoundEndPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rep")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="YearLabel" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ""
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.714, 0.282, 1)
+
+[node name="EventTitle" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ""
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.902, 0.925, 0.894, 1)
+
+[node name="PlanSummary" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ""
+theme_override_font_sizes/font_size = 19
+
+[node name="Divider1" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_divider")
+
+[node name="ChronicleLabel" type="RichTextLabel" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+text = ""
+
+[node name="DeathLabel" type="RichTextLabel" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+text = ""
+visible = false
+
+[node name="IgnoredBox" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Divider2" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_divider")
+
+[node name="SummaryHeader" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "—— 本轮国势变化 ——"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.373, 0.435, 0.396, 1)
+
+[node name="SummaryLabel" type="RichTextLabel" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+text = ""
+
+[node name="Spacer" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="NextBtn" type="Control" parent="VBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "进入下一轮 ▸"
+font_size = 22
+min_width = 280.0

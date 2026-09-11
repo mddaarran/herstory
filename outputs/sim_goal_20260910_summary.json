@@ -1,0 +1,279 @@
+{
+  "rows": [
+    {
+      "goal": "goal_gdp",
+      "strategy": "random",
+      "n": 500,
+      "reach_rate": 82.4,
+      "median": 27.0,
+      "mean": 27.7,
+      "p25": 22.0,
+      "p75": 34.0,
+      "max": 40,
+      "cards": 58.0
+    },
+    {
+      "goal": "goal_gdp",
+      "strategy": "crisis_first",
+      "n": 500,
+      "reach_rate": 82.2,
+      "median": 26,
+      "mean": 26.4,
+      "p25": 21.0,
+      "p75": 32.0,
+      "max": 40,
+      "cards": 56.9
+    },
+    {
+      "goal": "goal_gdp",
+      "strategy": "first_only",
+      "n": 500,
+      "reach_rate": 57.4,
+      "median": 28,
+      "mean": 28.6,
+      "p25": 24.0,
+      "p75": 35.0,
+      "max": 40,
+      "cards": 65.9
+    },
+    {
+      "goal": "goal_gdp",
+      "strategy": "goal_greedy",
+      "n": 500,
+      "reach_rate": 100.0,
+      "median": 14.0,
+      "mean": 14.1,
+      "p25": 11.0,
+      "p75": 17.0,
+      "max": 32,
+      "cards": 26.5
+    },
+    {
+      "goal": "goal_military",
+      "strategy": "random",
+      "n": 500,
+      "reach_rate": 19.4,
+      "median": 34,
+      "mean": 32.8,
+      "p25": 29.0,
+      "p75": 38.0,
+      "max": 40,
+      "cards": 75.8
+    },
+    {
+      "goal": "goal_military",
+      "strategy": "crisis_first",
+      "n": 500,
+      "reach_rate": 28.2,
+      "median": 34,
+      "mean": 32.3,
+      "p25": 29.0,
+      "p75": 38.0,
+      "max": 40,
+      "cards": 75.3
+    },
+    {
+      "goal": "goal_military",
+      "strategy": "first_only",
+      "n": 500,
+      "reach_rate": 0.6,
+      "median": 36,
+      "mean": 35,
+      "p25": 34.0,
+      "p75": 36.5,
+      "max": 37,
+      "cards": 79.3
+    },
+    {
+      "goal": "goal_military",
+      "strategy": "goal_greedy",
+      "n": 500,
+      "reach_rate": 97.4,
+      "median": 21,
+      "mean": 22.3,
+      "p25": 17.0,
+      "p75": 27.0,
+      "max": 40,
+      "cards": 44.3
+    },
+    {
+      "goal": "goal_population",
+      "strategy": "random",
+      "n": 500,
+      "reach_rate": 43.4,
+      "median": 29,
+      "mean": 29.0,
+      "p25": 24.0,
+      "p75": 35.0,
+      "max": 40,
+      "cards": 69.0
+    },
+    {
+      "goal": "goal_population",
+      "strategy": "crisis_first",
+      "n": 500,
+      "reach_rate": 53.0,
+      "median": 29,
+      "mean": 27.9,
+      "p25": 23.0,
+      "p75": 34.0,
+      "max": 40,
+      "cards": 66.6
+    },
+    {
+      "goal": "goal_population",
+      "strategy": "first_only",
+      "n": 500,
+      "reach_rate": 87.8,
+      "median": 24,
+      "mean": 24.5,
+      "p25": 19.0,
+      "p75": 30.0,
+      "max": 40,
+      "cards": 51.5
+    },
+    {
+      "goal": "goal_population",
+      "strategy": "goal_greedy",
+      "n": 500,
+      "reach_rate": 99.2,
+      "median": 15.0,
+      "mean": 15.9,
+      "p25": 12.0,
+      "p75": 19.0,
+      "max": 38,
+      "cards": 31.0
+    },
+    {
+      "goal": "goal_territory",
+      "strategy": "random",
+      "n": 500,
+      "reach_rate": 26.6,
+      "median": 34,
+      "mean": 33.0,
+      "p25": 30.0,
+      "p75": 38.0,
+      "max": 40,
+      "cards": 74.8
+    },
+    {
+      "goal": "goal_territory",
+      "strategy": "crisis_first",
+      "n": 500,
+      "reach_rate": 28.8,
+      "median": 34.0,
+      "mean": 32.5,
+      "p25": 29.0,
+      "p75": 37.0,
+      "max": 40,
+      "cards": 75.4
+    },
+    {
+      "goal": "goal_territory",
+      "strategy": "first_only",
+      "n": 500,
+      "reach_rate": 19.8,
+      "median": 36,
+      "mean": 35.2,
+      "p25": 33.0,
+      "p75": 38.5,
+      "max": 40,
+      "cards": 77.3
+    },
+    {
+      "goal": "goal_territory",
+      "strategy": "goal_greedy",
+      "n": 500,
+      "reach_rate": 96.8,
+      "median": 23.0,
+      "mean": 23.6,
+      "p25": 19.0,
+      "p75": 28.0,
+      "max": 40,
+      "cards": 47.0
+    },
+    {
+      "goal": "goal_treasury",
+      "strategy": "random",
+      "n": 500,
+      "reach_rate": 35.6,
+      "median": 30.0,
+      "mean": 29.2,
+      "p25": 25.0,
+      "p75": 35.8,
+      "max": 40,
+      "cards": 70.8
+    },
+    {
+      "goal": "goal_treasury",
+      "strategy": "crisis_first",
+      "n": 500,
+      "reach_rate": 39.6,
+      "median": 28.0,
+      "mean": 27.2,
+      "p25": 21.2,
+      "p75": 34.0,
+      "max": 40,
+      "cards": 69.5
+    },
+    {
+      "goal": "goal_treasury",
+      "strategy": "first_only",
+      "n": 500,
+      "reach_rate": 7.8,
+      "median": 33,
+      "mean": 30.8,
+      "p25": 24.0,
+      "p75": 38.0,
+      "max": 40,
+      "cards": 77.9
+    },
+    {
+      "goal": "goal_treasury",
+      "strategy": "goal_greedy",
+      "n": 500,
+      "reach_rate": 100.0,
+      "median": 13.0,
+      "mean": 14.0,
+      "p25": 11.0,
+      "p75": 17.0,
+      "max": 30,
+      "cards": 26.6
+    }
+  ],
+  "by_goal": {},
+  "by_strategy": {
+    "random": {
+      "reach_rate": 41.5,
+      "median": 30,
+      "mean": 29.4,
+      "min": 7,
+      "max": 40,
+      "cards": 69.7
+    },
+    "crisis_first": {
+      "reach_rate": 46.4,
+      "median": 29,
+      "mean": 28.4,
+      "min": 6,
+      "max": 40,
+      "cards": 68.7
+    },
+    "first_only": {
+      "reach_rate": 34.7,
+      "median": 27,
+      "mean": 27.4,
+      "min": 7,
+      "max": 40,
+      "cards": 70.4
+    },
+    "goal_greedy": {
+      "reach_rate": 98.7,
+      "median": 17,
+      "mean": 17.9,
+      "min": 5,
+      "max": 40,
+      "cards": 35.1
+    }
+  }
+}

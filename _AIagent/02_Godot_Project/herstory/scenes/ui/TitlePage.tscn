@@ -1,0 +1,101 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/TitlePage.gd" id="1_title"]
+[ext_resource type="Script" path="res://scripts/ui/NotchButton.gd" id="2_nb"]
+
+[node name="TitlePage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="SpacerTop" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+text = "Herstory"
+theme_override_font_sizes/font_size = 56
+theme_override_colors/font_color = Color(1, 0.714, 0.282, 1)
+
+[node name="Subtitle" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+text = "—— 女性君主历史演绎 · 最小 Demo ——"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.561, 0.627, 0.576, 1)
+
+[node name="SpacerMid1" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+
+[node name="Goal" type="RichTextLabel" parent="VBox"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+fit_content = true
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=#e6ece4]游戏说明
+每轮会出现两起事件。你选择一件亲自处理，另一件将按不作为结算。
+通过判定与取舍，改变财政、GDP、人口、军力和领土，完成你选择的君主目标。[/color]"
+
+[node name="SpacerMid2" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuBox" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="StartBtn" type="Control" parent="VBox/MenuBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "新的一局"
+font_size = 24
+min_width = 280.0
+
+[node name="GalleryBtn" type="Control" parent="VBox/MenuBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "图 鉴"
+font_size = 22
+min_width = 280.0
+
+[node name="SaveBtn" type="Control" parent="VBox/MenuBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "存档 · 未开放"
+font_size = 22
+min_width = 280.0
+
+[node name="QuitBtn" type="Control" parent="VBox/MenuBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "退出游戏"
+font_size = 22
+min_width = 280.0
+
+[node name="SpacerFoot" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3

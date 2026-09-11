@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dekd2y4g6tgmu"]
+
+[ext_resource type="Script" uid="uid://duecnovvbki8a" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Sidebar.tscn" id="2_sidebar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.047, 0.071, 0.063, 1)
+
+[node name="Main" type="Control" unique_id=1377797948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Bg" type="Panel" parent="." unique_id=1048298569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=2023566737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 14
+
+[node name="TitleSlot" type="Control" parent="Margin" unique_id=2039241661]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GameSlot" type="VBoxContainer" parent="Margin" unique_id=1298259835]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="Margin/GameSlot" unique_id=1597396619]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.714, 0.282, 1)
+theme_override_font_sizes/font_size = 26
+autowrap_mode = 3
+
+[node name="Row" type="HBoxContainer" parent="Margin/GameSlot" unique_id=2102555341]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Sidebar" parent="Margin/GameSlot/Row" unique_id=26828304 instance=ExtResource("2_sidebar")]
+layout_mode = 2
+
+[node name="PageHolder" type="MarginContainer" parent="Margin/GameSlot/Row" unique_id=378202962]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 12
+
+[node name="EndingSlot" type="Control" parent="Margin" unique_id=1896335860]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

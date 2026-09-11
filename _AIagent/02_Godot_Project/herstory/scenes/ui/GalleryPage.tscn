@@ -1,0 +1,61 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/GalleryPage.gd" id="1_gal"]
+[ext_resource type="Script" path="res://scripts/ui/NotchButton.gd" id="2_nb"]
+
+[node name="GalleryPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gal")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="SpacerTop" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+text = "图 鉴"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 0.714, 0.282, 1)
+
+[node name="Hint" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+text = "史官尚未收录任何条目。
+君主归于寂静后，其称号将登记于此。"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.561, 0.627, 0.576, 1)
+
+[node name="SpacerMid" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackBtn" type="Control" parent="VBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "返 回"
+font_size = 22
+min_width = 220.0
+
+[node name="SpacerFoot" type="Control" parent="VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3

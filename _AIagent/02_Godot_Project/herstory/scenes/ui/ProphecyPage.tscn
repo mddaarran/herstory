@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ProphecyPage.gd" id="1_pp"]
+[ext_resource type="Script" path="res://scripts/ui/NotchButton.gd" id="2_nb"]
+
+[node name="ProphecyPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pp")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Lines" type="VBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(920, 0)
+theme_override_constants/separation = 22
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="ContinueBtn" type="Control" parent="Center/VBox"]
+layout_mode = 2
+script = ExtResource("2_nb")
+text = "继续"
+font_size = 22
+min_width = 240.0

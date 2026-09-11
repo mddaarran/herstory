@@ -1,0 +1,4 @@
+runs_per_goal=500
+max_rounds=40
+build_budget=2
+elapsed_ms=244582

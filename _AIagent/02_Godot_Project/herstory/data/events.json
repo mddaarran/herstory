@@ -1,0 +1,5139 @@
+{
+  "daily": [
+    {
+      "id": "canal_split",
+      "title": "水不够辣",
+      "background": "灌溉季将至，粮户与德墨忒尔农业的两份灌溉申请同时递进调度室：渠道来水有限，粮田与火穗田只够浇一边。两家都把配额表拍在中央议厅桌上，等你签发调度令。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "grain_first",
+          "name": "先灌粮田",
+          "ability": "insight",
+          "direction": "粮田优先，粮食与人口的账先保住；军费与地界的缺口后头再补。",
+          "effects": {
+            "full": {
+              "population": 25,
+              "military": -10,
+              "radiation_risk": -10,
+              "agrarian_support": 15
+            },
+            "partial": {
+              "population": 12,
+              "military": -15,
+              "radiation_risk": -5,
+              "agrarian_support": 8
+            },
+            "fail": {
+              "population": -15,
+              "radiation_risk": 10,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "调度令签发，渠水先走粮田。青苗返青，粮仓的账面上多了一笔收成，军费没有大缺口。",
+            "partial": "调度只执行一半，粮田浇到七成就断了水，收成打了折扣，军费与地界的账反倒搭进去不少。",
+            "fail": "调度令传下去，两边都不服。当夜有人撬开渠口，改道的水漫了半片粮田。"
+          }
+        },
+        {
+          "id": "husk_first",
+          "name": "先灌火穗田",
+          "ability": "majesty",
+          "direction": "火穗田优先，火籽与炉料的账进得快；土地与人口的风险同时抬头。",
+          "effects": {
+            "full": {
+              "population": -5,
+              "gdp": 80,
+              "military": 30,
+              "radiation_risk": 10,
+              "agrarian_support": 15,
+              "guild_support": 15,
+              "fuel_reserve": 15
+            },
+            "partial": {
+              "population": -10,
+              "gdp": 40,
+              "military": 15,
+              "radiation_risk": 15,
+              "agrarian_support": 8,
+              "guild_support": 8,
+              "fuel_reserve": 8
+            },
+            "fail": {
+              "population": -15,
+              "military": -10,
+              "radiation_risk": 15,
+              "agrarian_support": -10,
+              "guild_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "渠水改道，火穗田先浇。火籽饱满，炉料不缺，地界上也还稳当。",
+            "partial": "火穗田浇上了，火籽的账好看了些，田埂那头的申诉单也积了一摞。",
+            "fail": "强行改水，堤上起了争执。水没进田，渠口先堵，两头的地都旱了。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "中央议厅未作裁示，各灌溉站按旧历自行放水。",
+        "chronicle": "调度令未签发，各站自行放水。财政无支出，粮田与火穗田的争水案顺延到下一年。",
+        "effects": {
+          "treasury": 50,
+          "civilian_support": -8,
+          "radiation_risk": 10,
+          "plague_progress": 1,
+          "agrarian_support": -5,
+          "guild_support": -5
+        }
+      }
+    },
+    {
+      "id": "silent_fields",
+      "title": "灰斑田",
+      "background": "德墨忒尔农业的田检报告登记了一批灰斑田：灰白斑块连片，火穗单产走低。地主要求照常播种，好把本季的火籽配额交够。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "fallow_rotate",
+          "name": "停种轮作",
+          "ability": "insight",
+          "direction": "停种轮作，土地风险的账先平；火籽配额与地主的怨气先欠着。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "gdp": -20,
+              "radiation_risk": -15,
+              "plague_progress": -1,
+              "agrarian_support": 10
+            },
+            "partial": {
+              "treasury": -60,
+              "gdp": -40,
+              "radiation_risk": -8,
+              "agrarian_support": 5
+            },
+            "fail": {
+              "radiation_risk": 12,
+              "plague_progress": 1,
+              "agrarian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "停种令签发，病田改种豆麦，补贴按时拨下，斑块没有继续扩散。地主脸色难看，倒没闹出大事。",
+            "partial": "轮作只批下一半，补贴拨了又追回一截，火籽照旧歉收。",
+            "fail": "地主的联名申诉压过田检报告，田里又撒上了火籽。"
+          }
+        },
+        {
+          "id": "force_planting",
+          "name": "继续种",
+          "ability": "majesty",
+          "direction": "火籽配额照交，军费的账有着落；土地与锈病的风险记在账外。",
+          "effects": {
+            "full": {
+              "military": 60,
+              "radiation_risk": 12,
+              "plague_progress": 1,
+              "agrarian_support": 18,
+              "guild_support": 10,
+              "fuel_reserve": 20
+            },
+            "partial": {
+              "military": 30,
+              "radiation_risk": 20,
+              "plague_progress": 1,
+              "agrarian_support": 8,
+              "guild_support": 5,
+              "fuel_reserve": 10
+            },
+            "fail": {
+              "population": -20,
+              "military": -30,
+              "radiation_risk": 25,
+              "plague_progress": 1,
+              "agrarian_support": -12,
+              "guild_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "火籽按额交齐，火籽炉没停，田检报告压了又压，暂不见异常。",
+            "partial": "配额勉强交齐，炉子带病转，田里的斑块又宽了一指。",
+            "fail": "强征火籽激起农人抗命，病株被拔出来扔在路边，锈病的传闻越传越广。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，斑块继续扩散，人口、钱粮与土地的账一起坏。",
+        "chronicle": "无人核准，斑块顺着田埂蔓延，本季火籽的收成恐怕要打对折。",
+        "effects": {
+          "population": -30,
+          "gdp": -40,
+          "radiation_risk": 25,
+          "plague_progress": 1,
+          "agrarian_support": -5,
+          "guild_support": -5
+        }
+      }
+    },
+    {
+      "id": "grain_hoarding",
+      "title": "囤货的粮商",
+      "background": "秋粮还没收完，粮商就开始囤货，城里粮价逐日走高。收文处的申诉登记积了一摞，都催中央出面。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "investigate_hoard",
+          "name": "清查囤粮",
+          "ability": "insight",
+          "direction": "摸清底细再动手，但是粮价还会再涨几天。",
+          "effects": {
+            "full": {
+              "treasury": 30,
+              "population": 50,
+              "civilian_support": 15,
+              "noble_support": -5,
+              "agrarian_support": 12,
+              "wealth_gap": -8
+            },
+            "partial": {
+              "treasury": 10,
+              "population": 30,
+              "civilian_support": 8,
+              "noble_support": -10,
+              "agrarian_support": 6,
+              "wealth_gap": -3
+            },
+            "fail": {
+              "civilian_support": -12,
+              "plague_progress": 1,
+              "agrarian_support": -10,
+              "wealth_gap": 8
+            }
+          },
+          "chronicle": {
+            "full": "警备部门严格办案，不眠不休几天把故意抬高价格的粮商顺藤摸瓜一网打尽，粮价最终回归正常。",
+            "partial": "只查了个大概，粮商咬定是收成不好，还欠下一圈人情。粮价照涨。",
+            "fail": "稽查员在仓外晾了三天，账没查到，粮价又涨一截。"
+          }
+        },
+        {
+          "id": "force_release",
+          "name": "强令开仓",
+          "ability": "majesty",
+          "direction": "稳民心、稳粮价，代价是商路和贵族的面子。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": 50,
+              "civilian_support": 20,
+              "noble_support": -8,
+              "agrarian_support": 12,
+              "wealth_gap": -15
+            },
+            "partial": {
+              "treasury": -50,
+              "population": 30,
+              "civilian_support": 10,
+              "noble_support": -15,
+              "agrarian_support": 6,
+              "wealth_gap": -8
+            },
+            "fail": {
+              "civilian_support": -15,
+              "noble_support": -15,
+              "agrarian_support": -10,
+              "wealth_gap": 15
+            }
+          },
+          "chronicle": {
+            "full": "储备库开仓，按限价卖粮。百姓领到平价粮，商路虽有影响，还稳得住。",
+            "partial": "限价令下去，粮行只肯交出小半仓粮。价是压住了，商路和人情都伤了。",
+            "fail": "强令开仓，粮商干脆罢市。粮价一夜翻倍，中央议厅外挤满了人。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不管，粮价接着涨，民心流失，锈病风险也在升。",
+        "chronicle": "粮价一日三涨，工坊的伙计砸了米铺的门板。",
+        "effects": {
+          "civilian_support": -15,
+          "plague_progress": 1,
+          "agrarian_support": -8,
+          "wealth_gap": 8
+        }
+      }
+    },
+    {
+      "id": "lamp_festival",
+      "title": "灯和炉抢火籽",
+      "background": "灯市季将至。同业公会的灯市用籽申请与冬供用籽的调拨申请同时进了配额审批：火籽只有一库，烧给灯市还是留给火籽炉过冬，等你批。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "hold_festival",
+          "name": "照办灯市",
+          "ability": "majesty",
+          "direction": "灯市优先，民心与商路的账面上好看；冬供火籽的缺口回头再补。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "gdp": 70,
+              "civilian_support": 30,
+              "plague_progress": -1,
+              "fuel_reserve": -15
+            },
+            "partial": {
+              "treasury": -60,
+              "gdp": 40,
+              "civilian_support": 10,
+              "fuel_reserve": -25
+            },
+            "fail": {
+              "treasury": -80,
+              "civilian_support": -15,
+              "plague_progress": 1,
+              "fuel_reserve": -30
+            }
+          },
+          "chronicle": {
+            "full": "灯市配额核准，火籽按量拨出。灯市热热闹闹办完，百姓高兴，商路也活，冬供的库存还够用。",
+            "partial": "灯市只批了三天量，火籽烧到半夜就见了底，冬供的库存搭进去一截。",
+            "fail": "灯市刚开，火籽炉的调度令先把籽截走。灯亮到一半熄了，满城的骂声压不住。"
+          }
+        },
+        {
+          "id": "store_fuel",
+          "name": "火籽入库",
+          "ability": "insight",
+          "direction": "火籽入库封存，冬供稳当；灯市与商家的期望先放一放。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "civilian_support": -5,
+              "plague_progress": -1,
+              "fuel_reserve": 20
+            },
+            "partial": {
+              "treasury": 35,
+              "civilian_support": -10,
+              "plague_progress": 1,
+              "fuel_reserve": 10
+            },
+            "fail": {
+              "gdp": -40,
+              "civilian_support": -20,
+              "plague_progress": 1,
+              "fuel_reserve": -10
+            }
+          },
+          "chronicle": {
+            "full": "火籽按数入库封存，火籽炉安稳过冬。灯市冷清了些，百姓倒没太计较。",
+            "partial": "灯只点了两夜，火籽省下，灯市的招牌与民心都淡了。",
+            "fail": "灯市勒得太狠，工坊索性歇工。冬供是保住了，工坊区的怨气也满了。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "灯市照办但供量不足，怨言暗生，火籽流向更难查。",
+        "chronicle": "灯市无人统筹，草草办了三天。火籽亏空一截，来年的账不好平。",
+        "effects": {
+          "treasury": -30,
+          "civilian_support": -10,
+          "plague_progress": 1,
+          "fuel_reserve": -15
+        }
+      }
+    },
+    {
+      "id": "stop_husk_field",
+      "title": "停一块火穗田",
+      "background": "德墨忒尔农业的停种改粮申请与同业公会的反对意见同一天递进中央议厅：一块老火穗田锈得厉害，再种下去这块土就废了；可一停，火籽产量掉下来，火籽炉就要停。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "fallow_for_grain",
+          "name": "停种改粮",
+          "ability": "insight",
+          "direction": "停种改粮，土地风险的账先平；火籽配额与同业公会的怨气先欠着。",
+          "effects": {
+            "full": {
+              "radiation_risk": -15,
+              "agrarian_support": 15,
+              "guild_support": -10,
+              "fuel_reserve": -10
+            },
+            "partial": {
+              "radiation_risk": -8,
+              "agrarian_support": 8,
+              "guild_support": -15,
+              "fuel_reserve": -20
+            },
+            "fail": {
+              "radiation_risk": 10,
+              "agrarian_support": -12,
+              "guild_support": 8
+            }
+          },
+          "chronicle": {
+            "full": "停种核准，病田改种豆麦，锈病没再长。德墨忒尔农业放了心，同业公会虽不痛快，火籽也还够用。",
+            "partial": "停种只批了一半，德墨忒尔农业勉强认账，同业公会脸色很难看，火籽产量还是掉一截。",
+            "fail": "停种令没传下去，同业公会暗地里把火籽又撒了回去。德墨忒尔农业和你都落了空。"
+          }
+        },
+        {
+          "id": "keep_planting",
+          "name": "继续种下去",
+          "ability": "influence",
+          "direction": "火籽配额照交，同业公会的账面上好看；德墨忒尔农业与土地的账日后算。",
+          "effects": {
+            "full": {
+              "radiation_risk": 8,
+              "agrarian_support": -10,
+              "guild_support": 15,
+              "fuel_reserve": 25
+            },
+            "partial": {
+              "plague_progress": 1,
+              "agrarian_support": -15,
+              "guild_support": 8,
+              "fuel_reserve": 12
+            },
+            "fail": {
+              "plague_progress": 1,
+              "agrarian_support": -20,
+              "guild_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "火籽照常交，火籽炉没停，同业公会脸上有了笑。田里的锈斑还没到不可收拾的地步。",
+            "partial": "配额勉强交齐，同业公会满意，德墨忒尔农业却闹了起来，锈斑又宽一指。",
+            "fail": "病株被佃户拔出来扔在路边，锈病的传闻压不住，德墨忒尔农业当场翻脸。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "德墨忒尔农业和同业公会各自去抢这块田的水，两边在田埂上先动了手。土地无人打理，锈病顺着田埂往外爬。",
+        "chronicle": "无人裁示，田埂上先打了起来。锈病没人压，顺着田埂爬进邻田。",
+        "effects": {
+          "plague_progress": 1,
+          "agrarian_support": -8,
+          "guild_support": -8
+        }
+      }
+    },
+    {
+      "id": "open_school",
+      "title": "技工学校",
+      "background": "中央议厅就识字办学开了一场听证。几个炉坊的老记账员到席作证：火籽炉的工牌没人读得懂，事故单全靠按手印。教育局主张多开技工学校，开班经费当场核准；吵起来的是收谁——只收男子，省事；连女子一起教，旧姓议会当场就沉了脸。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "teach_men_only",
+          "name": "只收男子",
+          "ability": "insight",
+          "direction": "稳步抬识字率、少惹争议，女性文盲照旧。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": 30,
+              "gdp": 40,
+              "noble_support": 5,
+              "literacy_rate": 10,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": -80,
+              "gdp": 20,
+              "literacy_rate": 5,
+              "female_support": -5
+            },
+            "fail": {
+              "treasury": -30,
+              "female_support": -3
+            }
+          },
+          "chronicle": {
+            "full": "学校办了起来，男子认了字，工牌也读得懂。花销不大，没人太闹。",
+            "partial": "学校是开了，教员不够，只教到城里这一片，乡下照旧不识字。",
+            "fail": "办学经费被挪作他用，学校只挂了牌子，一个学生没进。"
+          }
+        },
+        {
+          "id": "teach_all",
+          "name": "男女都收",
+          "ability": "majesty",
+          "direction": "识字率与女子任职的路都打开，旧姓议会要翻脸。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": 40,
+              "gdp": 50,
+              "noble_support": -10,
+              "literacy_rate": 10,
+              "female_literacy": 10,
+              "female_support": 15
+            },
+            "partial": {
+              "treasury": -80,
+              "gdp": 20,
+              "noble_support": -15,
+              "literacy_rate": 5,
+              "female_literacy": 5,
+              "female_support": 8
+            },
+            "fail": {
+              "treasury": -30,
+              "noble_support": -20,
+              "female_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "男女都进了学校，识字的人多，能当差的女子也多了。旧姓议会有怨言，还压得住。",
+            "partial": "女学生收了，议厅里起了闲话。识字的人是多，旧姓议会的脸色也难看。",
+            "fail": "旧姓议会当庭发难，说女子入学坏了规矩，学校没能办下去。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "办学的事一拖再拖，识字的人还是那些，工牌照旧没人读得懂。",
+        "chronicle": "无人再提办学，工牌还是没人读得懂，识字的事就此搁置。",
+        "effects": {
+          "civilian_support": -5
+        }
+      }
+    },
+    {
+      "id": "child_labor",
+      "title": "炉坊在用童工",
+      "background": "有人报上来，说同业公会里几家火籽炉在用童工，孩子整日在炉前看火，咳个不停。公会解释，穷人家的孩子吃了上顿没下顿，白天无事，才来这里帮忙。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "ban_child_labor",
+          "name": "查办童工",
+          "ability": "insight",
+          "direction": "立案稽查：先停涉童工的炉位，查清涉及哪些炉子。",
+          "effects": {
+            "full": {
+              "treasury": 20,
+              "population": 50,
+              "gdp": -30,
+              "guild_support": -10,
+              "literacy_rate": 20,
+              "labor_health": 20,
+              "female_support": 30
+            },
+            "partial": {
+              "treasury": 10,
+              "population": 30,
+              "gdp": -10,
+              "guild_support": -15,
+              "literacy_rate": 10,
+              "labor_health": 10,
+              "female_support": 15
+            },
+            "fail": {
+              "civilian_support": -10,
+              "guild_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "查实之后，童工放回，炉坊认罚。孩子不咳，同业公会虽不满也没敢闹。",
+            "partial": "只查了明面上的几家，暗处照旧。孩子放回一批，还有一批在炉前。",
+            "fail": "同业公会串通作伪证，查办反被倒打一耙，报信的人先没了音讯。"
+          }
+        },
+        {
+          "id": "placate_guild",
+          "name": "先安抚公会",
+          "ability": "influence",
+          "direction": "在保证产量的情况下让公会换成成年劳动力。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "gdp": 50,
+              "guild_support": 15,
+              "fuel_reserve": 15,
+              "labor_health": -5
+            },
+            "partial": {
+              "treasury": -50,
+              "gdp": 50,
+              "guild_support": 10,
+              "labor_health": -12
+            },
+            "fail": {
+              "treasury": -50,
+              "civilian_support": -10,
+              "guild_support": 20,
+              "labor_health": -20
+            }
+          },
+          "chronicle": {
+            "full": "公会答应逐步换人，火籽没耽误。孩子的病虽还拖着，总算有了准话。",
+            "partial": "公会口头应下，转头照用。火籽照交，孩子的咳声也照旧。",
+            "fail": "童工的事被压下去，公会越发有恃无恐，炉前的孩子反而多了。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "无人过问，孩子继续看火。炉坊照常转，只是咳声一年比一年多。",
+        "chronicle": "检举的登记表压在案底，孩子还在炉前看火。炉火没熄，咳声越来越密。",
+        "effects": {
+          "civilian_support": -5,
+          "labor_health": -10
+        }
+      }
+    },
+    {
+      "id": "women_night_read",
+      "title": "女子夜读",
+      "background": "教育局收文处接到旧姓议会的禁令申请：城内几位识字女性组织夜读，教妇人认字。申请援引旧例，称「女子夜出，有碍风化」，要求中央议厅签发禁令。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "reconcile_night_read",
+          "name": "调和旧姓与夜读会",
+          "ability": "influence",
+          "direction": "居中调停：夜读会改到白天、迁址办学，两边各退一步；你的面子和一部分预算要搭进去。",
+          "effects": {
+            "full": {
+              "gdp": 40,
+              "noble_support": 5,
+              "female_literacy": 6,
+              "female_support": 15
+            },
+            "partial": {
+              "gdp": 30,
+              "noble_support": 3,
+              "female_literacy": 3,
+              "female_support": 5
+            },
+            "fail": {
+              "civilian_support": -5,
+              "noble_support": -8,
+              "female_literacy": -3,
+              "female_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "调停方案核准：夜读会迁到白天、挪进旧姓议会管不到的坊间。旧姓议会有了台阶下，妇人照读，读书的风气也开了。",
+            "partial": "调停成了，妇人白天照读；旧姓议会不白让这一步，你额外批了几桩差事才把人请走。书读上了，人情折进去不少。",
+            "fail": "调停崩了，旧姓议会咬死「女子不得聚众」，妇人也不肯挪。你两头没讨好，夜读会散，旧姓议会还记你的仇。"
+          }
+        },
+        {
+          "id": "permit_night_read",
+          "name": "颁布许可",
+          "ability": "majesty",
+          "direction": "直接签发许可，干脆利落；旧姓议会的脸面与旧例要正面顶。",
+          "effects": {
+            "full": {
+              "gdp": 40,
+              "noble_support": -8,
+              "female_literacy": 10,
+              "legitimacy": 5,
+              "female_support": 30
+            },
+            "partial": {
+              "gdp": 30,
+              "noble_support": -5,
+              "female_literacy": 4,
+              "female_support": 10
+            },
+            "fail": {
+              "civilian_support": -3,
+              "noble_support": -10,
+              "legitimacy": -8
+            }
+          },
+          "chronicle": {
+            "full": "许可签发，夜读会名正言顺，识字的女子一天多过一天，往后能当差的女子也多了。旧姓议会虽骂，也压不住这风气。",
+            "partial": "许可颁下，旧姓议会阳奉阴违，只在城里这几处容得下。乡下妇人照旧摸黑，识字的账没涨多少。",
+            "fail": "许可还没传开，旧姓议会就带人砸了灯。妇人散，这一纸许可成了笑话。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "中央议厅未裁示，旧姓议会与夜读会各自僵着。",
+        "chronicle": "夜读案搁置，妇人夜里照旧摸黑，识字的还是那些人。旧姓议会与妇人的对立越积越深。",
+        "effects": {
+          "female_support": -10
+        }
+      }
+    },
+    {
+      "id": "widow_field",
+      "title": "寡妇守田",
+      "background": "边境一位戍卒阵亡，遗孀向登记处递交田产继承申请，要接管夫家的火穗田自行耕种。按现行地籍条例，寡妇不在继承人之列，田产应收归夫家旧姓。旧姓议会援引旧例，催你照章驳回。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "grant_field",
+          "name": "准她守田",
+          "ability": "majesty",
+          "direction": "破例核准，给女子撑腰、坐实你的名声。",
+          "effects": {
+            "full": {
+              "civilian_support": 10,
+              "noble_support": -10,
+              "legitimacy": 8,
+              "female_support": 15
+            },
+            "partial": {
+              "treasury": -10,
+              "civilian_support": 3,
+              "noble_support": -8,
+              "female_support": 8
+            },
+            "fail": {
+              "civilian_support": -5,
+              "noble_support": 8,
+              "legitimacy": -8,
+              "female_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "继承申请核准，田判给寡妇，她耕得比谁都用功。民间传你「女帝为女子做主」，都说你办事公道。",
+            "partial": "田判给寡妇，旧姓议会不肯罢休，硬要她按旧例补一笔「赎田银」。田保住了，人却背上债，一时不知是福是祸。",
+            "fail": "核准令刚下，旧姓议会搬出族谱，说田是「祖产」。寡妇被赶出田，你反倒落个「办不成事」的名声。"
+          }
+        },
+        {
+          "id": "revert_old_rule",
+          "name": "依旧例归旧姓",
+          "ability": "insight",
+          "direction": "照旧例驳回申请，稳住旧姓议会、不碰旧例。",
+          "effects": {
+            "full": {
+              "noble_support": 12,
+              "legitimacy": 3,
+              "female_support": -8
+            },
+            "partial": {
+              "civilian_support": -5,
+              "noble_support": 8,
+              "female_support": -10
+            },
+            "fail": {
+              "civilian_support": -12,
+              "noble_support": 5,
+              "female_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "申请驳回，田按旧例归旧姓，议会说你「守例」。寡妇领了抚恤金，没闹出大事。",
+            "partial": "田归旧姓，议会满意了，抚恤金却只发下七成。寡妇一家没处去，民间的闲话已经传开。",
+            "fail": "旧姓得了田还不罢休，把寡妇一家赶出村子，民怨顺着田埂烧了起来。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "田的归属拖着，两边都来问，谁也没得到一句准话。",
+        "chronicle": "继承案一拖再拖，田荒了半季，旧姓和村人各自去抢，最后是田埂上见的分晓。",
+        "effects": {
+          "civilian_support": -3,
+          "noble_support": -3
+        }
+      }
+    },
+    {
+      "id": "soul_rite",
+      "title": "主祭稷火",
+      "background": "稷火秋祭大典的章程已报中央议厅备核：按例由君主亲自主祭。旧姓议会在备核意见里援引旧例，称「女主不宜主祭」，推一位宗室代行——明面上是礼制之争，暗里是冲你的合法性来的。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "preside_rite",
+          "name": "亲自主祭",
+          "ability": "majesty",
+          "direction": "亲自主祭，坐实合法性、收拢民心；旧姓议会的算盘落空，脸面也难看。",
+          "effects": {
+            "full": {
+              "civilian_support": 10,
+              "noble_support": -5,
+              "legitimacy": 15,
+              "female_support": 8
+            },
+            "partial": {
+              "noble_support": -3,
+              "legitimacy": 8
+            },
+            "fail": {
+              "civilian_support": -5,
+              "noble_support": 8,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "典礼照章执行：你身着祭服，亲手点燃稷火，火光里万民下拜。合法性坐实，旧姓议会再没敢提「代祭」二字。",
+            "partial": "祭火点成了，合法性也算坐实；为压住旧姓议会的闲话，你额外给宗室让利一笔、又批了几个旧姓的职位。",
+            "fail": "主祭当日，祭火被「意外」泼熄。你当众失仪，旧姓议会趁机把「女主不宜主祭」喊得更响。"
+          }
+        },
+        {
+          "id": "let_royal_preside",
+          "name": "离间宗室",
+          "ability": "influence",
+          "direction": "不动章程，改走舆论：让人在坊间传旧姓守旧的歌谣，同时查清是哪个宗室在推动代祭，逼他自己缩回去。",
+          "effects": {
+            "full": {
+              "civilian_support": 8,
+              "noble_support": -12,
+              "legitimacy": 8,
+              "female_support": 5
+            },
+            "partial": {
+              "civilian_support": 3,
+              "noble_support": -5,
+              "legitimacy": -3
+            },
+            "fail": {
+              "civilian_support": -5,
+              "noble_support": 12,
+              "legitimacy": -15,
+              "female_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "歌谣在坊间传开，推动代祭的宗室成了笑柄，自己缩了回去，代祭的事不了了之。",
+            "partial": "代祭还是让那宗室上了台，可典礼上民众嘘声一片，你的目的也算达到一半。",
+            "fail": "孩子们只顾唱歌玩乐，旧姓提前把代祭的人藏了起来。舆论没伤到人，反被旧姓拿去做文章。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "大典的安排悬着，章程的备核越拖越僵，各方都在观望。",
+        "chronicle": "秋祭拖过吉日，旧姓自作主张推了位远房宗亲上台。民间传你「连祖宗的炉火都点不动」。",
+        "effects": {
+          "civilian_support": -3,
+          "legitimacy": -3
+        }
+      }
+    },
+    {
+      "id": "refugee_city",
+      "title": "流民入城",
+      "background": "下游水灾冲了田，一批流民在城郊登记搭棚。富户联名递了驱逐申请，嫌乱了秩序；工坊递了用工申请，想把这批劳力留下。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "absorb_into_mills",
+          "name": "收编进工坊",
+          "ability": "majesty",
+          "direction": "直接编入工坊，留劳力、匀贫富；富户与旧姓要闹。",
+          "effects": {
+            "full": {
+              "population": 40,
+              "gdp": 30,
+              "civilian_support": 8,
+              "noble_support": -8,
+              "wealth_gap": -8
+            },
+            "partial": {
+              "treasury": -30,
+              "population": 25,
+              "gdp": 15,
+              "noble_support": -5
+            },
+            "fail": {
+              "population": -10,
+              "civilian_support": -8,
+              "noble_support": 5
+            }
+          },
+          "chronicle": {
+            "full": "用工申请核准，流民编进工坊，个个有活干有饭吃。城里人手够了，钱粮涨了，贫富差距也窄了几分。富户虽不痛快，也拦不住。",
+            "partial": "流民编进工坊，人也安顿；富户不依，联名逼你免他们半年城税。人留住了，财政的账上却让出去一块。",
+            "fail": "收编令没传顺，富户抢先买通工头。流民进不了坊，倒被赶到更偏的荒地。"
+          }
+        },
+        {
+          "id": "negotiate_settle",
+          "name": "周旋安置流民",
+          "ability": "influence",
+          "direction": "在富户与工坊之间来回说合，给流民寻个各方都能接受的去处，费的是耐心和人情。",
+          "effects": {
+            "full": {
+              "population": 30,
+              "gdp": 15,
+              "civilian_support": 8,
+              "noble_support": 3
+            },
+            "partial": {
+              "population": 12,
+              "civilian_support": 3
+            },
+            "fail": {
+              "civilian_support": -8,
+              "noble_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "你说服富户让出城郊一角、工坊出钱搭棚收工，流民有了落脚和活计。富户面上有光，工坊得了人手，谁也没翻脸。",
+            "partial": "只说合一半，富户让的地小，只容得下三成流民。剩下的还在城郊搭棚，火气没散干净。",
+            "fail": "说合崩了，富户不肯让、工坊不肯接。流民滞在城郊，你落个「说了半天白说」的名声。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "驱也不驱，收也不收，城郊的棚子越搭越多。",
+        "chronicle": "流民在城郊扎了根，富户与流民的火气越积越足，城门口的风一天比一天紧。",
+        "effects": {
+          "civilian_support": -5,
+          "noble_support": -5
+        }
+      }
+    },
+    {
+      "id": "furnace_upgrade",
+      "title": "老炉技改",
+      "background": "一位老炉工向同业公会提交炉壁技改方案：新式炉壁能省两成火籽、事故率更低，但需停炉改造半月，预算不小。方案连同样品报告递进中央议厅，等你批预算。",
+      "difficulty": -3,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "fund_upgrade",
+          "name": "拨款技改",
+          "ability": "insight",
+          "direction": "火籽更省、炉工更安；眼前的钱和工坊的工期先搭进去。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "gdp": 60,
+              "guild_support": -3,
+              "fuel_reserve": 20,
+              "labor_health": 8,
+              "technology": 8
+            },
+            "partial": {
+              "treasury": -80,
+              "gdp": 30,
+              "fuel_reserve": 8,
+              "technology": 3
+            },
+            "fail": {
+              "treasury": -100,
+              "gdp": -30,
+              "guild_support": -5
+            }
+          },
+          "chronicle": {
+            "full": "技改预算核准，新炉壁装上，火籽省两成，炉工的伤也少了。钱花得不冤，同业公会虽抱怨，到底见了实惠。",
+            "partial": "技改只批三成炉壁，火籽省得有限，炉工的伤也没见少。钱花一半，名堂没改出来。",
+            "fail": "钱拨下去，被经手人层层截留，新炉壁成了次货。炉子没改好，钱打了水漂。"
+          }
+        },
+        {
+          "id": "keep_old_furnace",
+          "name": "维持旧炉",
+          "ability": "majesty",
+          "direction": "预算不批，稳住工坊；火籽照费、炉工的隐患照旧。",
+          "effects": {
+            "full": {
+              "guild_support": 5
+            },
+            "partial": {
+              "fuel_reserve": -15,
+              "labor_health": -5
+            },
+            "fail": {
+              "guild_support": -5,
+              "fuel_reserve": -30,
+              "labor_health": -10
+            }
+          },
+          "chronicle": {
+            "full": "旧炉照转，钱没动，工坊稳当。火籽虽费，眼下还供得上。",
+            "partial": "旧炉没动、钱也省下，可旧炉带病硬烧，火籽越烧越费。为补窟窿你不得不加征一笔火籽，炉工的伤也添了。",
+            "fail": "旧炉带病硬烧，又裂几处。火籽越烧越费，炉工的伤也添了。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "技改的事没人拍板，老炉就这么烧着。",
+        "chronicle": "老炉带病转了一季，火籽的窟窿越烧越大，炉工的咳声一天密过一天。",
+        "effects": {
+          "fuel_reserve": -8
+        }
+      }
+    },
+    {
+      "id": "iron_plow",
+      "title": "铁犁进田",
+      "background": "德墨忒尔农业提交了一份农机补贴立项申请，说新式铁犁能省三成人手，铁得靠火籽炉供。同业公会趁机把铁价喊高一截，两边把账本拍到中央议厅桌上，要你核准。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "subsidize_plow",
+          "name": "补贴铁犁",
+          "ability": "insight",
+          "direction": "采用新的铁犁，向这批铁犁补贴火籽。",
+          "effects": {
+            "full": {
+              "treasury": -70,
+              "population": 40,
+              "gdp": 80,
+              "agrarian_support": 12,
+              "technology": 8
+            },
+            "partial": {
+              "treasury": -40,
+              "population": 20,
+              "gdp": 50,
+              "agrarian_support": 5,
+              "guild_support": -5,
+              "technology": 4
+            },
+            "fail": {
+              "treasury": -40,
+              "agrarian_support": -8,
+              "guild_support": 5
+            }
+          },
+          "chronicle": {
+            "full": "铁犁大力推广，农人省了大力，德墨忒尔农业扬眉吐气。田里的活松快，你的名声也涨了。",
+            "partial": "只补贴一半铁犁，剩下的由德墨忒尔农业自己协商，同业公会嚷嚷「中央偏袒」，两边都憋着气。",
+            "fail": "补贴的钱被中间盘剥，铁犁到不了田里。德墨忒尔农业和你都落了空，同业公会白赚一笔。"
+          }
+        },
+        {
+          "id": "bargain_guild",
+          "name": "与同业公会议价",
+          "ability": "influence",
+          "direction": "当面跟同业公会压价，谈出一个两边都能接的价钱，费的是你的口舌和来回的周旋。",
+          "effects": {
+            "full": {
+              "gdp": 40,
+              "agrarian_support": 10,
+              "guild_support": 5,
+              "technology": 6
+            },
+            "partial": {
+              "gdp": 25,
+              "agrarian_support": 5,
+              "guild_support": 8,
+              "technology": 4
+            },
+            "fail": {
+              "gdp": -30,
+              "agrarian_support": -8,
+              "guild_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "你把德墨忒尔农业和同业公会拉到一桌，价压到农人买得起的数，同业公会也得了个「长期供铁」的准话。铁犁进田，两边都没撕破脸。",
+            "partial": "价压下来一截，同业公会不吃亏，转头要你许下「来年官铁只从公会采」的诺言。铁犁进了田，你却被公会绑了一道。",
+            "fail": "谈判谈崩，同业公会咬死高价不松口，德墨忒尔农业拍桌走了。铁犁锈在库里，两边都怨你「和稀泥」。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "铁犁的价没人定，德墨忒尔农业和同业公会各自叫价。",
+        "chronicle": "铁犁的事搁下，德墨忒尔农业与同业公会的新仇旧怨又添一层，田里的活照旧费人。",
+        "effects": {
+          "gdp": -8,
+          "agrarian_support": -3,
+          "guild_support": -3
+        }
+      }
+    },
+    {
+      "id": "river_tug_toll",
+      "title": "河运要不要收费",
+      "background": "大河航运管理局发来检修呈报：河运牵引器让货船跑得更快，但是火籽和维修经费消耗极大。财政总局要求收通行费，同业公会担心粮价上涨，航运站则建议把牵引器交给商人承包。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "tiered_toll",
+          "name": "按货物分级收费",
+          "ability": "insight",
+          "direction": "让高价值货物承担维修费，粮食和救济货免收；财政回款较慢。",
+          "effects": {
+            "full": {
+              "treasury": 90,
+              "population": 25,
+              "gdp": 40,
+              "civilian_support": 10
+            },
+            "partial": {
+              "treasury": 40,
+              "population": 10,
+              "gdp": 20,
+              "civilian_support": 5
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -30,
+              "civilian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "收费表按货物分级执行，粮船没有加价，商货承担牵引器维修费；河运继续增长，财政有了稳定回款。",
+            "partial": "分级收费勉强执行，粮船保住低价，但商货改走支渠，财政回款低于预期。",
+            "fail": "收费表没有算清，船户拒绝登记，河运站既没收上钱，也没维持秩序。"
+          }
+        },
+        {
+          "id": "lease_tug_fleet",
+          "name": "交给商会承包",
+          "ability": "influence",
+          "direction": "用承包换现金和快速维修，牺牲国家对河运价格的直接控制。",
+          "effects": {
+            "full": {
+              "treasury": 110,
+              "gdp": 60,
+              "civilian_support": -8,
+              "noble_support": -8
+            },
+            "partial": {
+              "treasury": 50,
+              "gdp": 25,
+              "civilian_support": -12,
+              "noble_support": -12
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -40,
+              "civilian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "承包商预付维修款，牵引器恢复运行，河运和财政都得到收益；商会也借合同扩大影响。",
+            "partial": "承包只修好主航道，偏远船站运费上涨，商会和地方船户开始争执。",
+            "fail": "承包商拿到许可却没有修好牵引器，河运停滞，财政还要承担违约处置费用。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "empress_work_badges",
+      "title": "工牌上要不要有女帝",
+      "background": "工会准备更新炉工工牌，宣传处建议印上女帝肖像，方便各地工坊统一识别。检查署担心工牌变成装饰，要求先印安全流程和识字标记；旧姓议会反对把君主形象放进工坊日常。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "standardize_safety_badges",
+          "name": "先印安全标记",
+          "ability": "insight",
+          "direction": "把工牌做成减少事故的工具，牺牲部分宣传效果；教育和劳动安全得到长期收益。",
+          "effects": {
+            "full": {
+              "population": 20,
+              "gdp": 35,
+              "civilian_support": 15
+            },
+            "partial": {
+              "population": 10,
+              "gdp": 15,
+              "civilian_support": 8
+            },
+            "fail": {
+              "gdp": -20,
+              "civilian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "新工牌先印危险标记和操作流程，炉工能看懂，事故减少；工坊第一次有了统一的安全语言。",
+            "partial": "安全标记只覆盖首都工坊，外地炉工仍拿着旧牌，事故下降得很慢。",
+            "fail": "工牌版式反复修改，旧牌继续使用，检查署找不到统一的事故记录。"
+          }
+        },
+        {
+          "id": "issue_royal_badges",
+          "name": "统一换成新工牌",
+          "ability": "majesty",
+          "direction": "用君主形象统一工坊秩序和忠诚表达，牺牲换牌经费与部分安全版面。",
+          "effects": {
+            "full": {
+              "gdp": 50,
+              "civilian_support": 20,
+              "noble_support": -8
+            },
+            "partial": {
+              "gdp": 25,
+              "civilian_support": 10,
+              "noble_support": -12
+            },
+            "fail": {
+              "gdp": -30,
+              "civilian_support": -15,
+              "noble_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "新工牌在各工坊换发，女帝肖像成为统一标志，工坊按同一套登记制度报工；安全标记仍保留。",
+            "partial": "首都工坊换了新牌，外地只换到一半，宣传效果有了，行政混乱也留下了。",
+            "fail": "强制换牌引起工坊拒发，工人把旧牌别回胸前，君主形象反而成了争执焦点。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "border_survey_team",
+      "title": "边地测绘队缺人",
+      "background": "边地测绘队发现一条可通河运的山口，但地契、旧地图和驻军报告互相矛盾。军务处要求立即修路设哨，财政总局想先测清税界，地方旧姓则警告测绘队会触碰祖产。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "map_and_register",
+          "name": "先测界再立案",
+          "ability": "insight",
+          "direction": "查清地形和产权，降低误判；领土收益来得慢，测绘费先支出。",
+          "effects": {
+            "full": {
+              "gdp": 40,
+              "territory": 15,
+              "noble_support": -5
+            },
+            "partial": {
+              "gdp": 20,
+              "territory": 8,
+              "noble_support": -10
+            },
+            "fail": {
+              "gdp": -20,
+              "territory": -10,
+              "noble_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "测绘队完成山口图和地契登记，新航道可以依法开工；地方旧姓失去一部分模糊地带，但没有公开冲突。",
+            "partial": "主航道测清了，支谷和祖产边界仍有争议，工程只能先做一半。",
+            "fail": "地图和地契对不上，测绘队撤回，山口被地方势力先行封住。"
+          }
+        },
+        {
+          "id": "send_guard_engineers",
+          "name": "让军队先占山口",
+          "ability": "majesty",
+          "direction": "先立哨、保住战略通道，领土和军力即时增加；产权争议与地方支持恶化。",
+          "effects": {
+            "full": {
+              "gdp": 30,
+              "military": 50,
+              "territory": 25,
+              "noble_support": -15
+            },
+            "partial": {
+              "military": 25,
+              "territory": 12,
+              "noble_support": -20
+            },
+            "fail": {
+              "military": -30,
+              "territory": -10,
+              "civilian_support": -10,
+              "noble_support": -20
+            }
+          },
+          "chronicle": {
+            "full": "驻军和工程队先到山口，哨站建成，河运线路纳入中央控制；地方旧姓抗议，但没有阻止通道启用。",
+            "partial": "哨站立住了，工程只推进到山脚，军队守住位置，却没能立刻带来河运收益。",
+            "fail": "驻军进入山口后遭地方阻拦，工程队退回，中央既得罪地方也丢了先机。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "admin_audit",
+      "title": "税册里的空白页",
+      "background": "财政总局的自动核账灯在东部税册上标出一片空白：税、粮和火籽配额都登记了，入库记录却没有对应页码。地方官说是运输损耗，德墨忒尔农业说是仓站漏报。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "audit_tax_ledgers",
+          "name": "逐册核对税账",
+          "ability": "insight",
+          "direction": "查清财政漏洞，追回被截留的收入；短期内会拖慢地方行政。",
+          "effects": {
+            "full": {
+              "treasury": 110,
+              "gdp": 20,
+              "noble_support": -15
+            },
+            "partial": {
+              "treasury": 50,
+              "gdp": 10,
+              "noble_support": -20,
+              "legitimacy": 5
+            },
+            "fail": {
+              "treasury": -40,
+              "civilian_support": -10,
+              "legitimacy": -8
+            }
+          },
+          "chronicle": {
+            "full": "审计员从税册、仓门仪表和河运记录里查出虚报，财政追回缺口，地方官和旧姓议会都不高兴。",
+            "partial": "审计只查出一部分问题，财政收回一些，剩下的账被地方以手续不全压了下来。",
+            "fail": "审计员没有拿到完整账册，中央反而承担追查费用。"
+          }
+        },
+        {
+          "id": "order_arrears",
+          "name": "限期补缴",
+          "ability": "majesty",
+          "direction": "用强制命令迅速回收财政，牺牲地方支持和部分行政效率。",
+          "effects": {
+            "full": {
+              "treasury": 80,
+              "gdp": -20,
+              "civilian_support": 10,
+              "noble_support": -25,
+              "legitimacy": -5
+            },
+            "partial": {
+              "treasury": 35,
+              "gdp": -30,
+              "civilian_support": 5,
+              "noble_support": -30,
+              "legitimacy": 5
+            },
+            "fail": {
+              "treasury": -50,
+              "civilian_support": -15,
+              "noble_support": -20,
+              "legitimacy": -8
+            }
+          },
+          "chronicle": {
+            "full": "限期补缴的命令送到各地，几处亏空被追回，百姓看到地方仓库重新开门；地方势力的怨气更重。",
+            "partial": "地方补缴一部分，却削减了民生工程，财政回款不如预期。",
+            "fail": "地方官员联合拖延，补缴没有完成，运输和税务系统先停了下来。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "border_tariff",
+      "title": "边市的火籽执照",
+      "background": "边市商人同时经营盐、粮和火籽运输，但执照上的收费标准来自不同年份，连检查站的仪表都读不出同一套费率。财政总局要求统一执照，商人担心新费用会让边贸停摆。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "tiered_border_license",
+          "name": "按货物分级收费",
+          "ability": "insight",
+          "direction": "让高利润货物承担费用，保护粮食贸易；财政收益回款较慢。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "population": 20,
+              "gdp": 30,
+              "agrarian_support": 8,
+              "guild_support": 10
+            },
+            "partial": {
+              "treasury": 45,
+              "population": 10,
+              "gdp": 15,
+              "agrarian_support": 4,
+              "guild_support": 5
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -30,
+              "civilian_support": -10,
+              "agrarian_support": -8,
+              "guild_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "执照费按货物价值分级，粮食运输没有被压垮，高利润货物补上财政缺口，边市仍然繁忙。",
+            "partial": "分级办法执行不稳，财政收回一部分，几支商队改走小路避税。",
+            "fail": "收费表没有算清，商人拒绝登记，边市的货物和税款一起消失。"
+          }
+        },
+        {
+          "id": "merchant_license_contract",
+          "name": "把执照交给商会",
+          "ability": "influence",
+          "direction": "用商会预付款换取财政和商路稳定；国家让出部分执照管理权。",
+          "effects": {
+            "full": {
+              "treasury": 120,
+              "gdp": 40,
+              "civilian_support": -10,
+              "noble_support": -10,
+              "agrarian_support": 8,
+              "guild_support": 10
+            },
+            "partial": {
+              "treasury": 55,
+              "gdp": 20,
+              "civilian_support": -15,
+              "noble_support": -15,
+              "agrarian_support": 4,
+              "guild_support": 5
+            },
+            "fail": {
+              "treasury": -50,
+              "gdp": -40,
+              "civilian_support": -15,
+              "agrarian_support": -8,
+              "guild_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "商会先交管理保证金，边市恢复通行，财政收到稳定收入；商会也拥有更多议价权。",
+            "partial": "商会交了钱，但只管理主市场，小商户被排除在外，民间怨气上升。",
+            "fail": "商会拒绝承担责任，执照无人发放，商队绕开中央检查站。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "north_settlement",
+      "title": "北部移民安置点",
+      "background": "北部河谷的土壤检测灯显示仍可耕种，但缺少劳力和粮仓。南部连续收成不稳，许多家庭申请迁往北部；地方官担心迁民会增加粮食压力，旧姓则想把荒地留作牧场。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "grain_seed_migration",
+          "name": "提供粮种和减税",
+          "ability": "influence",
+          "direction": "用补贴吸引家庭自愿迁移；人口和耕地增加，但财政先承担安置成本。",
+          "effects": {
+            "full": {
+              "population": 80,
+              "gdp": 40,
+              "territory": 15,
+              "radiation_risk": 5,
+              "agrarian_support": 12
+            },
+            "partial": {
+              "population": 35,
+              "gdp": 20,
+              "territory": 8,
+              "agrarian_support": 6
+            },
+            "fail": {
+              "population": -30,
+              "civilian_support": -15,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "迁民获得粮种、住房和减税，北部形成稳定聚落，人口增加，新的耕地开始供应地方市场。",
+            "partial": "安置只覆盖主要家庭，人口增加有限，财政补贴却因运输延误而增加。",
+            "fail": "迁移名单被地方势力截留，迁民没有得到土地，南北两边都不满意。"
+          }
+        },
+        {
+          "id": "forced_frontier_labor",
+          "name": "征调劳力开垦",
+          "ability": "majesty",
+          "direction": "用行政命令快速开垦；领土控制更快，但迁民怨气明显。",
+          "effects": {
+            "full": {
+              "population": 40,
+              "gdp": 30,
+              "territory": 25,
+              "civilian_support": -20,
+              "agrarian_support": 12,
+              "wealth_gap": 12
+            },
+            "partial": {
+              "population": 18,
+              "gdp": 15,
+              "territory": 12,
+              "civilian_support": -25,
+              "agrarian_support": 6
+            },
+            "fail": {
+              "population": -40,
+              "gdp": -30,
+              "civilian_support": -25,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "开垦队在北部建立聚落和防洪堤，中央控制范围扩大，军粮运输也更稳定；迁民支持度下降。",
+            "partial": "工程只推进到河谷入口，中央立住了标记，却没有形成完整聚落。",
+            "fail": "征调引发逃亡，人口和工程劳力一起流失。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "midwife_station",
+      "title": "乡镇接生员",
+      "background": "检查署的卫生公报记录了几个乡镇的产妇死亡，原因不是神秘疾病，而是没有接生员、消毒炉和可读的药品标签。财政总局认为巡回医疗站会挤占火籽炉维修经费。",
+      "difficulty": -3,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "mobile_maternity_stations",
+          "name": "设巡回产护站",
+          "ability": "insight",
+          "direction": "降低妇幼死亡和基层疫病风险；财政和炉坊维护会承受压力。",
+          "effects": {
+            "full": {
+              "population": 60,
+              "gdp": 30
+            },
+            "partial": {
+              "population": 25,
+              "gdp": 15
+            },
+            "fail": {
+              "population": -30
+            }
+          },
+          "chronicle": {
+            "full": "巡诊棚、消毒炉和接生员下到乡镇，人口增长，人疫病进度下降，财政承担了长期支出。",
+            "partial": "巡诊站只覆盖主要乡镇，人口和疫病收益有限，运输与药品费用反而增加。",
+            "fail": "药品和人员没有按时到位，死亡记录继续上升。"
+          }
+        },
+        {
+          "id": "local_family_clinics",
+          "name": "让地方家族筹办",
+          "ability": "influence",
+          "direction": "用地方家族的钱和人办医疗站；国家获得财政空间，但服务会优先照顾有关系的人。",
+          "effects": {
+            "full": {
+              "population": 40,
+              "gdp": 40,
+              "civilian_support": -10,
+              "noble_support": 15,
+              "wealth_gap": 15,
+              "female_support": -8
+            },
+            "partial": {
+              "population": 18,
+              "gdp": 20,
+              "civilian_support": -20
+            },
+            "fail": {
+              "population": -25,
+              "civilian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "地方家族筹资，医疗站按期开放，人口和乡镇产出增加，财政支出明显减少；平民得到的服务不完全均等。",
+            "partial": "医疗站只在富裕乡镇运行，人口有所增加，偏远地区的人疫病风险仍在积累。",
+            "fail": "地方家族借医疗名义收取额外费用，百姓拒绝就诊。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_beacon",
+      "title": "边哨缺少火籽",
+      "background": "西部边哨的火籽储备告急，夜间信标只能断续点亮。军务处要求立即拨付军需，财政总局提醒：城市供暖和边哨争的是同一批火籽。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "fuel_frontier_beacons",
+          "name": "拨火籽给边哨",
+          "ability": "majesty",
+          "direction": "优先保障边防信标和驻军；军力与边境控制增强，但城市民生和财政承压。",
+          "effects": {
+            "full": {
+              "population": -10,
+              "military": 80,
+              "territory": 30
+            },
+            "partial": {
+              "population": -15,
+              "military": 35,
+              "territory": 15
+            },
+            "fail": {
+              "military": -50,
+              "territory": -15
+            }
+          },
+          "chronicle": {
+            "full": "边哨信标连续点亮，军队稳住了边境，中央也保住了通道；财政和人口承受代价。",
+            "partial": "只保住主哨站，边角哨所仍然黑着，军力增加有限而财政支出上升。",
+            "fail": "火籽没有按时送达，边哨缩减巡逻，边境控制下降。"
+          }
+        },
+        {
+          "id": "low_fuel_patrols",
+          "name": "改用低耗巡逻",
+          "ability": "insight",
+          "direction": "用巡逻路线和地形判断节省火籽；财政得到缓解，但警戒强度下降。",
+          "effects": {
+            "full": {
+              "gdp": -20,
+              "military": 50,
+              "territory": 15,
+              "civilian_support": -5
+            },
+            "partial": {
+              "gdp": -35,
+              "military": 25,
+              "territory": 8
+            },
+            "fail": {
+              "military": -40,
+              "territory": -10,
+              "civilian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "巡逻路线重新编排，军队提高机动反应，财政省下开支；部分夜间信标停止运行。",
+            "partial": "只有主线完成改编，军队增加有限，边境商队开始抱怨等待时间。",
+            "fail": "路线判断失误，巡逻队错过边境动静。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mountain_submission",
+      "title": "山口的地方武装",
+      "background": "山口地方武装控制着一条旧商路，愿意承认中央管理，但要求保留武器和地方税收。军务处主张立即缴械，邦交与贸易事务处认为可以先谈条件。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "integrate_mountain_guard",
+          "name": "谈判收编",
+          "ability": "influence",
+          "direction": "把地方武装编入边防体系；中央获得兵力和领土控制，但要承认部分地方特权。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "military": 60,
+              "territory": 35,
+              "noble_support": -15
+            },
+            "partial": {
+              "treasury": 35,
+              "military": 30,
+              "territory": 18,
+              "noble_support": -20
+            },
+            "fail": {
+              "treasury": -30,
+              "military": -40,
+              "territory": -20
+            }
+          },
+          "chronicle": {
+            "full": "地方武装换发中央军牌，山口纳入边防和税务登记，军力、领土与财政同时增加。",
+            "partial": "只有主寨完成收编，边支仍由地方控制，中央获得的兵力和税收有限。",
+            "fail": "谈判破裂，地方武装关闭商路，中央失去山口控制。"
+          }
+        },
+        {
+          "id": "disarm_mountain_guard",
+          "name": "立即缴械设站",
+          "ability": "majesty",
+          "direction": "用中央军队直接接管山口；控制更强，但可能引发长期抵抗。",
+          "effects": {
+            "full": {
+              "treasury": -60,
+              "population": -20,
+              "military": 70,
+              "territory": 30,
+              "noble_support": -20
+            },
+            "partial": {
+              "treasury": -90,
+              "population": -30,
+              "military": 35,
+              "territory": 15
+            },
+            "fail": {
+              "population": -20,
+              "military": -60,
+              "territory": -25
+            }
+          },
+          "chronicle": {
+            "full": "驻军接管山口并建成检查站，领土和军力增加，商路恢复；地方旧姓和人口承担代价。",
+            "partial": "检查站建成但地方仍拒绝交税，军队守住位置却无法真正管理山口。",
+            "fail": "缴械行动遭到阻拦，军队撤回，商路和边境一起受损。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_towers",
+      "title": "北境烽火台要不要重修",
+      "background": "北境几座烽火台的信号镜和火籽炉年久失修，商队多次遭到劫掠。工程署要求重修通信塔，军务处认为应该把预算花在机动巡防队上。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "repair_frontier_towers",
+          "name": "重修烽火台",
+          "ability": "insight",
+          "direction": "恢复预警和边境通信；防务更稳定，但短期不能增加机动力量。",
+          "effects": {
+            "full": {
+              "treasury": -40,
+              "gdp": 20,
+              "military": 50,
+              "territory": 25
+            },
+            "partial": {
+              "treasury": -70,
+              "gdp": 10,
+              "military": 25,
+              "territory": 12
+            },
+            "fail": {
+              "treasury": -30,
+              "military": -30,
+              "territory": -15
+            }
+          },
+          "chronicle": {
+            "full": "烽火台恢复联络，军队提前得到预警，领土控制增强，河运商路也恢复；修缮费由财政承担。",
+            "partial": "主线塔台修好，偏远塔台仍靠旧镜片，预警范围有限。",
+            "fail": "修缮材料被地方截留，塔台没有恢复，边境继续失去消息。"
+          }
+        },
+        {
+          "id": "mobile_frontier_patrol",
+          "name": "组建机动巡防队",
+          "ability": "majesty",
+          "direction": "用机动部队快速处理边境冲突；军力提升更明显，但长期预警能力不足。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": -15,
+              "military": 80,
+              "territory": 20
+            },
+            "partial": {
+              "treasury": -80,
+              "population": -25,
+              "military": 40,
+              "territory": 10
+            },
+            "fail": {
+              "treasury": -30,
+              "military": -50,
+              "territory": -20
+            }
+          },
+          "chronicle": {
+            "full": "巡防队完成编制，军队快速增加，边境商路恢复；人口和财政承受军需支出。",
+            "partial": "巡防队只有半数完成训练，局部冲突能处理，远处烽火仍然沉默。",
+            "fail": "巡防队缺乏向导，在荒地中迷失，边境损失扩大。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "riverbank_settlement",
+      "title": "河滩上的新聚落",
+      "background": "河道改线后，水位仪表显示一片河滩可以耕种，但土地没有户籍，也没有防洪堤。居民已经搭起临时聚落，地方旧姓要求把河滩划给自己的牧场。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "register_river_settlement",
+          "name": "登记聚落并修堤",
+          "ability": "insight",
+          "direction": "确认土地安全和居民身份，再把聚落纳入行政系统。",
+          "effects": {
+            "full": {
+              "population": 45,
+              "gdp": 30,
+              "territory": 20,
+              "radiation_risk": -5,
+              "agrarian_support": 10
+            },
+            "partial": {
+              "population": 20,
+              "gdp": 15,
+              "territory": 10,
+              "agrarian_support": 5
+            },
+            "fail": {
+              "population": -25,
+              "territory": -15,
+              "agrarian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "登记处完成户籍，工程队修好防洪堤，人口增加，中央对河滩的领土控制建立起来。",
+            "partial": "堤坝只修到主聚落，人口增加有限，剩余居民仍在临时棚屋中。",
+            "fail": "地质报告被地方扣下，洪水冲垮临时聚落。"
+          }
+        },
+        {
+          "id": "license_local_development",
+          "name": "发放地方开发许可",
+          "ability": "influence",
+          "direction": "让地方势力先行开发河滩；国家获得税收和领土控制，但中央监管较弱。",
+          "effects": {
+            "full": {
+              "population": 35,
+              "gdp": 40,
+              "territory": 30,
+              "civilian_support": -10,
+              "agrarian_support": 10
+            },
+            "partial": {
+              "population": 15,
+              "gdp": 20,
+              "territory": 15,
+              "civilian_support": -15,
+              "agrarian_support": 5
+            },
+            "fail": {
+              "population": -30,
+              "gdp": -30,
+              "territory": -20,
+              "agrarian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "开发许可换来地方投资，聚落扩张，领土和财政增加；平民承担更高的地租。",
+            "partial": "只开发主河滩，税收和领土收益保住一部分，偏远居民被排除在外。",
+            "fail": "地方势力拿许可不建堤，洪水和土地争议一起爆发。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eastern_tax_registry",
+      "title": "地方税册承认中央格式",
+      "background": "东部地方议会继续使用自己的税册，只向中央缴纳象征性份额。中央登记处发去标准表格，地方议会回文称：可以承认中央税册，但必须保留地方司法和继承权。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "recognize_local_tax_terms",
+          "name": "承认地方自治条件",
+          "ability": "influence",
+          "direction": "用地方自治换取正式纳税和中央名义上的统治。",
+          "effects": {
+            "full": {
+              "treasury": 80,
+              "population": 30,
+              "territory": 25,
+              "noble_support": 15,
+              "agrarian_support": 8,
+              "wealth_gap": 15,
+              "legitimacy": 10,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": 35,
+              "population": 15,
+              "territory": 12,
+              "noble_support": 25,
+              "agrarian_support": 4,
+              "legitimacy": 5
+            },
+            "fail": {
+              "treasury": -40,
+              "territory": -20,
+              "noble_support": -15,
+              "agrarian_support": -8,
+              "legitimacy": -8
+            }
+          },
+          "chronicle": {
+            "full": "地方议会盖章承认中央税册，税款按期入库，领土和人口登记都得到补全。",
+            "partial": "只有主要城镇接入中央税册，财政收入增加有限，地方保留更多特权。",
+            "fail": "地方议会拒绝盖章，中央税务人员被挡在登记处外。"
+          }
+        },
+        {
+          "id": "central_tax_takeover",
+          "name": "派中央官接管税务",
+          "ability": "majesty",
+          "direction": "直接统一税务和行政；中央控制增强，但地方合作关系会破裂。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "gdp": 20,
+              "territory": 35,
+              "civilian_support": -10,
+              "noble_support": -25,
+              "agrarian_support": 8
+            },
+            "partial": {
+              "treasury": 45,
+              "gdp": 10,
+              "territory": 18,
+              "noble_support": -35,
+              "agrarian_support": 4,
+              "legitimacy": 5
+            },
+            "fail": {
+              "treasury": -50,
+              "population": -20,
+              "territory": -25,
+              "agrarian_support": -8,
+              "legitimacy": -8
+            }
+          },
+          "chronicle": {
+            "full": "中央税务官进驻，领土控制和财政收入明显增加；旧姓议会失去部分地方权力。",
+            "partial": "主城完成接管，乡镇仍按旧册征税，财政和领土收益不完整。",
+            "fail": "接管引发地方抵抗，税款和人口登记一起中断。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pump_instruments",
+      "title": "火籽泵站的旧仪表",
+      "background": "几座原子泵站使用的仪表型号已经停产，炉工只能凭经验判断压力。检查署的检修报告写得很直白：仪表不换，下一次超压会先烧穿人的防护服。",
+      "difficulty": -3,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "standardize_pump_instruments",
+          "name": "统一更换仪表",
+          "ability": "insight",
+          "direction": "用标准仪表降低事故和维护成本；更换期间必须停掉部分泵站。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "gdp": 60,
+              "military": 40
+            },
+            "partial": {
+              "treasury": 35,
+              "gdp": 25,
+              "military": 20
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -50,
+              "military": -20
+            }
+          },
+          "chronicle": {
+            "full": "新仪表接入统一读数，火籽消耗下降，劳工健康改善，军需泵站也获得稳定供水。",
+            "partial": "只有主要泵站完成更换，火籽和事故收益有限，改造费却已经支出。",
+            "fail": "旧仪表继续使用，超压事故发生，GDP和军需供给一起下降。"
+          }
+        },
+        {
+          "id": "workshop_instrument_license",
+          "name": "允许工坊自行改装",
+          "ability": "influence",
+          "direction": "让工坊快速解决设备问题；生产增长更快，但安全标准不统一。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "gdp": 80,
+              "military": 30
+            },
+            "partial": {
+              "treasury": 30,
+              "gdp": 35,
+              "military": 15
+            },
+            "fail": {
+              "gdp": -60,
+              "military": -30
+            }
+          },
+          "chronicle": {
+            "full": "工坊迅速完成改装，GDP增加，财政收到许可费，军需泵站也能继续运行；劳工健康下降。",
+            "partial": "主力工坊完成改装，产出增加有限，边缘泵站仍在使用旧表。",
+            "fail": "改装标准互相冲突，泵站停摆，火籽和军需一起受损。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fuel_crate_patent",
+      "title": "火籽运输箱的专利",
+      "background": "一名年轻技工提交了火籽运输箱的样品报告：箱体内壁能减少受潮和辐射灰泄漏。同业公会想买断设计，军务处认为这种箱子也适合军需运输。",
+      "difficulty": -3,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "buyout_fuel_crate_patent",
+          "name": "国家买断并公开标准",
+          "ability": "insight",
+          "direction": "买断技术并统一生产；扩散更快，但国家要先支付专利费用。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "gdp": 50,
+              "military": 50
+            },
+            "partial": {
+              "treasury": 30,
+              "gdp": 25,
+              "military": 25
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -30,
+              "military": -20
+            }
+          },
+          "chronicle": {
+            "full": "运输箱统一生产，火籽损耗下降，军需和工业产出同时增加，财政也收回了部分许可收入。",
+            "partial": "只有主航线采用新箱，火籽损耗下降有限，专利费用却已经付出。",
+            "fail": "设计无法量产，旧箱继续漏灰，火籽和军需运输都受损。"
+          }
+        },
+        {
+          "id": "grant_crate_monopoly",
+          "name": "授予公会独家生产权",
+          "ability": "majesty",
+          "direction": "用特许权换取快速生产和预付款；国家失去对价格和供应的直接控制。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "gdp": 70,
+              "military": 40,
+              "civilian_support": -15,
+              "wealth_gap": 12
+            },
+            "partial": {
+              "treasury": 45,
+              "gdp": 30,
+              "military": 20,
+              "civilian_support": -20
+            },
+            "fail": {
+              "treasury": -50,
+              "gdp": -40,
+              "military": -20
+            }
+          },
+          "chronicle": {
+            "full": "同业公会交付预付款并扩大生产，财政、GDP和军需运输都增加；市场控制权转给公会。",
+            "partial": "生产扩大但供应集中，财政收到部分预付款，偏远地区仍拿不到新箱。",
+            "fail": "公会压低产量抬高价格，火籽运输延误，军需线出现缺口。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "retired_furnace_workers",
+      "title": "退役炉工要不要领补助",
+      "background": "检查署把一批炉工的健康档案递进财政总局：他们长期接触火籽灰，已经无法继续工作。工坊主说补助会开坏先例，炉工家属则把申诉登记表铺满了收文台。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "register_furnace_compensation",
+          "name": "建立炉工补助名册",
+          "ability": "insight",
+          "direction": "核实伤情后提供长期补助；保护劳工和社会稳定，但财政负担增加。",
+          "effects": {
+            "full": {
+              "treasury": -70,
+              "population": 35,
+              "gdp": 30,
+              "civilian_support": 15
+            },
+            "partial": {
+              "treasury": -100,
+              "population": 15,
+              "gdp": 15,
+              "civilian_support": 8
+            },
+            "fail": {
+              "population": -25,
+              "gdp": -30,
+              "civilian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "伤情核实完成，炉工获得补助和转岗，人口与GDP稳定，劳工健康得到改善；财政承担长期支出。",
+            "partial": "名册只覆盖主要工坊，部分炉工获得补助，财政却因追补旧案而增加支出。",
+            "fail": "档案无法核对，补助没有发出，炉工离开工坊，事故记录继续增加。"
+          }
+        },
+        {
+          "id": "guild_worker_compensation",
+          "name": "让同业公会自行赔偿",
+          "ability": "influence",
+          "direction": "让企业承担责任，国家获得财政空间；补助标准取决于公会。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "population": 40,
+              "gdp": 50,
+              "civilian_support": -10
+            },
+            "partial": {
+              "treasury": 30,
+              "population": 18,
+              "gdp": 25,
+              "civilian_support": -20
+            },
+            "fail": {
+              "population": -30,
+              "gdp": -40,
+              "civilian_support": -20
+            }
+          },
+          "chronicle": {
+            "full": "同业公会签下赔偿协议，炉工得到安置，财政支出减少，工坊恢复生产；补助标准不完全统一。",
+            "partial": "公会赔偿只覆盖首都，人口和GDP有所恢复，偏远炉工仍在等待。",
+            "fail": "公会拒绝赔偿，炉工罢工，工坊产出和民间支持同时下降。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "merchant_furnace_banquet",
+      "title": "女帝是否参加商会晚宴",
+      "background": "同业公会邀请女帝参加新火籽炉落成晚宴，公报草案已经写好，只等你宣布扩产。旧姓议会提醒你不要把中央议厅交给商人，平民则在炉坊外等着看新炉是否真的带来工作。这明显是鸿门宴",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "hear_furnace_workers",
+          "name": "公开听取炉工证词",
+          "ability": "insight",
+          "direction": "把晚宴变成公开听证，换取真实生产信息；商会的私人利益受到限制。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "population": 30,
+              "gdp": 50,
+              "civilian_support": 15
+            },
+            "partial": {
+              "treasury": 30,
+              "population": 15,
+              "gdp": 20,
+              "civilian_support": 8
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -30,
+              "civilian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "炉工、检查署和商会在同一张记录页上发言，扩产计划更可靠，财政、GDP和人口都得到收益。",
+            "partial": "听证只在首都完成，计划缩小，收益有限，商会要求额外补偿。",
+            "fail": "证词被公会代表打断，晚宴变成公开争执，扩产和民心都受损。"
+          }
+        },
+        {
+          "id": "announce_expansion",
+          "name": "在晚宴上宣布扩产许可",
+          "ability": "majesty",
+          "direction": "用君主权威给市场确定性；工业和财政迅速增长，但扩产加重土地风险。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "population": 40,
+              "gdp": 80,
+              "radiation_risk": 10
+            },
+            "partial": {
+              "treasury": 45,
+              "population": 18,
+              "gdp": 35,
+              "radiation_risk": 20
+            },
+            "fail": {
+              "treasury": -60,
+              "population": -20,
+              "gdp": -50,
+              "radiation_risk": 25
+            }
+          },
+          "chronicle": {
+            "full": "扩产许可签发，火籽炉和工坊增加，财政、GDP和人口增长；检查署同时留下土地辐射警示。",
+            "partial": "许可只覆盖安全区，产业增加有限，公会仍要求扩大到病田。",
+            "fail": "许可提前泄露，地方抢种火穗，扩产没有形成秩序，土地风险上升。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "agriculture_new_land",
+      "title": "北方山口土地登记案",
+      "background": "德墨忒尔农业提交的北方山口土地登记申请递进中央议厅：测绘队确认山口适合开垦火穗，但旧地图、驻军报告与旧姓议会的地契记录无法对应。申请卡在土地权属与开发许可之间，等中央核准。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "agriculture_new_land_p1",
+          "name": "先登记再开垦",
+          "ability": "insight",
+          "direction": "土地权属的账先核清，火穗产量和开发速度的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "gdp": 30,
+              "territory": 20,
+              "noble_support": -10,
+              "agrarian_support": 15
+            },
+            "partial": {
+              "treasury": -80,
+              "gdp": 15,
+              "territory": 10,
+              "noble_support": -15,
+              "agrarian_support": 8
+            },
+            "fail": {
+              "territory": -15,
+              "noble_support": 5,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "测绘队完成地契归档，登记处给外围田区编号，德墨忒尔农业拿到开垦许可。核心山口仍挂着旧姓议会的争议牌。",
+            "partial": "外围地块先完成登记，第一道灌溉渠已经放线；核心地块还在复核，农业公司的施工队只能等批文。",
+            "fail": "三套地契没有一套能通过核验。测绘队撤回，地方势力在山口立起自己的界碑。"
+          }
+        },
+        {
+          "id": "agriculture_new_land_p2",
+          "name": "让军队先立界碑",
+          "ability": "majesty",
+          "direction": "边境控制的账先平，产权争议与地方信任的账后头再算。",
+          "effects": {
+            "full": {
+              "treasury": -60,
+              "population": -15,
+              "military": 50,
+              "territory": 35,
+              "noble_support": -20,
+              "agrarian_support": -10
+            },
+            "partial": {
+              "treasury": -90,
+              "population": -25,
+              "military": 25,
+              "territory": 18,
+              "agrarian_support": -5
+            },
+            "fail": {
+              "population": -20,
+              "military": -40,
+              "territory": -20,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "军务处的界碑和哨站先于地契抵达山口。中央地图补上了这个缺口，地方议会随后提交抗议。",
+            "partial": "驻军守住了山口入口，但工程队没能越过山脚。河运线路仍停在测绘图上。",
+            "fail": "设防令与地方界线互相冲突，驻军撤回营地，山口的收费牌换成了地方势力的名字。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "山口登记申请压在中央议厅，界碑、税册和施工许可都没有签发。",
+        "chronicle": "申请拖成积案，地方先立了收费牌。下一支测绘队出发时，中央已经没有一块完整的空地可登记。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "fuel_for_fields",
+      "title": "火籽播种配额调整",
+      "background": "德墨忒尔农业提交火穗播种配额申请，要求燃料总局优先拨发火籽。城市炉坊与边境信标也在申请同一批储备，配额表卡在审批链。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "fuel_for_fields_p1",
+          "name": "给火穗田先用",
+          "ability": "insight",
+          "direction": "下一季火穗的账先保住，城市炉坊和边境信标的缺口暂时记账。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "gdp": -30,
+              "military": -20,
+              "agrarian_support": 18,
+              "guild_support": -12,
+              "fuel_reserve": 35
+            },
+            "partial": {
+              "treasury": 35,
+              "gdp": -45,
+              "military": -30,
+              "agrarian_support": 10,
+              "fuel_reserve": 15
+            },
+            "fail": {
+              "gdp": -40,
+              "agrarian_support": -15,
+              "fuel_reserve": -25
+            }
+          },
+          "chronicle": {
+            "full": "农业配额令按时送达，北部火穗田完成播种。首都炉坊当晚实行轮换供能，边境信标少亮了两座。",
+            "partial": "种核田和主要灌溉区拿到火籽，偏远田区顺延到下一轮。德墨忒尔农业保住了今年的播种底线。",
+            "fail": "运输车队在燃料总局门口被两份配额表拦住，播种窗口关闭，农业公司开始提交补偿清单。"
+          }
+        },
+        {
+          "id": "fuel_for_fields_p2",
+          "name": "保城市炉坊",
+          "ability": "majesty",
+          "direction": "城市生产的账面先平，农业播种和边境警戒的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 50,
+              "gdp": 70,
+              "radiation_risk": 10,
+              "agrarian_support": -20,
+              "guild_support": 18
+            },
+            "partial": {
+              "treasury": 25,
+              "gdp": 30,
+              "radiation_risk": 15,
+              "agrarian_support": -25,
+              "guild_support": 10
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -40,
+              "radiation_risk": 20,
+              "agrarian_support": -15,
+              "guild_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "城市炉坊维持满负荷，织造订单没有退回。燃料总局把农业播种列入下一批配额，火穗田的进度被迫后移。",
+            "partial": "大炉坊保住了夜间产能，小型炉坊和部分田区只收到半额火籽。城市灯亮了，农田的泵站却只运转了半夜。",
+            "fail": "炉坊仍没有恢复稳定生产，火籽也没有送入火穗田。两份配额表都盖了退回章。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "燃料总局没有改表，各部门按旧配额截留火籽。播种、炉坊和信标都只得到不足额供应。",
+        "chronicle": "配额申请继续压着，下一轮播种期限已经写进催办报告。谁也没有拿到足够的火籽，谁也不愿先承担责任。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "migration_contract",
+      "title": "北部农业聚落迁移申请",
+      "background": "德墨忒尔农业向登记处提交北部新聚落迁移申请，要求接收南部灾民和失业工人。申请卡在住房、粮种和户籍归属三项配额之间。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "migration_contract_p1",
+          "name": "给迁民粮种和住房",
+          "ability": "influence",
+          "direction": "新聚落的人口账先建立，财政拨款和短期粮食缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -60,
+              "population": 70,
+              "gdp": 30,
+              "territory": 15,
+              "civilian_support": 8,
+              "agrarian_support": 18
+            },
+            "partial": {
+              "treasury": -90,
+              "population": 30,
+              "gdp": 15,
+              "territory": 8,
+              "agrarian_support": 10
+            },
+            "fail": {
+              "treasury": -50,
+              "population": -30,
+              "civilian_support": -10,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "迁移令和安置拨款同时签发，灾民领到住房凭证与粮种。北部新聚落开始出现第一批登记户。",
+            "partial": "首批迁民完成安置，剩余人口仍在南部等候。新聚落有了劳力，但仓储和医务配额只够维持一个月。",
+            "fail": "迁移名单没有和拨款表对上，灾民继续睡在登记处外。德墨忒尔农业撤回了聚落申请。"
+          }
+        },
+        {
+          "id": "migration_contract_p2",
+          "name": "让旧姓负责迁民",
+          "ability": "majesty",
+          "direction": "地方秩序的账先平，中央户籍控制和农业公司自主权暂时让出。",
+          "effects": {
+            "full": {
+              "treasury": 40,
+              "population": 45,
+              "territory": 20,
+              "civilian_support": -10,
+              "noble_support": 18,
+              "agrarian_support": -15,
+              "wealth_gap": 15,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": 20,
+              "population": 20,
+              "territory": 10,
+              "noble_support": 10,
+              "agrarian_support": -20
+            },
+            "fail": {
+              "population": -35,
+              "territory": -15,
+              "noble_support": -10,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "旧姓议会按庄园名册完成安置，北部人口迅速增加，地方秩序由庄园警卫负责维持。",
+            "partial": "迁民被分散到几个庄园，户籍没有回传中央。北部看起来有人了，登记处却不知道这些人去了哪里。",
+            "fail": "地方招募令与中央迁移令互相覆盖，灾民被庄园和聚落同时扣留，最终没有形成有效安置。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "迁移申请没有签发，南部灾民留在原地，北部的住房和粮仓继续空置。",
+        "chronicle": "人口名册拖成积案，德墨忒尔农业失去播种劳力，登记处收到的只有重复的催办单。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "company_tax_sheet",
+      "title": "火穗田税册改版申请",
+      "background": "德墨忒尔农业提交火穗田税册改版申请，要求把火穗田、辐射整治区和粮田分开登记。财政总局与旧姓议会均提出异议。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "company_tax_sheet_p1",
+          "name": "公开核对土地账",
+          "ability": "insight",
+          "direction": "土地、产量和整治责任的账先核清，行政速度和地方关系的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 90,
+              "noble_support": -18,
+              "radiation_risk": -10,
+              "agrarian_support": 15
+            },
+            "partial": {
+              "treasury": 40,
+              "noble_support": -25,
+              "radiation_risk": -5,
+              "agrarian_support": 8
+            },
+            "fail": {
+              "treasury": -40,
+              "noble_support": 5,
+              "agrarian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "核查令生效，登记处完成土地测绘，财政总局启用新税册。火穗田、粮田和整治区终于各有一栏。",
+            "partial": "主要地块完成核验，边缘田区暂时沿用旧账。税款可以收，但整治责任还挂在复核栏里。",
+            "fail": "旧地契没有交齐，核查队无法确认面积。财政总局暂缓收税，农业公司也无法证明整治支出。"
+          }
+        },
+        {
+          "id": "company_tax_sheet_p2",
+          "name": "直接核准新税册",
+          "ability": "majesty",
+          "direction": "中央税务格式的账先建立，旧姓支持和地方配合的缺口回头再算。",
+          "effects": {
+            "full": {
+              "treasury": 110,
+              "territory": 15,
+              "noble_support": -25,
+              "agrarian_support": -10,
+              "legitimacy": -5
+            },
+            "partial": {
+              "treasury": 50,
+              "territory": 8,
+              "noble_support": -30,
+              "agrarian_support": -15
+            },
+            "fail": {
+              "treasury": -50,
+              "noble_support": -20,
+              "agrarian_support": -15,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "新税册直接生效，土地编号和税率由中央统一下发。德墨忒尔农业的申报格式被纳入正式档案。",
+            "partial": "新格式送到了地方，但旧账没有销毁。中央和地方各自收到了不同的税额，年底账面出现差额。",
+            "fail": "地方登记处拒绝换册，旧税率继续执行。中央收到的农业税减少，农业公司的土地责任也没有被确认。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "改版申请没有进入签发流程，两套税册继续并存。同一块田在不同窗口有不同面积。",
+        "chronicle": "税册争议被顺延到下一季，财政总局没有新的征收依据，土地整治责任继续无人认领。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "border_farm_supply",
+      "title": "西部边境屯田分区案",
+      "background": "德墨忒尔农业提交西部边境荒地开发申请，军务处同时提交军粮屯田和训练场申请。两套征用通知已经进入审批链。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "border_farm_supply_p1",
+          "name": "分区给军粮和火穗",
+          "ability": "insight",
+          "direction": "军粮与火穗的账一起平，土地效率和短期财政缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -40,
+              "population": -10,
+              "military": 45,
+              "territory": 20,
+              "agrarian_support": 12
+            },
+            "partial": {
+              "treasury": -70,
+              "population": -15,
+              "military": 20,
+              "territory": 10,
+              "agrarian_support": 6
+            },
+            "fail": {
+              "military": -25,
+              "territory": -15,
+              "civilian_support": -10,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "分区令落地，军粮田、火穗田和居民用地完成划界。两套灌溉渠分别接入，边境供应开始恢复。",
+            "partial": "主要地块已经插牌，但运输路和灌溉渠只完成一半。军粮入库量和火穗产量都低于预算。",
+            "fail": "两支征用队同时进入农田，居民拒绝交出水闸钥匙。军粮和火穗都没有按期入库。"
+          }
+        },
+        {
+          "id": "border_farm_supply_p2",
+          "name": "军队先接管",
+          "ability": "majesty",
+          "direction": "边境控制的账先平，农业公司的开发计划和地方信任暂时挂账。",
+          "effects": {
+            "full": {
+              "population": -20,
+              "gdp": -20,
+              "military": 75,
+              "territory": 30,
+              "civilian_support": -15,
+              "agrarian_support": -20,
+              "wealth_gap": 12
+            },
+            "partial": {
+              "population": -30,
+              "military": 35,
+              "territory": 15,
+              "civilian_support": -20,
+              "agrarian_support": -25
+            },
+            "fail": {
+              "population": -25,
+              "military": -50,
+              "territory": -20,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "军务处先完成接管，边境驻军得到屯田和训练场，西部边线的巡查频次提高。",
+            "partial": "军队守住了土地，但火穗种植没有按期开始。农业公司撤回灌溉设备，民用聚落暂缓建设。",
+            "fail": "接管令引发地方阻拦，军队没有建立稳定哨线，农业公司也失去开发窗口。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "两套征用通知继续生效，边境田区被反复标记。农户不知道该向军务处还是德墨忒尔农业交粮。",
+        "chronicle": "分区案没有签发，灌溉工程停在图纸上。军粮延期，火穗种子在仓库里受潮。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "company_radiation_debt",
+      "title": "高风险火穗田整治责任案",
+      "background": "整治署提交风险复核报告，指出德墨忒尔农业把高辐射火穗田登记为普通农田。检查署要求立即停种并追查责任。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "company_radiation_debt_p1",
+          "name": "强制整治并追责",
+          "ability": "majesty",
+          "direction": "土地安全的账先结清，农业产量、财政拨款和公司支持度的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -70,
+              "radiation_risk": -18,
+              "agrarian_support": -15,
+              "fuel_reserve": -20,
+              "legitimacy": 12
+            },
+            "partial": {
+              "treasury": -100,
+              "radiation_risk": -8,
+              "agrarian_support": -25,
+              "fuel_reserve": -30
+            },
+            "fail": {
+              "radiation_risk": 20,
+              "agrarian_support": -20,
+              "legitimacy": -15
+            }
+          },
+          "chronicle": {
+            "full": "强制整治令签发，高风险田区停种。整治署完成土壤清理，农业公司补交了三年的风险报告。",
+            "partial": "核心污染区已经封存，偏远田区只完成警示和取样。火籽产量下降，但风险没有继续扩散。",
+            "fail": "停种令没有传到地方，旧登记被继续使用。新一季火穗又种进了风险田，检查署扩大了封锁线。"
+          }
+        },
+        {
+          "id": "company_radiation_debt_p2",
+          "name": "用长期合同换整治",
+          "ability": "influence",
+          "direction": "让农业公司承担长期整治的账，中央监管和未来收益暂时让出一部分。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "gdp": 30,
+              "noble_support": -10,
+              "radiation_risk": -10,
+              "agrarian_support": 10
+            },
+            "partial": {
+              "treasury": 30,
+              "gdp": 15,
+              "radiation_risk": -5,
+              "agrarian_support": 5
+            },
+            "fail": {
+              "gdp": -25,
+              "radiation_risk": 15,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "长期整治合同签发，德墨忒尔农业保留经营期限，同时承担土地修复、检测和农户补偿。",
+            "partial": "合同只覆盖主要田区，地方整治队缺少防护设备。土地风险下降得很慢，后续预算仍需追加。",
+            "fail": "合同卡在责任条款，农业公司继续按旧标准播种，检查署只能重复提交警告报告。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "整治报告压在案头，停种令和追责令都没有签发。警示牌被新土覆盖。",
+        "chronicle": "高风险田区继续生产，下一季的土地检测结果比上一季更差，整治署将案件列入长期积案。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "company_military_rations",
+      "title": "种核与军粮配额冲突",
+      "background": "军需署提交火籽转军粮申请，德墨忒尔农业则提交种核保留申请。两份配额令指向同一座储备库。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "company_military_rations_p1",
+          "name": "保住种核",
+          "ability": "insight",
+          "direction": "下一季农业再生产的账先保住，边防军当前配给的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "population": 25,
+              "military": -25,
+              "agrarian_support": 18,
+              "fuel_reserve": 30
+            },
+            "partial": {
+              "population": 10,
+              "military": -40,
+              "agrarian_support": 10,
+              "fuel_reserve": 12
+            },
+            "fail": {
+              "population": -20,
+              "military": -20,
+              "agrarian_support": -15,
+              "fuel_reserve": -25
+            }
+          },
+          "chronicle": {
+            "full": "种核保留令签发，火籽转入农业储备库。军需署改用低配额方案，边防军暂时减少燃料消耗。",
+            "partial": "大部分种核完成封存，军粮加工只拿到半额。德墨忒尔农业保住下一季播种，但边境仓库开始限量发放。",
+            "fail": "军需署扣下运输凭证，种核没有回到农业储备库。农业公司取消了部分播种计划。"
+          }
+        },
+        {
+          "id": "company_military_rations_p2",
+          "name": "先拨军粮配额",
+          "ability": "majesty",
+          "direction": "边防军当前供应的账先平，农业再生产和民间粮食的缺口后头再算。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": -15,
+              "military": 70,
+              "civilian_support": -10,
+              "agrarian_support": -20
+            },
+            "partial": {
+              "treasury": -80,
+              "population": -25,
+              "military": 35,
+              "agrarian_support": -25
+            },
+            "fail": {
+              "population": -30,
+              "military": -45,
+              "civilian_support": -15,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "军粮配额令生效，火籽按军需单进入边境仓库，边防军恢复正常巡查。",
+            "partial": "军粮先送到前线，但农业储备被削减。军需署解决了当前缺口，德墨忒尔农业开始重算下一季面积。",
+            "fail": "两套配额都在运输线上失效，军粮没有到边境，种核也没有入库。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "军需署和农业公司各自保管一份调度单，储备库拒绝放行。",
+        "chronicle": "火籽车队停在两道检查线之间，边防军和农业公司同时提交催拨报告。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "farm_energy_conflict",
+      "title": "灌溉泵站夜间供能令",
+      "background": "德墨忒尔农业提交夜间供能申请，要求将火籽炉负荷转给灌溉泵站。同业公会提交反对意见，燃料总局要求中央择一签发。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "farm_energy_conflict_p1",
+          "name": "给灌溉泵站供能",
+          "ability": "insight",
+          "direction": "火穗产量和土地安全的账先平，工业订单和公会收益的缺口后头再补。",
+          "effects": {
+            "full": {
+              "population": 30,
+              "gdp": -20,
+              "radiation_risk": -10,
+              "agrarian_support": 20,
+              "guild_support": -18
+            },
+            "partial": {
+              "population": 15,
+              "gdp": -35,
+              "radiation_risk": -5,
+              "agrarian_support": 10,
+              "guild_support": -25
+            },
+            "fail": {
+              "population": -20,
+              "gdp": -40,
+              "radiation_risk": 15,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "夜间调度令签发，灌溉泵站连续运行三晚。关键田区完成供水，城市炉坊按计划降低夜间负荷。",
+            "partial": "主要泵站获得供能，偏远田区仍要轮流抽水。农田保住大半产量，但炉坊订单出现延期。",
+            "fail": "调度令没有执行，泵站和炉坊反复跳闸。农田缺水，炉前工也没有拿到稳定的工作班表。"
+          }
+        },
+        {
+          "id": "farm_energy_conflict_p2",
+          "name": "维持炉坊负荷",
+          "ability": "majesty",
+          "direction": "城市工业的账面先平，农业用能和土地风险暂时记在后账。",
+          "effects": {
+            "full": {
+              "treasury": 50,
+              "gdp": 80,
+              "radiation_risk": 15,
+              "agrarian_support": -20,
+              "guild_support": 20
+            },
+            "partial": {
+              "treasury": 25,
+              "gdp": 35,
+              "radiation_risk": 20,
+              "agrarian_support": -28,
+              "guild_support": 10
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -50,
+              "agrarian_support": -20,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "炉坊保持满负荷，工业订单按期出货。燃料总局把泵站供能列入下一轮调度。",
+            "partial": "大型炉坊保持生产，小炉坊和农业泵站被削减负荷。城市收入增加，田区开始报告缺水。",
+            "fail": "夜班炉压失控，炉坊停机检修，灌溉泵站也没有得到补充供能。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "燃料总局没有签发新负荷令，两个部门继续按旧表争夺夜间火籽。",
+        "chronicle": "供能申请拖成积案，下一批火穗田的灌溉窗口已经过去。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "grain_city_furnaces",
+      "title": "冬季粮仓分配令",
+      "background": "储备署提交冬季粮仓分配表，现有库存只能完整保障城市炉坊和边境军粮中的一项。两套配额申请同时递进中央议厅。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "grain_city_furnaces_p1",
+          "name": "保种粮和农户粮",
+          "ability": "insight",
+          "direction": "下一季农业和农村人口的账先平，城市生产与边防军粮的缺口后头再补。",
+          "effects": {
+            "full": {
+              "population": 45,
+              "gdp": -30,
+              "military": -20,
+              "civilian_support": 8,
+              "agrarian_support": 18
+            },
+            "partial": {
+              "population": 20,
+              "gdp": -45,
+              "military": -30,
+              "agrarian_support": 10
+            },
+            "fail": {
+              "population": -25,
+              "gdp": -40,
+              "civilian_support": -10,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "分配令优先保障种粮和农户口粮，储备署完成下一季播种库存登记。城市炉坊接受限量配给。",
+            "partial": "农村获得基本口粮，种粮被保留下来，但城市和边境仓库只收到部分配额。",
+            "fail": "分配表执行走样，农村没有足够种粮，城市炉坊也开始拆分工人配给。"
+          }
+        },
+        {
+          "id": "grain_city_furnaces_p2",
+          "name": "先保城市和军粮",
+          "ability": "majesty",
+          "direction": "城市秩序与边境安全的账先平，农村人口和农业再生产的缺口后头再算。",
+          "effects": {
+            "full": {
+              "population": -20,
+              "gdp": 50,
+              "military": 45,
+              "agrarian_support": -20,
+              "guild_support": 15
+            },
+            "partial": {
+              "population": -30,
+              "gdp": 25,
+              "military": 20,
+              "agrarian_support": -28,
+              "guild_support": 8
+            },
+            "fail": {
+              "population": -35,
+              "gdp": -45,
+              "military": -35,
+              "civilian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "城市炉坊和边境军粮按期入库，首都维持生产，军务处确认边境配给稳定。",
+            "partial": "城市和军队获得主要配额，农村口粮被压低。南部登记处开始收到人口离开农区的报告。",
+            "fail": "粮仓调度失败，城市和边境都没有收到足量库存，储备署启动临时封库。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "旧比例继续执行，所有仓库只收到不足量。储备署没有新的分配令可供执行。",
+        "chronicle": "粮仓缺口被顺延到下月，种粮、城市配给和军粮都在各自账册上留下红字。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "noble_ancestral_land",
+      "title": "南部无籍火穗田归属案",
+      "background": "德墨忒尔农业提交南部无籍火穗田接管申请，旧姓议会提交祖产档案。登记处要求双方提供完整地契链。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "noble_ancestral_land_p1",
+          "name": "审查祖产档案",
+          "ability": "insight",
+          "direction": "土地归属和整治责任的账先核清，开发速度与旧姓支持度的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 50,
+              "territory": 15,
+              "noble_support": -18,
+              "radiation_risk": -8,
+              "agrarian_support": 15
+            },
+            "partial": {
+              "treasury": 25,
+              "territory": 8,
+              "noble_support": -25,
+              "agrarian_support": 8
+            },
+            "fail": {
+              "territory": -15,
+              "noble_support": 5,
+              "agrarian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "听证记录完成归档，中央确认土地归属，德墨忒尔农业取得部分经营权。整治责任写入地块档案。",
+            "partial": "主要地块完成审查，边缘田区继续封存。农业公司可以进入，但不能改动争议地契。",
+            "fail": "双方拒绝交出原始档案，整治队停止进场。南部田区继续空置，地方雇员开始自行看守。"
+          }
+        },
+        {
+          "id": "noble_ancestral_land_p2",
+          "name": "承认旧姓祖产",
+          "ability": "influence",
+          "direction": "地方秩序的账先平，中央土地控制和农业公司进入权暂时让出。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "territory": -10,
+              "noble_support": 20,
+              "agrarian_support": -20,
+              "wealth_gap": 15,
+              "legitimacy": 5,
+              "female_support": -10
+            },
+            "partial": {
+              "treasury": 30,
+              "territory": -15,
+              "noble_support": 10,
+              "agrarian_support": -28
+            },
+            "fail": {
+              "treasury": -40,
+              "noble_support": -10,
+              "agrarian_support": -15,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "旧姓议会接受中央税务条件，地方完成土地交接，农业公司获得整治合同。",
+            "partial": "旧姓议会保留大部分管理权，只上报部分人口和税额。中央账册出现缺口。",
+            "fail": "地方只接受土地权利，不接受中央责任。财政总局收不到完整税册，登记处无法确认面积。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "归属案无人核准，双方自行雇人进入田地。整治和征税都没有法律依据。",
+        "chronicle": "地契案顺延到下一季度，南部田区继续被不同机构重复登记。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "noble_customs_gate",
+      "title": "河港私设收费站处置案",
+      "background": "财政总局提交河港税路复核报告，指出旧姓议会在新河港设置收费站。德墨忒尔农业担心火籽和粮食运输被重复收费。",
+      "difficulty": 1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "noble_customs_gate_p1",
+          "name": "撤掉私设收费站",
+          "ability": "majesty",
+          "direction": "中央税权和商路通行的账先恢复，地方合作和旧姓支持度的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 80,
+              "gdp": 40,
+              "noble_support": -20,
+              "agrarian_support": 12
+            },
+            "partial": {
+              "treasury": 35,
+              "gdp": 20,
+              "noble_support": -30,
+              "agrarian_support": 6
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -30,
+              "noble_support": -15,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "撤站令生效，监察员接管河港账册，商船重新按中央税率通行。火籽运输不再重复缴费。",
+            "partial": "主要收费站被撤除，偏远码头仍保留地方费用。中央税路恢复，但运输成本只下降一部分。",
+            "fail": "地方拒绝执行撤站令，商船绕开中央码头，财政总局收到的税款减少。"
+          }
+        },
+        {
+          "id": "noble_customs_gate_p2",
+          "name": "分成关税收入",
+          "ability": "influence",
+          "direction": "先让河港继续运转，中央税权和农业运输成本的账后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "gdp": 50,
+              "civilian_support": -10,
+              "noble_support": 15,
+              "agrarian_support": -15,
+              "wealth_gap": 15,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": 30,
+              "gdp": 25,
+              "noble_support": 8,
+              "agrarian_support": -25
+            },
+            "fail": {
+              "treasury": -50,
+              "gdp": -35,
+              "noble_support": -10,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "分成协议签发，旧姓议会撤除收费站，中央获得固定税额，河港恢复正常运转。",
+            "partial": "部分码头接受分成，地方仍在小码头收费。商船继续选择较远但费用更低的航线。",
+            "fail": "分成表没有执行，中央和地方各自收税，火籽和粮食运输出现延误。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "私设收费案停在复核阶段，收费站继续使用地方账本。",
+        "chronicle": "河港税路拖成积案，每批粮火都要在地方和中央窗口重复登记。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "noble_marriage_land",
+      "title": "北部土地继承备案案",
+      "background": "登记处收到北部土地婚姻继承备案，涉及大面积火穗田和数个边地聚落。旧姓议会要求完整继承权，德墨忒尔农业要求保留监管权。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "noble_marriage_land_p1",
+          "name": "准许继承但限制用途",
+          "ability": "insight",
+          "direction": "继承关系的账先确认，中央监管和农业开发的缺口分阶段补。",
+          "effects": {
+            "full": {
+              "treasury": 40,
+              "territory": 20,
+              "noble_support": -15,
+              "radiation_risk": -8,
+              "agrarian_support": 12
+            },
+            "partial": {
+              "treasury": 20,
+              "territory": 10,
+              "noble_support": -25,
+              "agrarian_support": 6
+            },
+            "fail": {
+              "territory": -15,
+              "noble_support": -10,
+              "agrarian_support": -10,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "继承备案签发，旧姓议会取得继承权，但土地用途、税务和整治责任仍由登记处监管。",
+            "partial": "继承关系得到确认，部分用途限制暂缓。农业公司只进入已登记区域。",
+            "fail": "备案退回补件，地方家族先行接管土地，登记处没有拿到人口名录。"
+          }
+        },
+        {
+          "id": "noble_marriage_land_p2",
+          "name": "承认完整继承",
+          "ability": "influence",
+          "direction": "地方稳定的账先平，中央土地监管与农业公司进入权暂时让出。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "territory": 30,
+              "civilian_support": -10,
+              "noble_support": 20,
+              "agrarian_support": -18,
+              "wealth_gap": 15,
+              "female_support": -10
+            },
+            "partial": {
+              "treasury": 30,
+              "territory": 15,
+              "noble_support": 10,
+              "agrarian_support": -25
+            },
+            "fail": {
+              "treasury": -40,
+              "territory": -20,
+              "noble_support": -15,
+              "legitimacy": -10
+            }
+          },
+          "chronicle": {
+            "full": "完整继承令签发，旧姓议会承诺缴税并维持边地秩序，边地行政暂时稳定。",
+            "partial": "贵族控制土地但只提交部分税册，中央保留名义监管，实际管理依靠地方守门人。",
+            "fail": "地方将继承令解释为独立管理许可，中央登记处失去对边地的实际控制。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "婚姻备案和土地交接同时停滞，地契先换了管理人，中央文件仍没有签发。",
+        "chronicle": "北部土地案顺延到下一轮继承审核，农业公司被挡在地契办公室外。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "guild_furnace_technology",
+      "title": "新炉壁技术推广申请",
+      "background": "检查署收到新炉壁安全检测报告，确认其能够降低火籽消耗和辐射泄漏。同业公会提交独家生产申请，推广方案等待核准。",
+      "difficulty": -2,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "guild_furnace_technology_p1",
+          "name": "国家买断并公开标准",
+          "ability": "insight",
+          "direction": "炉坊安全和技术扩散的账先平，财政拨款与公会独占收益的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "gdp": 60,
+              "agrarian_support": -10,
+              "guild_support": -18,
+              "fuel_reserve": 20,
+              "labor_health": 15
+            },
+            "partial": {
+              "treasury": -80,
+              "gdp": 30,
+              "agrarian_support": -15,
+              "guild_support": -25,
+              "labor_health": 8
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -40,
+              "fuel_reserve": -15,
+              "labor_health": -15
+            }
+          },
+          "chronicle": {
+            "full": "国家买断令签发，新炉壁标准公开。检查署开始逐炉验收，火籽消耗和辐射泄漏都有下降记录。",
+            "partial": "大型炉坊完成改造，小型炉坊等待材料配额。技术开始扩散，但安全收益还没有覆盖全城。",
+            "fail": "推广经费没有落实，样机继续锁在检查署仓库，旧炉壁事故记录增加。"
+          }
+        },
+        {
+          "id": "guild_furnace_technology_p2",
+          "name": "授予公会独家生产权",
+          "ability": "majesty",
+          "direction": "快速生产和工业收入的账先平，技术开放与农业火籽配额的缺口后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "gdp": 70,
+              "agrarian_support": -20,
+              "guild_support": 20,
+              "fuel_reserve": -15
+            },
+            "partial": {
+              "treasury": 45,
+              "gdp": 35,
+              "agrarian_support": -28,
+              "guild_support": 10,
+              "fuel_reserve": -25
+            },
+            "fail": {
+              "treasury": -50,
+              "gdp": -45,
+              "guild_support": -15,
+              "labor_health": -20
+            }
+          },
+          "chronicle": {
+            "full": "公会独家生产许可签发，新炉壁快速进入市场，大型炉坊用预付款完成改造。",
+            "partial": "大型炉坊完成换壁，小型炉坊买不起专利。公会收入增加，技术标准没有完全公开。",
+            "fail": "公会报价失控，采购案被迫暂停，炉坊继续使用旧设备，检查署收到新的裂纹报告。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "技术报告没有进入采购流程，样品留在仓库，旧炉壁继续承担城市负荷。",
+        "chronicle": "推广案拖成积案，下一次炉体检修仍只能使用旧规格部件。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "guild_worker_shift",
+      "title": "炉坊夜班扩编申请",
+      "background": "同业公会提交炉坊夜班扩编申请，检查署同时提交事故报告，德墨忒尔农业要求保留夜间负荷给灌溉泵站。",
+      "difficulty": -1,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "guild_worker_shift_p1",
+          "name": "限制夜班并设防护",
+          "ability": "insight",
+          "direction": "劳工健康和农业供能的账先平，工业产出与公会订单的缺口后头再补。",
+          "effects": {
+            "full": {
+              "gdp": -30,
+              "agrarian_support": 15,
+              "guild_support": -18,
+              "fuel_reserve": 10,
+              "labor_health": 18
+            },
+            "partial": {
+              "gdp": -45,
+              "agrarian_support": 8,
+              "guild_support": -25,
+              "labor_health": 8
+            },
+            "fail": {
+              "gdp": -40,
+              "agrarian_support": -10,
+              "guild_support": -15,
+              "labor_health": -15
+            }
+          },
+          "chronicle": {
+            "full": "夜班限制令和防护拨款同时签发，炉工轮班制度落地，灌溉泵站保住最低稳定负荷。",
+            "partial": "主要炉坊执行防护要求，夜班产出下降，小型工坊仍在申请例外班次。",
+            "fail": "限制令没有落实，工坊继续私自扩班，检查署的事故登记超过本月编制。"
+          }
+        },
+        {
+          "id": "guild_worker_shift_p2",
+          "name": "批准夜班扩产",
+          "ability": "majesty",
+          "direction": "城市工业和财政收入的账面先平，劳工健康与土地供能的账后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "gdp": 80,
+              "radiation_risk": 10,
+              "agrarian_support": -18,
+              "guild_support": 20,
+              "labor_health": -15
+            },
+            "partial": {
+              "treasury": 30,
+              "gdp": 35,
+              "agrarian_support": -25,
+              "guild_support": 10,
+              "labor_health": -25
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -50,
+              "guild_support": -15,
+              "labor_health": -25
+            }
+          },
+          "chronicle": {
+            "full": "夜班扩编令签发，城市订单按期完成，公会提交了新增炉工名单。",
+            "partial": "大型工坊完成扩班，劳工事故增加，农业泵站被迫执行夜间限流。",
+            "fail": "炉前事故导致多座炉坊停机，订单和劳工健康同时出现赤字。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "夜班申请没有核准也没有驳回，工坊管理局没有统一班表。",
+        "chronicle": "夜班问题压在审批链上，检查署持续收到事故报告，公会自行延长工作时段。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "guild_trade_route",
+      "title": "商路统一税率案",
+      "background": "同业公会提交商路税率统一申请，德墨忒尔农业要求保留粮运检查站。财政总局要求中央确定税率和检查权限。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "guild_trade_route_p1",
+          "name": "统一税率但保留检查站",
+          "ability": "insight",
+          "direction": "商业流通和粮火监管的账一起保住，公会要求的完全自由通行暂时欠着。",
+          "effects": {
+            "full": {
+              "treasury": 50,
+              "gdp": 55,
+              "noble_support": -10,
+              "agrarian_support": 12,
+              "guild_support": 15
+            },
+            "partial": {
+              "treasury": 25,
+              "gdp": 25,
+              "agrarian_support": 6,
+              "guild_support": 8
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -35,
+              "agrarian_support": -10,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "统一税率令签发，地方税率被撤销，农业检查站按新规保留。商路摩擦明显下降。",
+            "partial": "主要商路完成统一，偏远地区仍沿用旧税率，运输商继续准备两套单据。",
+            "fail": "地方拒绝执行统一税率，商人拆分货物绕行，财政与粮火监管同时变弱。"
+          }
+        },
+        {
+          "id": "guild_trade_route_p2",
+          "name": "撤掉德墨忒尔农业检查站",
+          "ability": "influence",
+          "direction": "商路速度和公会收益的账先平，粮火监管与农业公司议价权的缺口后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 80,
+              "population": -10,
+              "gdp": 75,
+              "radiation_risk": 8,
+              "agrarian_support": -20,
+              "guild_support": 20
+            },
+            "partial": {
+              "treasury": 35,
+              "population": -15,
+              "gdp": 35,
+              "agrarian_support": -30,
+              "guild_support": 10
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -45,
+              "civilian_support": -10,
+              "agrarian_support": -20,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "检查站撤除令生效，公会接管商路，火籽和粮食运输速度提高。",
+            "partial": "主要站点撤除，但地方出现囤货和外运。公会获得通行权，农业公司失去部分议价能力。",
+            "fail": "监管站撤除后没有新的检查制度，粮火被中间商截留，中央收到缺货报告。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "统一税率申请压在财政总局，地方继续执行三套税率。",
+        "chronicle": "商路没有中断，但每批货都要在不同站点重新解释税目，通行时间继续增加。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "guild_city_market",
+      "title": "首都火籽市场扩建案",
+      "background": "同业公会提交首都火籽市场扩建申请，德墨忒尔农业要求限制粮火外流，旧姓议会申请市场特许经营权。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "guild_city_market_p1",
+          "name": "有条件扩建市场",
+          "ability": "insight",
+          "direction": "商业收入和中央税收的账先增加，粮火外流和市场扩张速度的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "gdp": 60,
+              "agrarian_support": -10,
+              "guild_support": 12,
+              "fuel_reserve": -8
+            },
+            "partial": {
+              "treasury": 35,
+              "gdp": 25,
+              "agrarian_support": -18,
+              "guild_support": 6,
+              "fuel_reserve": -15
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": -40,
+              "agrarian_support": -12,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "市场扩建令签发，冷藏仓和交易席位投入使用，粮火限额被写入市场管理办法。",
+            "partial": "主要市场完成扩建，运输线只建成一部分，商人仍在城外临时交易。",
+            "fail": "拨款和许可没有同步，商人转移到城外棚市，中央税收减少。"
+          }
+        },
+        {
+          "id": "guild_city_market_p2",
+          "name": "把市场交给旧姓商号",
+          "ability": "influence",
+          "direction": "地方资本和快速建设的账先平，公会控制权与农业调度权的缺口后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "gdp": 70,
+              "noble_support": 20,
+              "agrarian_support": -15,
+              "guild_support": -18,
+              "fuel_reserve": -10,
+              "wealth_gap": 15,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": 25,
+              "gdp": 30,
+              "noble_support": 10,
+              "agrarian_support": -22,
+              "guild_support": -25
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -45,
+              "noble_support": -15,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "特许经营令签发，旧姓商号完成市场主体建设，交易税开始回流。",
+            "partial": "市场投入使用，但交易席位被少数商号控制，公会和德墨忒尔农业都被排除在部分交易外。",
+            "fail": "商号争夺特许范围，市场工程停滞，城外棚市继续扩大。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "扩建案停在许可处，粮食、火籽和税款分散在不同账册。",
+        "chronicle": "市场项目顺延到下一财政期，首都仍没有统一的火籽交易账。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "population_labor_draft",
+      "title": "灾民劳动力调配案",
+      "background": "登记处提交南部灾民劳动力名册，德墨忒尔农业申请迁入火穗聚落，工坊管理局则申请调入城市工坊。住房、粮食和医疗配额只能支持一套方案。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "population_labor_draft_p1",
+          "name": "送往农业聚落",
+          "ability": "influence",
+          "direction": "农业人口和新聚落的账先建立，财政拨款与城市用工缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "population": 60,
+              "gdp": -20,
+              "territory": 20,
+              "agrarian_support": 18,
+              "guild_support": -12
+            },
+            "partial": {
+              "treasury": -80,
+              "population": 25,
+              "gdp": -35,
+              "territory": 10,
+              "agrarian_support": 10
+            },
+            "fail": {
+              "population": -30,
+              "civilian_support": -10,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "迁移令签发，灾民获得住房、粮食和农业工牌，北部聚落开始形成稳定人口。",
+            "partial": "部分灾民完成迁移，住房和医疗配额不足，聚落需要后续拨款维持。",
+            "fail": "迁移名单没有执行，灾民滞留城市，德墨忒尔农业无法获得劳动力。"
+          }
+        },
+        {
+          "id": "population_labor_draft_p2",
+          "name": "送进城市工坊",
+          "ability": "majesty",
+          "direction": "工业产出和城市财政的账先平，农业聚落与人口稳定的缺口后头再算。",
+          "effects": {
+            "full": {
+              "treasury": 50,
+              "population": -15,
+              "gdp": 75,
+              "radiation_risk": 10,
+              "agrarian_support": -20,
+              "guild_support": 18
+            },
+            "partial": {
+              "treasury": 25,
+              "population": -25,
+              "gdp": 35,
+              "agrarian_support": -28,
+              "guild_support": 10
+            },
+            "fail": {
+              "population": -35,
+              "gdp": -45,
+              "guild_support": -15,
+              "labor_health": -15
+            }
+          },
+          "chronicle": {
+            "full": "工坊接收令签发，劳动力完成分配，城市产出和税收增加。",
+            "partial": "工坊接收部分人口，但住房和医疗不足，劳工健康报告开始恶化。",
+            "fail": "工坊无法吸收迁入人口，失业名单和住宿纠纷同时增加。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "登记处没有签发迁移名单，工坊和农业聚落各自等待人口。",
+        "chronicle": "灾民在登记处和工坊之间反复排队，人口没有进入任何一份有效名册。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "settlement_registry",
+      "title": "新聚落户籍归属案",
+      "background": "登记处收到新聚落户籍申请。德墨忒尔农业提交土地名册，旧姓议会要求居民登记在地方庄园名下。中央担心新土地和人口脱离税务系统。",
+      "difficulty": 0,
+      "weight": 1,
+      "cooldown": 3,
+      "plans": [
+        {
+          "id": "settlement_registry_p1",
+          "name": "纳入中央登记",
+          "ability": "insight",
+          "direction": "中央人口、土地和税务的账先统一，农业公司自治和地方合作的缺口后头再补。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "population": 35,
+              "territory": 20,
+              "noble_support": -20,
+              "agrarian_support": 10
+            },
+            "partial": {
+              "treasury": 30,
+              "population": 15,
+              "territory": 10,
+              "noble_support": -28,
+              "agrarian_support": 5
+            },
+            "fail": {
+              "treasury": -40,
+              "population": -25,
+              "territory": -15,
+              "agrarian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "中央登记令签发，新聚落获得统一户籍、土地编号和税务记录。德墨忒尔农业的灌溉渠被写入公共资产表。",
+            "partial": "主要居民完成登记，边缘农户仍保留地方名册。中央掌握了聚落主体人口，但土地账还不完整。",
+            "fail": "中央登记令没有落实，地方自行发放户籍，人口与土地数据出现两套版本。"
+          }
+        },
+        {
+          "id": "settlement_registry_p2",
+          "name": "交给地方庄园登记",
+          "ability": "influence",
+          "direction": "地方秩序和快速安置的账先平，中央户籍控制和农业公司土地权暂时让出。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "population": 25,
+              "territory": 25,
+              "noble_support": 18,
+              "agrarian_support": -18,
+              "wealth_gap": 15,
+              "legitimacy": -8,
+              "female_support": -8
+            },
+            "partial": {
+              "treasury": 35,
+              "population": 10,
+              "territory": 12,
+              "noble_support": 10,
+              "agrarian_support": -25
+            },
+            "fail": {
+              "population": -30,
+              "territory": -20,
+              "noble_support": -15,
+              "legitimacy": -12
+            }
+          },
+          "chronicle": {
+            "full": "地方庄园完成登记，并按协议上报人口和税额。新聚落暂时获得稳定秩序。",
+            "partial": "人口完成登记，但土地和税收主要由庄园控制，中央只收到不完整名录。",
+            "fail": "地方拒绝提交完整名册，新聚落逐渐脱离中央登记体系。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "户籍模板没有签发，农业公司和旧姓议会各自保存名单。",
+        "chronicle": "新聚落的土地称呼和人口归属继续分裂，登记处将案件列为待补档案。",
+        "effects": {}
+      }
+    }
+  ],
+  "crisis": [
+    {
+      "id": "husk_blight",
+      "title": "火穗生锈",
+      "background": "锈病呈报从农业口一路递进中央议厅：多个火穗田同期染病，火籽单产骤降，首都的火籽炉、粮仓与河运的供籽链一起吃紧。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 50,
+            "stat": "radiation_risk"
+          },
+          {
+            "min": 5,
+            "stat": "plague_progress"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "quarantine_fields",
+          "name": "封锁病源",
+          "ability": "insight",
+          "direction": "封锁病田，人口与土地的账先保住；军力与疆土的预算吃大亏。",
+          "effects": {
+            "full": {
+              "population": 150,
+              "military": -100,
+              "territory": -60,
+              "radiation_risk": -40,
+              "plague_progress": -1,
+              "agrarian_support": 30,
+              "fuel_reserve": -30
+            },
+            "partial": {
+              "military": -150,
+              "territory": -120,
+              "radiation_risk": -20,
+              "plague_progress": -1,
+              "agrarian_support": 15,
+              "fuel_reserve": -40
+            },
+            "fail": {
+              "population": -150,
+              "radiation_risk": 50,
+              "plague_progress": 1,
+              "agrarian_support": -20
+            }
+          },
+          "chronicle": {
+            "full": "封锁令签发，病田隔离，军民合力堵住病源。军费花得不冤，灯市还亮着。",
+            "partial": "封锁晚了半步，锈病缓了下来，军力与河运的账却搭进去不少。",
+            "fail": "封锁令刚下，堤岸先乱。流民冲破检查站，病苗跟着人流进了城。"
+          }
+        },
+        {
+          "id": "harvest_husk",
+          "name": "集中提炼",
+          "ability": "majesty",
+          "direction": "抢收集中提炼，火籽与城里秩序的账面上好看；田地与人口的代价记在后头。",
+          "effects": {
+            "full": {
+              "population": -60,
+              "military": 200,
+              "civilian_support": 20,
+              "radiation_risk": 35,
+              "guild_support": 30,
+              "fuel_reserve": 40
+            },
+            "partial": {
+              "population": -120,
+              "military": 80,
+              "radiation_risk": 60,
+              "plague_progress": 1,
+              "guild_support": 15,
+              "fuel_reserve": 20,
+              "labor_health": -15
+            },
+            "fail": {
+              "population": -200,
+              "civilian_support": -20,
+              "radiation_risk": 80,
+              "plague_progress": 1,
+              "guild_support": -15,
+              "labor_health": -30
+            }
+          },
+          "chronicle": {
+            "full": "抢收令下发，火籽集中提炼，火籽炉昼夜不停，田里的病气暂时还压得住。",
+            "partial": "火籽炼了出来，病株的根还留在土里，人也病倒一批。",
+            "fail": "抢收的火籽混着病株进了炉。炉火是旺了，灰烬里全是病气。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "病田不封锁，锈病顺着水渠与粮道往外爬。",
+        "chronicle": "无人核准封锁，锈病顺着河运进了城，火籽炉一家接一家停火。",
+        "effects": {
+          "population": -80,
+          "civilian_support": -15,
+          "radiation_risk": 25,
+          "plague_progress": 2,
+          "fuel_reserve": -20
+        }
+      }
+    },
+    {
+      "id": "fuel_demand",
+      "title": "火籽分配之争",
+      "background": "德墨忒尔农业递来配额催办：农用炉与灌溉泵站的火籽配额压在审批链上久未核准，先粮后火的成例眼看要破。公司随呈报附上停止供粮的预登记——配额再不到账，辐射区的农资统配与口粮调度将中止。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "max": 42,
+            "stat": "agrarian_support"
+          },
+          {
+            "min": 500,
+            "stat": "fuel_reserve"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "lend_fuel",
+          "name": "核准农用配额",
+          "ability": "influence",
+          "direction": "农用炉与泵站的账先平；炉序余量的缺口先欠着。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "gdp": 15,
+              "agrarian_support": 25,
+              "fuel_reserve": -120
+            },
+            "partial": {
+              "treasury": -60,
+              "gdp": 5,
+              "agrarian_support": 15,
+              "fuel_reserve": -180
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": -15,
+              "agrarian_support": -8,
+              "fuel_reserve": -100
+            }
+          },
+          "chronicle": {
+            "full": "农用配额核发，泵站与农用炉照常运转，德墨忒尔农业撤了停止供粮的预登记。先粮后火的成例保住了，账也平了。",
+            "partial": "配额只批了一半，农用炉保住了，灌溉泵站仍断着火。公司没再递停供预登记，农资统配的催办却仍一封封递来。",
+            "fail": "配额迟迟未核，公司真中止了辐射区口粮调度，几处田埂断了供给，地方的催办堆成摞。"
+          }
+        },
+        {
+          "id": "refuse_fuel",
+          "name": "驳回农用配额",
+          "ability": "majesty",
+          "direction": "炉序与储备的账先平；农用炉与泵站的断火风险先欠着。",
+          "effects": {
+            "full": {
+              "treasury": 10,
+              "gdp": -10,
+              "agrarian_support": -25,
+              "fuel_reserve": 40
+            },
+            "partial": {
+              "treasury": -20,
+              "gdp": -25,
+              "agrarian_support": -35,
+              "fuel_reserve": 20
+            },
+            "fail": {
+              "treasury": -50,
+              "gdp": -40,
+              "agrarian_support": -45,
+              "fuel_reserve": -30
+            }
+          },
+          "chronicle": {
+            "full": "农用配额压住，公司没敢真停供，撤了预登记回到谈判桌。炉序照旧，事情暂时按住。",
+            "partial": "公司让了一步，农用炉的火候却已见吃紧，泵站的停机预告也挂了出来。",
+            "fail": "停止供粮成了真，辐射区的口粮调度停摆，田埂上的炉火灭了一片，账本上添了赤字。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "配额催办压着没裁，公司的停供预登记和中央的批复都僵在原地。",
+        "chronicle": "农用配额的呈报在案头积灰，先粮后火的成例没人兑付。德墨忒尔农业的催办一日紧过一日，谁也没先让步。",
+        "effects": {
+          "agrarian_support": -15,
+          "fuel_reserve": -50
+        }
+      }
+    },
+    {
+      "id": "furnace_crack",
+      "title": "火籽炉开裂",
+      "background": "燃料总局的更换呈报递进中央议厅：新式锅炉的图纸和操作规程早已下发，技术积累已经到位，城里最老的火籽炉却仍沿用旧式炉壁。同业公会不愿停炉换新，几次核准的换炉预算都被压成了积案，旧炉照常开火。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 30,
+            "stat": "literacy_rate"
+          },
+          {
+            "max": 35,
+            "stat": "guild_support"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "shutdown_repair",
+          "name": "停炉换新锅炉",
+          "ability": "insight",
+          "direction": "炉序与工艺换代的账先平；火籽产量下行的缺口先欠着。",
+          "effects": {
+            "full": {
+              "treasury": -120,
+              "guild_support": 15,
+              "fuel_reserve": -80,
+              "literacy_rate": 12
+            },
+            "partial": {
+              "treasury": -200,
+              "guild_support": 8,
+              "fuel_reserve": -140,
+              "literacy_rate": 6
+            },
+            "fail": {
+              "treasury": -80,
+              "guild_support": -12,
+              "fuel_reserve": -60
+            }
+          },
+          "chronicle": {
+            "full": "停炉令签发，旧炉熄火，新锅炉按期就位，换炉预算核销清楚。同业公会的停产损失呈报收在案上，暂无下文。",
+            "partial": "换炉拖成整月，同业公会的停产损失呈报一封接一封，火籽产量掉了一截，账上多烧了一倍。",
+            "fail": "停炉令没传下去，同业公会抢先开炉，换炉的事搁了。账面上既没省下钱，炉壁还是旧的。"
+          }
+        },
+        {
+          "id": "reinforce_run",
+          "name": "加厚炉壁继续烧",
+          "ability": "majesty",
+          "direction": "火籽产量与炉序的账先平；换炉的预算先欠着。",
+          "effects": {
+            "full": {
+              "treasury": -40,
+              "guild_support": 12
+            },
+            "partial": {
+              "treasury": -30,
+              "guild_support": 5,
+              "fuel_reserve": -60
+            },
+            "fail": {
+              "treasury": -50,
+              "guild_support": -15,
+              "fuel_reserve": -100
+            }
+          },
+          "chronicle": {
+            "full": "加厚炉壁补上，炉火不停，火籽照交。换炉的事顺延到下一年，同业公会没话说。",
+            "partial": "炉子没停，火籽也照交，补炉的灰没干透，产量只保住大半。换炉的呈报还压着。",
+            "fail": "补炉的灰没干，炉壁又裂，火籽灰洒了一地。同业公会反手递来索赔，账本上添了赤字。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "停也不是，烧也不是。",
+        "chronicle": "换炉的预算压在案头，炉坊区的炉火声一日弱过一日。燃料总局的催单没人再递，两边僵着。",
+        "effects": {
+          "guild_support": -8,
+          "fuel_reserve": -40
+        }
+      }
+    },
+    {
+      "id": "fuel_smuggle",
+      "title": "火籽走私",
+      "background": "边市稽查递来安全报告：储备库的火籽被倒卖出境换黄金，账面的火籽储备对不上数。追查的线索直通某家旧姓商号的账房。旧姓议会否认，反咬稽查冤枉。贫富分化的账越拉越大，边民眼红走私的暴利。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 55,
+            "stat": "wealth_gap"
+          },
+          {
+            "max": 40,
+            "stat": "noble_support"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "raid_smuggle_line",
+          "name": "查抄走私线",
+          "ability": "majesty",
+          "direction": "火籽储备与账面的账先平；旧姓与商路的关系先欠着。",
+          "effects": {
+            "full": {
+              "civilian_support": 10,
+              "noble_support": -25,
+              "fuel_reserve": 200,
+              "legitimacy": 15
+            },
+            "partial": {
+              "treasury": -30,
+              "noble_support": -35,
+              "fuel_reserve": 90,
+              "legitimacy": 5
+            },
+            "fail": {
+              "noble_support": 8,
+              "fuel_reserve": -50,
+              "legitimacy": -15
+            }
+          },
+          "chronicle": {
+            "full": "查抄令签发，走私线连根拔掉，火籽回库，商号封账。储备库重新对上了数，边市的稽查报了平安。",
+            "partial": "只查到账房，主家脱了身。火籽追回小半，储备库的账还是差着一截，旧姓与你结了怨。",
+            "fail": "抄查抄到一半，旧姓反手把储备库的账烧了。火籽没追回，账本上又添了一笔无头债。"
+          }
+        },
+        {
+          "id": "fine_border_only",
+          "name": "只罚边市结案",
+          "ability": "insight",
+          "direction": "商路与旧姓的账先平；火籽外流与储备的窟窿先欠着。",
+          "effects": {
+            "full": {
+              "treasury": 5,
+              "noble_support": 8,
+              "fuel_reserve": -60
+            },
+            "partial": {
+              "treasury": -30,
+              "noble_support": 8,
+              "fuel_reserve": -120
+            },
+            "fail": {
+              "noble_support": 5,
+              "fuel_reserve": -200,
+              "legitimacy": -12
+            }
+          },
+          "chronicle": {
+            "full": "只罚边市的几个贩子，商路没断，旧姓也松口气。火籽虽漏，暂时还查得出数。",
+            "partial": "商路和旧姓都稳住，走私的船没停，火籽照漏。为平账，储备库又拨出一批火籽补上窟窿。",
+            "fail": "睁一只眼，火籽漏成河。储备库见了底，边市的黄金越堆越高，没人认这笔账。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "走私的线不查，账本的窟窿也不补。",
+        "chronicle": "火籽顺着边市一船船外流，储备库的账一天比一天对不上。旧姓数着黄金，没人再递查抄的呈报。",
+        "effects": {
+          "fuel_reserve": -80,
+          "legitimacy": -8
+        }
+      }
+    },
+    {
+      "id": "flu_raiding",
+      "title": "坊区时疫",
+      "background": "炉坊区起了时疫，病倒的人一天多过一天。工坊主怕停工商路断，要你只发药照常开工；检查署的医官却要你设巡诊棚、隔离病患。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "max": 45,
+            "stat": "labor_health"
+          },
+          {
+            "max": 40,
+            "stat": "civilian_support"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "quarantine_clinic",
+          "name": "设棚隔离",
+          "ability": "insight",
+          "direction": "先压疫病、保炉工的命，工坊的钱粮和同业公会先吃紧。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "gdp": -40,
+              "civilian_support": 10,
+              "plague_progress": -1,
+              "labor_health": 20
+            },
+            "partial": {
+              "treasury": -120,
+              "plague_progress": -1,
+              "guild_support": -10,
+              "labor_health": 12
+            },
+            "fail": {
+              "civilian_support": -10,
+              "plague_progress": 1,
+              "labor_health": -15
+            }
+          },
+          "chronicle": {
+            "full": "巡诊棚设了，病患隔了，时疫没烧起来。炉工得到救治，都说中央没丢下他们。商路虽冷几日，人心是暖的。",
+            "partial": "疫是压下去了，人也保住，隔离的日子拖长，工坊停工亏了大半，同业公会追着要补贴，财政总局又拨出去一笔。",
+            "fail": "隔离的棚子还没搭齐，工坊主带人冲了检查站。病患混着炉工，疫气一夜铺开。"
+          }
+        },
+        {
+          "id": "work_and_medicate",
+          "name": "发药但是照常开工",
+          "ability": "majesty",
+          "direction": "保工坊和商路，先观察疫病情况。",
+          "effects": {
+            "full": {
+              "plague_progress": 1,
+              "guild_support": 10,
+              "labor_health": -10
+            },
+            "partial": {
+              "plague_progress": 1,
+              "guild_support": 5,
+              "labor_health": -12
+            },
+            "fail": {
+              "civilian_support": -15,
+              "plague_progress": 1,
+              "labor_health": -25
+            }
+          },
+          "chronicle": {
+            "full": "药发了，炉子照转，商路没断，同业公会满意。疫气暂时还压得住，只是炉工的咳声密了些。",
+            "partial": "炉子照转，商路也没断，药不够分，只罩住半个坊区。时疫在另一半慢慢爬，炉工的账早晚要算。",
+            "fail": "带病开工，时疫顺着工坊传遍全城。炉火没停，可烧的是人命。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "巡诊和开工两头都不定，坊区就这么耗着。",
+        "chronicle": "时疫在炉坊区扎了根，病气混着火籽灰，炉工的咳声成了坊区的夜曲。",
+        "effects": {
+          "civilian_support": -5,
+          "plague_progress": 1,
+          "labor_health": -5
+        }
+      }
+    },
+    {
+      "id": "border_pay",
+      "title": "女子军队同工同酬",
+      "background": "军务处递来薪资核定呈报：女子军队已编入建制，同等岗位的薪资却与男丁差着一档。地方登记处收到多起申诉登记，女兵联名要求同工同酬。军务处请示：是否核平这档差额，把女子军伍的薪资标准重新立起来。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 6,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "max": 44,
+            "stat": "legitimacy"
+          },
+          {
+            "max": 38,
+            "stat": "female_support"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "pay_in_full",
+          "name": "核平薪资差额",
+          "ability": "majesty",
+          "direction": "女子军伍薪资标准的账先平；军务处预算的缺口先欠着。",
+          "effects": {
+            "full": {
+              "treasury": -120,
+              "military": 10,
+              "legitimacy": 12,
+              "female_support": 25
+            },
+            "partial": {
+              "treasury": -180,
+              "military": 5,
+              "legitimacy": 6,
+              "female_support": 15
+            },
+            "fail": {
+              "treasury": -60,
+              "military": -15,
+              "legitimacy": -8,
+              "female_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "薪资差额核平，女兵薪资补足，军务处的气顺了。申诉登记销了案，营务也稳了。",
+            "partial": "只核平了主要驻地，边远部队仍差着一档。申诉登记少了大半，却还有几封压在案头。",
+            "fail": "核定卡在审批链上，同工同酬迟迟未核。女兵的申诉越积越厚，军务处的呈报已经写成了告急。"
+          }
+        },
+        {
+          "id": "pay_half",
+          "name": "维持现有薪资标准",
+          "ability": "insight",
+          "direction": "军务处既定编制的账先平；女兵申诉与军心的账先欠着。",
+          "effects": {
+            "full": {
+              "treasury": 10,
+              "military": -5,
+              "legitimacy": -10,
+              "female_support": -25
+            },
+            "partial": {
+              "treasury": 5,
+              "military": -15,
+              "legitimacy": -15,
+              "female_support": -35
+            },
+            "fail": {
+              "treasury": -20,
+              "military": -30,
+              "legitimacy": -20,
+              "female_support": -50
+            }
+          },
+          "chronicle": {
+            "full": "旧有标准维持，军务处没起波澜。女兵虽有不满，暂时按住了没闹。",
+            "partial": "标准没动，申诉登记却一天多过一天，几处营区开始自行其事。",
+            "fail": "维持标准激化了不满，女兵联名递诉，军务处的调动令也开始不好使了。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "同工同酬的呈报压着没批，军务处和登记处两边都僵着。",
+        "chronicle": "薪资核定在案头搁置，申诉登记堆满登记处，女兵的薪资差一档，谁也没补上。",
+        "effects": {
+          "military": -10,
+          "legitimacy": -5,
+          "female_support": -15
+        }
+      }
+    },
+    {
+      "id": "treasury_crisis_450",
+      "title": "库存和支出争夺",
+      "background": "财政刚有起色，各地的拨款申请却同时递进中央议厅。同业公会递扩产申请，储备署递补储申请，边地也要钱维持驻军，眼下的财政只够先保一头。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 650,
+            "stat": "treasury"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "unlocks": "treasury_crisis_800",
+      "plans": [
+        {
+          "id": "reserve_expansion_fund",
+          "name": "保留扩张资金",
+          "ability": "insight",
+          "direction": "先查清各项支出的实际收益，保住能继续带来增长的投入；代价是部分民生和地方需求要暂缓。",
+          "effects": {
+            "full": {
+              "treasury": 110,
+              "gdp": 80,
+              "civilian_support": 8
+            },
+            "partial": {
+              "treasury": 70,
+              "gdp": 45,
+              "civilian_support": 3
+            },
+            "fail": {
+              "treasury": -40,
+              "gdp": 20,
+              "civilian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "财政司重新核对账目，扩张资金没有被挪走，工坊和商路继续运转。几处地方虽然没拿到足额拨款，但没有形成新的亏空。",
+            "partial": "账目只核清了一半，扩张资金保住了大部分，几处工坊仍然因为缺钱放慢进度。地方没有闹起来，但对中央的抱怨已经记在案上。",
+            "fail": "各部门交来的账目互相矛盾，核查花掉了时间和钱。扩张没有完全停下，但财政没有得到有效保护，地方也开始催问欠款。"
+          }
+        },
+        {
+          "id": "cut_immediate_spending",
+          "name": "先压低支出",
+          "ability": "majesty",
+          "direction": "直接削减眼前的非必要开支，把财政余裕留在账面；代价是部分民众和商人会立刻感到不便。",
+          "effects": {
+            "full": {
+              "treasury": 150,
+              "gdp": 35,
+              "civilian_support": 15
+            },
+            "partial": {
+              "treasury": 100,
+              "gdp": 10,
+              "civilian_support": 8
+            },
+            "fail": {
+              "treasury": 40,
+              "gdp": -25,
+              "civilian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "削减令迅速执行，几项铺张的工程和宴会被取消，财政重新有了余裕。工坊虽然少拿了一部分补助，但大多数人认为这次收紧是必要的。",
+            "partial": "支出削减成功，但地方执行得不够一致。账面多留下一笔钱，工坊和商人却认为中央开始动摇，几处市场出现了短暂的冷清。",
+            "fail": "命令发出后，各地都只削减了别人的预算。财政留下了一点余裕，民间却认为中央只会下令，不会承担代价。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，扩张、储备和驻军都按旧账继续要钱。财政暂时没有立刻见底，但每一项开支都开始挤占其他项目。",
+        "chronicle": "中央议厅没有裁定哪笔钱优先，各部门按旧账自行拨款。财政没有增加，工坊和地方却都记下了新的欠款。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "treasury_crisis_800",
+      "title": "财政账目失控",
+      "background": "财政账面上的数字越来越好看，真正能调动的钱却越来越少。地方账目、宫廷支出和商人借款互相遮掩，几名掌账官都声称问题出在别人那里。",
+      "difficulty": 2,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 800,
+            "stat": "treasury"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "audit_treasury_accounts",
+          "name": "查清账目",
+          "ability": "insight",
+          "direction": "先找出财政缺口的真正来源，再决定哪些支出必须保留；代价是短期内会拖慢资金调度。",
+          "effects": {
+            "full": {
+              "treasury": 180,
+              "gdp": 70,
+              "noble_support": 8
+            },
+            "partial": {
+              "treasury": 120,
+              "gdp": 35,
+              "noble_support": 2
+            },
+            "fail": {
+              "treasury": 50,
+              "gdp": -25,
+              "noble_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "财政司查出了几处长期挪用和重复拨款，账目被重新归并，财政终于恢复了真实的调度能力。几名地方官失去了原有的便利，但主要商路没有受到影响。",
+            "partial": "大部分账目被查清，但几项旧债仍然无法核实。财政恢复了一部分余裕，商路也勉强维持，只是后续一段时间仍要谨慎花钱。",
+            "fail": "账目之间的矛盾没有被理顺，查账反而让各方开始互相推责。财政暂时多收回一点钱，经济活动却因为不安而放慢，旧姓势力也开始抱怨。"
+          }
+        },
+        {
+          "id": "command_spending_cut",
+          "name": "直接压住支出",
+          "ability": "majesty",
+          "direction": "不再等待账目完全清楚，先用王令冻结一批支出；代价是贵族、地方和部分民众都会立刻失去一部分既得利益。",
+          "effects": {
+            "full": {
+              "treasury": 210,
+              "civilian_support": 12,
+              "noble_support": -5
+            },
+            "partial": {
+              "treasury": 140,
+              "civilian_support": 5,
+              "noble_support": -12
+            },
+            "fail": {
+              "treasury": 80,
+              "civilian_support": -12,
+              "noble_support": -18
+            }
+          },
+          "chronicle": {
+            "full": "王令冻结了多项未经核准的支出，财政迅速止住了缺口。地方和贵族虽然不满，但财政终于重新由中央掌握。",
+            "partial": "支出冻结令执行了一部分，财政得到缓冲，但几处地方用拖延和隐瞒抵消了命令。民众暂时没有明显受损，贵族却开始联合要求解释。",
+            "fail": "命令传遍各地，却没有真正阻止资金流失。财政只保住了一小部分钱，地方和贵族都认为中央的命令可以被绕开。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，账目继续按旧习流转。财政缺口会被新的收入暂时掩盖，但下一次大额支出到来时，问题会一起暴露。",
+        "chronicle": "无人接手查账，各部门继续用自己的账本解释财政。财政暂时没有崩溃，中央却越来越难知道手里的钱究竟在哪里。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "gdp_crisis_400",
+      "title": "生产扩张过快",
+      "background": "工坊和商路的规模迅速扩大，原料、运输和劳力却没有跟上。商人要求继续扩大订单，地方官则报告储备库和道路已经开始拥堵。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 650,
+            "stat": "gdp"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "unlocks": "gdp_crisis_800",
+      "plans": [
+        {
+          "id": "adjust_production_pace",
+          "name": "调整生产节奏",
+          "ability": "insight",
+          "direction": "先查清哪些生产真正带来收益，减少无效扩张；代价是经济增长会慢一些，但财政和民生可以得到缓冲。",
+          "effects": {
+            "full": {
+              "treasury": 80,
+              "gdp": 130,
+              "civilian_support": 8
+            },
+            "partial": {
+              "treasury": 45,
+              "gdp": 80,
+              "civilian_support": 2
+            },
+            "fail": {
+              "treasury": 20,
+              "gdp": 35,
+              "civilian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "生产计划重新排过，低效工坊暂时停下，原料和运输被集中到真正有收益的产业。经济继续增长，财政也收到了一笔原本会被浪费的钱。",
+            "partial": "生产计划只调整了一部分，几处低效工坊仍然占着原料。经济保持增长，但财政的改善没有预期那么明显，民间对停产安排也有些不满。",
+            "fail": "调整方案没有得到工坊配合，订单和原料依旧互相冲撞。经济仍有小幅增长，但财政没有得到补充，工人和地方都开始抱怨。"
+          }
+        },
+        {
+          "id": "force_continued_production",
+          "name": "强令工坊继续生产",
+          "ability": "majesty",
+          "direction": "不让订单和产能中断，要求工坊继续扩大生产；代价是财政和劳工压力会被推迟到后面。",
+          "effects": {
+            "full": {
+              "treasury": 45,
+              "gdp": 190,
+              "military": 10
+            },
+            "partial": {
+              "treasury": 20,
+              "gdp": 125,
+              "civilian_support": -8
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": 60,
+              "civilian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "王令统一了生产和运输安排，工坊按期完成订单，经济规模继续上升。军需和商路都得到一部分好处，但财政仍要承担扩张成本。",
+            "partial": "工坊继续开工，部分订单顺利交付，另一些则因为缺料延误。经济得到增长，地方和工人的抱怨也开始累积。",
+            "fail": "强令没有解决原料和运输问题，工坊只是同时陷入缺货和积压。经济勉强增长了一点，财政却因为补救和赔偿出现损失。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，工坊按照自己的订单继续扩张。经济数字还会增长，但运输、原料和劳工问题会一起变得更难收拾。",
+        "chronicle": "中央没有调整生产安排，各工坊都先抢原料、抢车队、抢订单。经济继续向上，国家却没有从这场增长中得到足够的控制权。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "gdp_crisis_800",
+      "title": "市场需求崩落",
+      "background": "繁荣时期积累的货物突然卖不出去，邦交与贸易事务处登记的市场报告显示：商人申请交易保护，工坊申请国家继续收购。市场已经足够庞大，任何错误都会放大成全国性的损失。",
+      "difficulty": 2,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 800,
+            "stat": "gdp"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "stabilize_local_market",
+          "name": "稳住本地市场",
+          "ability": "influence",
+          "direction": "与商人和地方协商，优先保证本地交易和基本消费；代价是对外贸易和部分利润会暂时减少。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "gdp": 160,
+              "civilian_support": 20
+            },
+            "partial": {
+              "treasury": 25,
+              "gdp": 100,
+              "civilian_support": 10
+            },
+            "fail": {
+              "treasury": -30,
+              "gdp": 45,
+              "civilian_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "商会接受了限价和分区销售的安排，库存逐渐流入本地市场。百姓买得到所需物资，财政也获得一笔稳定收入，经济没有出现断崖式下滑。",
+            "partial": "本地市场保住了大半，仍有一部分货物积压在储备库。民心暂时稳定，财政得到的收益却有限，商人开始要求下一轮补偿。",
+            "fail": "商人没有接受协商，地方市场只消化掉少量积压。百姓对物价和失业的抱怨增加，财政还要承担一部分救济支出。"
+          }
+        },
+        {
+          "id": "protect_external_trade",
+          "name": "维持对外贸易",
+          "ability": "insight",
+          "direction": "保住外部商路和大宗订单，用更大的市场消化过剩货物；代价是需要承担运输、边境和贸易保护的支出。",
+          "effects": {
+            "full": {
+              "treasury": 90,
+              "gdp": 230,
+              "territory": 10
+            },
+            "partial": {
+              "treasury": 40,
+              "gdp": 150,
+              "noble_support": 5
+            },
+            "fail": {
+              "treasury": -45,
+              "gdp": 70,
+              "noble_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "外部商路重新接上，积压货物被分批运走，商人的信心也恢复了。财政收到新的贸易收入，边境上的控制范围还得到扩大。",
+            "partial": "大部分商路恢复，货物终于开始流动，但运输成本和交易条件都比过去更差。经济继续增长，财政收益没有完全覆盖支出。",
+            "fail": "外部商路没有稳定下来，货物只运出去一小部分。商人要求赔偿，财政损失了一笔钱，旧姓势力也开始质疑贸易政策。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，商人和工坊自行寻找出路。部分市场会自己恢复，但中央会失去重新安排经济流向的机会。",
+        "chronicle": "没有新的市场命令，商人各自寻找买家，工坊各自削减生产。经济没有立刻崩溃，但国家没有掌握这次调整的方向。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "military_crisis_300",
+      "title": "军费挤压财政",
+      "background": "军队扩张后，薪资、装备和边防费用一起上涨。军务处要求继续投入，财政总局则担心国家已经承担不起这支不断扩大的军队。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 300,
+            "stat": "military"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "unlocks": "military_crisis_560",
+      "plans": [
+        {
+          "id": "rearrange_military_budget",
+          "name": "重新安排军费",
+          "ability": "insight",
+          "direction": "查清哪些军费真正提高战力，把钱从重复和低效项目中挪出来；代价是部分部队会暂时失去原有待遇。",
+          "effects": {
+            "full": {
+              "treasury": 100,
+              "military": 90,
+              "noble_support": 8
+            },
+            "partial": {
+              "treasury": 55,
+              "military": 55,
+              "noble_support": 2
+            },
+            "fail": {
+              "treasury": 20,
+              "military": 25,
+              "noble_support": -10
+            }
+          },
+          "chronicle": {
+            "full": "军费账目被重新整理，重复采购和虚报支出被削减，真正需要补给的部队得到优先保障。军力继续增长，财政也恢复了一部分余裕。",
+            "partial": "大部分军费被重新安排，但仍有几支部队没有拿到足额补给。军力有所增加，财政压力减轻了一些，几名将领开始抱怨待遇下降。",
+            "fail": "军费核查没有理顺，部队之间反而开始争夺预算。军力只增加一点，财政勉强保住，旧姓势力却认为中央正在削弱军队。"
+          }
+        },
+        {
+          "id": "secure_military_pay",
+          "name": "先保证薪资",
+          "ability": "majesty",
+          "direction": "先让军队按时领到薪资，保证军心和边防稳定；代价是财政会立即承担更大的压力。",
+          "effects": {
+            "full": {
+              "treasury": 45,
+              "military": 140,
+              "civilian_support": 8
+            },
+            "partial": {
+              "treasury": 20,
+              "military": 90,
+              "civilian_support": -5
+            },
+            "fail": {
+              "treasury": -35,
+              "military": 45,
+              "civilian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "薪资按期发放，部队没有因为欠款而停训或哗变。军队士气提高，民众也因为边境安稳而获得一些信心。",
+            "partial": "薪资大部分按期发放，边防军得到优先保障，后方部队仍然有少量拖欠。军力明显增加，但财政官员开始要求削减其他项目。",
+            "fail": "命令没有完全落实，薪资仍然在地方层层拖延。军队只得到有限补给，财政还要承担额外的催收和补发费用。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，军费仍按旧账增长。军队暂时不会立刻停摆，但财政会逐渐失去支撑军队的能力。",
+        "chronicle": "军费没有重新安排，各地继续按照旧有惯例拨款。部队勉强维持训练，财政却被一笔笔无法拒绝的开支掏空。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "military_crisis_560",
+      "title": "军队权力膨胀",
+      "background": "军队已经成为国家最强大的组织。将领们要求更多自治权，地方贵族也试图借助军队扩大自己的影响，中央的命令开始需要先经过军营的同意。",
+      "difficulty": 2,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 560,
+            "stat": "military"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "reconcile_generals",
+          "name": "重整军队关系",
+          "ability": "influence",
+          "direction": "拉拢可靠的将领，重新划清军队和地方势力的边界；代价是需要给出一部分财政和政治上的回报。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "military": 100,
+              "noble_support": 25
+            },
+            "partial": {
+              "treasury": 20,
+              "military": 60,
+              "noble_support": 12
+            },
+            "fail": {
+              "treasury": -35,
+              "military": 30,
+              "noble_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "将领之间的利益被重新安排，主要军队重新承认中央的调度权。军力得到补充，贵族也愿意暂时接受新的军政边界。",
+            "partial": "大部分将领接受安排，但仍有几支边防军保持自己的判断。军队继续增强，贵族关系有所缓和，中央还需要继续支付安抚成本。",
+            "fail": "协商没有形成共同方案，几名将领转而互相结盟。军力只增加一点，财政和贵族支持都受到损失。"
+          }
+        },
+        {
+          "id": "purge_generals",
+          "name": "公开整肃将领",
+          "ability": "majesty",
+          "direction": "直接削弱不服从的将领，把军队重新放回王令之下；代价是短期内会引起军队和旧姓势力的反弹。",
+          "effects": {
+            "full": {
+              "military": 140,
+              "civilian_support": 20,
+              "noble_support": -8
+            },
+            "partial": {
+              "military": 85,
+              "civilian_support": 8,
+              "noble_support": -20
+            },
+            "fail": {
+              "military": 45,
+              "civilian_support": -15,
+              "noble_support": -30
+            }
+          },
+          "chronicle": {
+            "full": "整肃迅速完成，关键军权重新回到中央手中。军队保住了战力，民众也认为君主没有被军营挟持。",
+            "partial": "几名主要将领被撤换，军队仍能执行命令，但地方军营开始观望。中央权威提高，旧姓势力则更加不满。",
+            "fail": "整肃没有压住局面，部分将领拒绝交出兵权。军队增加了一点表面上的力量，中央却失去了更多实际控制。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，军队会继续扩大自己的预算和权限。短期内军力还会上升，但中央会越来越难以命令这支军队。",
+        "chronicle": "中央没有处理将领之间的争执，军营自行决定了哪些命令值得执行。军队的数量增加了，君主对军队的掌控却进一步减弱。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "population_crisis_300",
+      "title": "人口供养压力",
+      "background": "人口增长后，粮食、住房和工作都变得紧张。地方官要求增加救济，工坊则要求把新增人口投入生产，中央必须决定先保民生还是先保增长。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 400,
+            "stat": "population"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "unlocks": "population_crisis_500",
+      "plans": [
+        {
+          "id": "arrange_food_and_settlement",
+          "name": "安排人口和粮食",
+          "ability": "insight",
+          "direction": "先查清粮食和住房的缺口，把新增人口安置到可以长期供养的地方；代价是财政要立即承担救济和建设支出。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "population": 100,
+              "civilian_support": 25
+            },
+            "partial": {
+              "treasury": -55,
+              "population": 60,
+              "civilian_support": 12
+            },
+            "fail": {
+              "treasury": -70,
+              "population": 30,
+              "civilian_support": -8
+            }
+          },
+          "chronicle": {
+            "full": "粮食、住房和迁徙安排被重新分配，新增人口得到安置，地方没有出现大规模逃散。财政花掉一部分钱，但民众对中央的信任明显增加。",
+            "partial": "只有部分地区得到完整安置，其他地方仍然缺粮缺房。人口继续增加，民心有所改善，但财政支出比原计划更高。",
+            "fail": "安置方案没有执行下去，粮食和住房依旧不够。人口只增加一点，地方开始抱怨中央把人引来却没有准备好供养。"
+          }
+        },
+        {
+          "id": "place_people_in_workshops",
+          "name": "让工坊吸收人口",
+          "ability": "influence",
+          "direction": "让工坊和商会承担安置，把新增人口快速转化为劳力；代价是部分人会在没有充分准备的情况下进入生产。",
+          "effects": {
+            "full": {
+              "treasury": 55,
+              "population": 130,
+              "gdp": 100
+            },
+            "partial": {
+              "population": 80,
+              "gdp": 55,
+              "civilian_support": -8
+            },
+            "fail": {
+              "population": 40,
+              "gdp": 20,
+              "civilian_support": -18
+            }
+          },
+          "chronicle": {
+            "full": "工坊接受了新增劳力，人口获得工作，经济规模也随之增长。财政没有承担全部安置成本，但工坊需要负责基本的住房和粮食。",
+            "partial": "大多数工坊接收了人口，但工作和住房安排并不完整。人口有所增长，经济也得到推动，民间对过度劳动的抱怨开始出现。",
+            "fail": "工坊只愿意接收少量劳力，大部分新增人口仍然没有稳定去处。经济略有增长，地方对失业和拥挤的怨气明显上升。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，人口会继续增长，但粮食、住房和工作的分配会由地方自行决定。",
+        "chronicle": "中央没有统一安排新增人口，各地按照自己的能力接收或驱赶人群。人口继续增加，城市和乡镇却开始互相推卸供养责任。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "population_crisis_500",
+      "title": "人口流动失控",
+      "background": "大量人口涌入城市和边境地区，旧有的户籍、粮食和治安安排已经无法覆盖所有人。户籍与迁徙登记处收到两份申请，一份主张开放迁徙，一份要求立即限制流动，地方官则开始自行封锁道路。",
+      "difficulty": 2,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 500,
+            "stat": "population"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "organize_migration",
+          "name": "组织安置和迁徙",
+          "ability": "influence",
+          "direction": "与地方官、商会和旧姓协商，把人口流动变成有计划的安置；代价是需要持续投入财政，并牺牲一部分短期效率。",
+          "effects": {
+            "full": {
+              "treasury": -70,
+              "population": 130,
+              "gdp": 90,
+              "civilian_support": 25
+            },
+            "partial": {
+              "treasury": -110,
+              "population": 80,
+              "gdp": 45,
+              "civilian_support": 10
+            },
+            "fail": {
+              "treasury": -120,
+              "population": 40,
+              "gdp": 15,
+              "civilian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "各地接受了统一的安置安排，人口被分流到有粮食和工作的地方。城市压力下降，经济增长加快，财政承担了一笔可控的安置费用。",
+            "partial": "大部分人口得到安置，但仍有几处城市无法接收全部迁入者。人口继续增加，经济获得一定活力，财政和民心都付出了更高代价。",
+            "fail": "协商没有形成统一方案，地方只愿意接收少量人口。人口增长有限，城市经济得到一点帮助，但拥挤和失业问题更加明显。"
+          }
+        },
+        {
+          "id": "restrict_migration",
+          "name": "先限制人口流动",
+          "ability": "majesty",
+          "direction": "直接限制迁徙，把人口压力压回原有地区；代价是短期内能够减轻财政负担，但会伤害民众对中央的看法。",
+          "effects": {
+            "full": {
+              "treasury": 110,
+              "population": 80,
+              "noble_support": 15
+            },
+            "partial": {
+              "treasury": 70,
+              "population": 45,
+              "civilian_support": -12
+            },
+            "fail": {
+              "population": 20,
+              "gdp": -45,
+              "civilian_support": -25
+            }
+          },
+          "chronicle": {
+            "full": "限制令得到执行，主要道路和城市入口重新恢复秩序。人口仍然有所增加，财政也保住了较大余裕，但边地和城市居民都对限制心存不满。",
+            "partial": "部分地区执行了限制，主要城市的压力有所减轻。财政得到补充，许多被挡在城外的人却开始指责中央无情。",
+            "fail": "限制令在地方被反复突破，人口流动没有真正停止。经济受到影响，民众也认为中央既不能安置人，也不能真正控制道路。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，人口会继续流向有粮食和工作的地方。地方可能暂时自发解决问题，但中央会失去控制人口分布的机会。",
+        "chronicle": "没有统一迁徙令，城市和边地各自设法应付涌入的人群。部分地方靠临时分配维持住了局面，更多地方则开始自行关闭道路和仓门。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "territory_crisis_220",
+      "title": "边地治理失效",
+      "background": "新控制的土地已经扩大，但地方官、驻军和原有势力之间没有形成稳定关系。名义上的领土增加了，真正能从中取得的税收和秩序却没有同步增长。",
+      "difficulty": 1,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 220,
+            "stat": "territory"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "unlocks": "territory_crisis_340",
+      "plans": [
+        {
+          "id": "rebuild_local_governance",
+          "name": "重新安排地方治理",
+          "ability": "influence",
+          "direction": "与地方势力重新分配权责，让新领土先形成可以持续运转的治理结构；代价是中央需要暂时让出一部分直接收益。",
+          "effects": {
+            "full": {
+              "treasury": 70,
+              "territory": 70,
+              "civilian_support": 20
+            },
+            "partial": {
+              "treasury": 35,
+              "territory": 40,
+              "civilian_support": 8
+            },
+            "fail": {
+              "treasury": -25,
+              "territory": 20,
+              "civilian_support": -12
+            }
+          },
+          "chronicle": {
+            "full": "地方官和原有势力接受了新的权责安排，新领土开始稳定缴纳收入。中央没有立即拿走全部收益，但地方民众和商路都得到改善。",
+            "partial": "大部分地方接受了新的安排，但仍有几处地区保持观望。领土控制得到巩固，财政收益增加有限，地方民众的态度有所改善。",
+            "fail": "协商没有真正解决权责问题，地方势力继续各自行动。领土只增加一点，财政还要承担安抚和补救费用。"
+          }
+        },
+        {
+          "id": "send_garrison",
+          "name": "增派驻军维持秩序",
+          "ability": "majesty",
+          "direction": "直接用驻军保证道路、城镇和税收不被地方势力截断；代价是军力和财政会被长期占用。",
+          "effects": {
+            "full": {
+              "treasury": -30,
+              "military": 70,
+              "territory": 100
+            },
+            "partial": {
+              "treasury": -70,
+              "military": 35,
+              "territory": 60
+            },
+            "fail": {
+              "treasury": -90,
+              "military": -20,
+              "territory": 30
+            }
+          },
+          "chronicle": {
+            "full": "驻军及时接管了关键道路和城镇，地方势力没有机会扩大影响。新领土被牢牢控制，军队也从边地获得了新的经验。",
+            "partial": "驻军守住了主要城镇，但乡村和偏远地区仍然由地方势力管理。领土增加，军力得到锻炼，财政却开始承担持续驻防的费用。",
+            "fail": "驻军没有按时抵达，地方势力趁机控制了几条道路。中央仍保住一部分名义领土，但军队和财政都损失了资源。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，新领土会继续由地方势力自行管理。短期内地方可能保持安静，但中央会越来越难从这些土地得到稳定收益。",
+        "chronicle": "中央没有重新安排地方治理，也没有增派驻军。边地表面上仍然服从，税收和道路却逐渐被地方势力截留。",
+        "effects": {}
+      }
+    },
+    {
+      "id": "territory_crisis_340",
+      "title": "边疆军政冲突",
+      "background": "边疆总督和驻军将领都声称自己才是当地真正的统治者。双方暂时没有公开决裂，但任何一方得到更多资源，都可能让另一方拒绝服从中央。",
+      "difficulty": 2,
+      "weight": 0,
+      "cooldown": 0,
+      "trigger": {
+        "type": "any",
+        "conditions": [
+          {
+            "min": 340,
+            "stat": "territory"
+          }
+        ]
+      },
+      "trigger_weight": 20,
+      "plans": [
+        {
+          "id": "mediate_frontier_factions",
+          "name": "调停地方势力",
+          "ability": "influence",
+          "direction": "让总督、将领和地方势力重新分配边疆的权力与收益；代价是中央必须承认一部分地方利益，不能立即收回全部资源。",
+          "effects": {
+            "full": {
+              "treasury": 60,
+              "military": 30,
+              "territory": 90,
+              "noble_support": 25
+            },
+            "partial": {
+              "treasury": 25,
+              "territory": 55,
+              "noble_support": 12
+            },
+            "fail": {
+              "military": -25,
+              "territory": 25,
+              "noble_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "各方接受了新的边疆协议，地方税收和军队调度重新回到中央记录中。边疆继续扩大，贵族愿意暂时支持这份安排，财政也获得新的收入。",
+            "partial": "协议暂时压住了冲突，但几支边防军仍然保留自己的调度习惯。领土继续增加，贵族关系有所缓和，中央需要继续支付一部分安抚费用。",
+            "fail": "调停没有形成共同方案，总督和将领开始互相封锁消息。领土只增加一点，贵族和军队都对中央失去了一部分信任。"
+          }
+        },
+        {
+          "id": "take_direct_control",
+          "name": "直接接管边疆",
+          "ability": "majesty",
+          "direction": "直接撤换地方掌权者，把边疆军政交回中央；代价是需要立即投入军力和财政，并承担地方反弹。",
+          "effects": {
+            "full": {
+              "treasury": -50,
+              "military": 100,
+              "territory": 120,
+              "civilian_support": 10
+            },
+            "partial": {
+              "treasury": -90,
+              "military": 55,
+              "territory": 75
+            },
+            "fail": {
+              "treasury": -120,
+              "military": -40,
+              "territory": 35
+            }
+          },
+          "chronicle": {
+            "full": "中央接管了关键城镇和军营，边疆总督被撤换，军队重新服从王令。领土和军力都得到扩大，财政承担了必要的接管成本。",
+            "partial": "中央控制了主要城镇，但偏远地区仍由原有势力管理。领土和军力继续增加，财政支出明显上升，地方民众对接管并不完全接受。",
+            "fail": "接管命令没有完全执行，部分将领拒绝交出兵权。中央保住了一些领土，但军队和财政都遭到消耗，边疆的服从变得更加脆弱。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "不处理，总督和将领会继续争夺边疆的实际控制权。双方暂时不会立刻决裂，但资源和兵力会越来越少地回到中央手中。",
+        "chronicle": "中央没有裁定边疆的军政归属，总督和将领各自扣留了税收、兵员和消息。边疆仍然挂在地图上，真正的控制却逐渐变成一层空名。",
+        "effects": {}
+      }
+    }
+  ],
+  "major": [
+    {
+      "id": "autumn_council",
+      "title": "明年怎么种",
+      "background": "秋收结账完毕，中央议厅召开年度农务会议，定明年的土地、粮食与火穗配额。财政总局、德墨忒尔农业与同业公会各递了一份方案。",
+      "difficulty": 3,
+      "plans": [
+        {
+          "id": "grain_first_plan",
+          "name": "粮田优先",
+          "ability": "insight",
+          "direction": "粮田与人口优先，工业化的步子放慢。",
+          "effects": {
+            "full": {
+              "population": 250,
+              "military": -80,
+              "radiation_risk": -40,
+              "agrarian_support": 40,
+              "guild_support": -30
+            },
+            "partial": {
+              "population": 100,
+              "military": -150,
+              "radiation_risk": -20,
+              "agrarian_support": 20,
+              "guild_support": -15
+            },
+            "fail": {
+              "radiation_risk": 40,
+              "agrarian_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "决议签发：粮田排在最前，火穗退到后面。军费省着花，仓里多了几石粮。",
+            "partial": "调度令是下了，军费却砸进去一大笔，火穗田的地契还压在议厅桌上。",
+            "fail": "议厅争了三天，调度令没出来。农人已经在田头自行轮作。"
+          }
+        },
+        {
+          "id": "husk_first_plan",
+          "name": "火穗优先",
+          "ability": "majesty",
+          "direction": "火穗与国力优先，土地与人口的风险账压上来。",
+          "effects": {
+            "full": {
+              "gdp": 250,
+              "military": 250,
+              "radiation_risk": 30,
+              "agrarian_support": -30,
+              "guild_support": 40,
+              "fuel_reserve": 40
+            },
+            "partial": {
+              "military": 120,
+              "radiation_risk": 60,
+              "agrarian_support": -15,
+              "guild_support": 20
+            },
+            "fail": {
+              "population": -150,
+              "civilian_support": -15,
+              "radiation_risk": 80,
+              "agrarian_support": -15,
+              "guild_support": -15
+            }
+          },
+          "chronicle": {
+            "full": "决议签发：火穗田扩开，灯火通明，商路也顺，田地还稳得住。",
+            "partial": "火穗扩种，炉火更旺，田里的病气也冒了头。",
+            "fail": "扩田令激起农人哗然，会上的争辩草草收场。"
+          }
+        }
+      ],
+      "ignored": {
+        "text": "明年的安排无人拍板，各站照旧例各自种。",
+        "chronicle": "决议搁置，各站照旧例耕种，粮田与火穗田的争端又拖一年。",
+        "effects": {
+          "gdp": -60,
+          "radiation_risk": 15,
+          "agrarian_support": -10,
+          "guild_support": -10
+        }
+      }
+    }
+  ]
+}
